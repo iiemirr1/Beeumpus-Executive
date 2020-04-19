@@ -1,4 +1,4 @@
-// Lord Youtube
+// Alpha Youtube
 
 const express = require('express');
 const app = express();
@@ -12,7 +12,7 @@ const http = require('http');
     http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
     }, 280000);
 
-// Lord Youtube
+// Alpha Youtube
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
