@@ -46,5 +46,5 @@ exports.conf = {
 exports.help = {
     name: 'otorol',
     description: 'Sunucuya katılanlara belirtilen rolü verir.',
-    usage: 'otorol ayarla @rol #kanal'
+    usage: 'otorol'
 }
