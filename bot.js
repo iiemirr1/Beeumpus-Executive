@@ -139,28 +139,45 @@ client.login(ayarlar.token);
 
 //-----------------------KOMUTLAR-----------------------\\
 
-//-----------------------Otorol-----------------------\\
-//-----------------------Otorol-----------------------\\
-//-----------------------Otorol-----------------------\\
-//-----------------------Otorol-----------------------\\
-
-
+//Otorol
 client.on("guildMemberAdd", async member => {
-  if (member.user.bot === true) return;
- if(!db.fetch(`otorol_${member.guild.id}`)) return;
-  let rolisim = await db.fetch(`otorolismi_${member.guild.id}`);
-  let kanal = await db.fetch(`otorolkanali_${member.guild.id}`);
-  let rolID = await db.fetch(`otorol_${member.guild.id}`);
-  let logkanali = client.channels.get(kanal)
-    logkanali.send(` \`${member.user.tag}\` adlı kullanıcıya **${rolisim}** adlı rol verildi.` );
-   member.addRole(rolID);
+  let sayac = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
+  let otorole = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
+  let arole = otorole[member.guild.id].sayi;
+  let giriscikis = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
+  let embed = new Discord.RichEmbed()
+    .setTitle("Otorol Sistemi")
+    .setDescription(
+      `:loudspeaker: :inbox_tray:  @${member.user.tag}'a Otorol Verildi `
+    )
+    .setColor("GREEN")
+    .setFooter("BOTISMİ", client.user.avatarURL);
+
+  if (!giriscikis[member.guild.id].kanal) {
+    return;
+  }
+
+  try {
+    let giriscikiskanalID = giriscikis[member.guild.id].kanal;
+    let giriscikiskanali = client.guilds
+      .get(member.guild.id)
+      .channels.get(giriscikiskanalID);
+    giriscikiskanali.send(
+      `:loudspeaker: :white_check_mark: Hoşgeldin **${member.user.tag}** Rolün Başarıyla Verildi.`
+    );
+  } catch (e) {
+    // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
+    return console.log(e);
+  }
 });
+//Kullanıcı sunucudan ayrıldığında ayarlanan kanala mesaj gönderelim.
+client.on("guildMemberAdd", async member => {
+  let autorole = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
+  let role = autorole[member.guild.id].sayi;
 
-//-----------------------Otorol Son-----------------------\\
-//-----------------------Otorol Son-----------------------\\
-//-----------------------Otorol Son-----------------------\\
-//-----------------------Otorol Son-----------------------\\
-
+  member.addRole(role);
+});
+//Otorol SON
 //-----------------------sunucu panel---------------------\\
 //-----------------------sunucu panel---------------------\\
 //-----------------------sunucu panel---------------------\\
