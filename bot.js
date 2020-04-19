@@ -135,6 +135,7 @@ client.on('error', e => {
 });
 
 client.login(ayarlar.token);
+//////////////////////////////////////////////////////////////////////////////////
 
 //-----------------------KOMUTLAR-----------------------\\
 
@@ -913,54 +914,3 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 //-----------------------Modlog Son-----------------------\\
 //-----------------------Modlog Son-----------------------\\
 
-//GELEN GİDEN//////////////////////////////////////////////
-
-client.on("guildMemberAdd", member => {
- let gelengiden = JSON.parse(fs.readFileSync('./ayarlar/gelengiden.json', 'utf8'));
-  var asd = db.fetch(`hgbb_${member.guild.id}`)
-     let guild = member.guild;
-       var Durum = member.user.presence.status;
-        var Durm = (Durum == "online" ? (0x00AE86) : (Durum == "offline" ? (0x808080) : (Durum == "idle" ? (0xFFFF00) : (Durum == "dnd" ? (0xFF0000) : (0x00AE86)))))
-        var durm = (Durum == "online" ? ("Çevrimiçi", `<:evrimii:701110513249288313> Çevrimiçi`) : (Durum == "offline" ? ("Çevrimdışı", `<:evrimd:701110755382132876> Çevrimdışı`) : (Durum == "idle" ? ("Boşta", `<:bota:701109673537044570> Boşta`) : (Durum == "dnd" ? ("Rahatsız Etmeyin", `<:rahatszetmeyin:701110287369240586> Rahatsız Etme`) : ("Bilinmiyor/bulunamadı.")))))
-  const channel = member.guild.channels.find("id", asd.id);
-  if (!channel) return;
-  const embed = new Discord.RichEmbed()
-    .setColor("GREEN")
-    .setAuthor(
-      member.user.tag,
-      member.user.avatarURL || member.user.defaultAvatarURL
-    )
-    .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
-    .setTitle(`**${member.user.username}** Adlı sunucumuza giriş yaptı!`)
-    .setDescription(`**${member.guild.memberCount}** Üyeye Ulaştık!`)
-    .addField("kullanıcı", `${member.user.tag}`)
-    .addField("ID", `${member.user.id}`)
-    .setTimestamp();
-  channel.send(embed);
-});
-
-client.on("guildMemberRemove", member => {
-    let gelengiden = JSON.parse(fs.readFileSync('./ayarlar/gelengiden.json', 'utf8'));
-    var asd = db.fetch(`hgbb_${member.guild.id}`)
-         let guild = member.guild;
-         var Durum = member.user.presence.status;
-        var Durm = (Durum == "online" ? (0x00AE86) : (Durum == "offline" ? (0x808080) : (Durum == "idle" ? (0xFFFF00) : (Durum == "dnd" ? (0xFF0000) : (0x00AE86)))))
-        var durm = (Durum == "online" ? ("Çevrimiçi", `:evrimii:701110513249288313> Çevrimiçi`) : (Durum == "offline" ? ("Çevrimdışı", `<:evrimd:701110755382132876> Çevrimdışı`) : (Durum == "idle" ? ("Boşta", `<:bota:701109673537044570> Boşta`) : (Durum == "dnd" ? ("Rahatsız Etmeyin", `<:rahatszetmeyin:701110287369240586> Rahatsız Etme`) : ("Bilinmiyor/bulunamadı.")))))
-  const channel = member.guild.channels.find("id", asd.id);
-  if (!channel) return;
-  const embed = new Discord.RichEmbed()
-    .setColor("RED")
-    .setAuthor(
-      member.user.tag, 
-      member.user.avatarURL || member.user.defaultAvatarURL
-    )
-    .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
-    .setTitle(`**${member.user.username}** Sunucumuzdan ayrıldı!`)
-    .setDescription(`**${member.guild.memberCount}** Üyeye düştük!`)
-    .addField("kullanıcı", `${member.user.tag}`)
-    .addField("ID", `${member.user.id}`)
-    .setTimestamp();
-  channel.send(embed);
-});
-
-//GELEN GİDEN SON
