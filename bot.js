@@ -936,9 +936,8 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 //-----------------------Son Üye Panel--------------------\\
 
 
-Kaydet Yeni Çoğalt ve Düzenle Sade Metin Olarak Göster Twitter da Paylaş
-1
-client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get("KANAL ID"); frenzy_c.setName(`Son Üye : ${member.user.username}`) })client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get("KANAL ID"); frenzy_c.setName(`Son Üye : ${member.user.username}`) })
+
+client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get("702206943128977469"); frenzy_c.setName(`Son Üye : ${member.user.username}`) })
 
 //-----------------------Son Üye Panel Son--------------------\\
 //-----------------------Son Üye Panel Son--------------------\\
