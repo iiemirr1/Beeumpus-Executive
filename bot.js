@@ -184,12 +184,12 @@ client.on("guildMemberAdd", async member => {
 
 //Sunucuya biri girdiğinde kanal ismi değiştirme
 client.on("guildMemberAdd", message => {
-  client.channels.get("697184746425417788").setName(`Toplam Kişi Sayısı: ${message.guild.memberCount} `);
+  client.channels.get("697184746425417788").setName(`Toplam Üye : ${message.guild.memberCount} `);
 // kanal id yazan yerlere sesli kanalın id'sini sağtıklayıp kopyalayın ve yapıştırın
 });
 //Sunucudan Çıktığın Kişi Sayını Azaltma
 client.on("guildMemberRemove", message => {
-  client.channels.get("697184746425417788").setName(`Toplam Kişi Sayısı: ${message.guild.memberCount} `);
+  client.channels.get("697184746425417788").setName(`Toplam Üye : ${message.guild.memberCount} `);
   
 });
 
