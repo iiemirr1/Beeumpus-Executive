@@ -1,5 +1,4 @@
 // Alpha Youtube
-
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -11,7 +10,6 @@ const http = require('http');
     setInterval(() => {
     http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
     }, 280000);
-
 // Alpha Youtube
 
 const Discord = require('discord.js');
