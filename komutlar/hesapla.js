@@ -1,4 +1,3 @@
-
 const Discord = require('discord.js');
 const math = require('math-expression-evaluator')
 const stripIndents = require('common-tags').stripIndents
