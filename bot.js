@@ -941,3 +941,41 @@ client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get
 //-----------------------Son Üye Panel Son--------------------\\
 //-----------------------Son Üye Panel Son--------------------\\
 
+//-----------------------değişen kanal adı--------------------\\
+//-----------------------değişen kanal adı--------------------\\
+//-----------------------değişen kanal adı--------------------\\
+
+function codersA() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      client.channels.get(`702962161839898714`).setName(`️Alpha`);
+      codersB();
+    }, 2000);
+  });
+}
+
+function codersB() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      client.channels.get(`702962161839898714`).setName(`Code`);
+      codersC();
+    }, 2000);
+  });
+}
+function codersC() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      client.channels.get(`702962161839898714`).setName(`Gururla Sunar`);
+      codersA();
+    }, 2000);
+  });
+}
+
+client.on("ready", async message => {
+  codersA();
+});
+
+//-----------------------değişen kanal adı Son--------------------\\
+//-----------------------değişen kanal adı Son--------------------\\
+//-----------------------değişen kanal adı Son--------------------\\
+
