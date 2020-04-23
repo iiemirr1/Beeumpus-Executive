@@ -948,7 +948,7 @@ client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get
 function codersA() {
   return new Promise(resolve => {
     setTimeout(() => {
-      client.channels.get(`702962161839898714`).setName(`️Alpha`);
+      client.channels.get(`kanal id`).setName(`️isim`);
       codersB();
     }, 2000);
   });
@@ -957,7 +957,7 @@ function codersA() {
 function codersB() {
   return new Promise(resolve => {
     setTimeout(() => {
-      client.channels.get(`702962161839898714`).setName(`Code`);
+      client.channels.get(`kanal id`).setName(`isim2`);
       codersC();
     }, 2000);
   });
@@ -965,7 +965,7 @@ function codersB() {
 function codersC() {
   return new Promise(resolve => {
     setTimeout(() => {
-      client.channels.get(`702962161839898714`).setName(`Gururla Sunar`);
+      client.channels.get(`kanal id`).setName(`isim3`);
       codersA();
     }, 2000);
   });

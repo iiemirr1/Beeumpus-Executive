@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
 const embed = new Discord.RichEmbed();
-embed.setDescription("**:tik: Işte Sitem [TIKLA](https://rixnuxbin.glitch.me)**")
+embed.setDescription("[TIKLA](https://alpha-code.glitch.me/)")
 
 message.channel.send(embed)
 }
