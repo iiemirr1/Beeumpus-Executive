@@ -1,16 +1,14 @@
-// Alpha Youtube
-const express = require('express');
 const app = express();
-const http = require('http');
-    app.get("/", (request, response) => {
-    console.log(`Bot Başarıyla Hostlandı.`);
-    response.sendStatus(200);
-    });
-    app.listen(process.env.PORT);
-    setInterval(() => {
-    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-    }, 280000);
-// Alpha Youtube
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping tamamdır.");
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+  http.get(`http://alpha-yeni-royal.glitch.me/`); //aynı proje ismi olacak
+  http.get('http://alpha-yeni-royal.glitch.me/'); //aynı proje ismi olacak
+}, 28000);
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
