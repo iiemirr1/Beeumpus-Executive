@@ -1,14 +1,16 @@
+// Alpha Youtube
+const express = require('express');
 const app = express();
-app.get("/", (request, response) => {
-  console.log(Date.now() + " Ping tamamdır.");
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-  http.get(`http://alpha-yeni-royal.glitch.me/`); //aynı proje ismi olacak
-  http.get('http://alpha-yeni-royal.glitch.me/'); //aynı proje ismi olacak
-}, 28000);
+const http = require('http');
+    app.get("/", (request, response) => {
+    console.log(`Bot Başarıyla Hostlandı.`);
+    response.sendStatus(200);
+    });
+    app.listen(process.env.PORT);
+    setInterval(() => {
+    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+    }, 280000);
+// Alpha Youtube
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -938,3 +940,42 @@ client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get
 //-----------------------Son Üye Panel Son--------------------\\
 //-----------------------Son Üye Panel Son--------------------\\
 //-----------------------Son Üye Panel Son--------------------\\
+
+//-----------------------değişen kanal adı--------------------\\
+//-----------------------değişen kanal adı--------------------\\
+//-----------------------değişen kanal adı--------------------\\
+
+function codersA() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      client.channels.get(`kanal id`).setName(`️isim`);
+      codersB();
+    }, 2000);
+  });
+}
+
+function codersB() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      client.channels.get(`kanal id`).setName(`isim2`);
+      codersC();
+    }, 2000);
+  });
+}
+function codersC() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      client.channels.get(`kanal id`).setName(`isim3`);
+      codersA();
+    }, 2000);
+  });
+}
+
+client.on("ready", async message => {
+  codersA();
+});
+
+//-----------------------değişen kanal adı Son--------------------\\
+//-----------------------değişen kanal adı Son--------------------\\
+//-----------------------değişen kanal adı Son--------------------\\
+
