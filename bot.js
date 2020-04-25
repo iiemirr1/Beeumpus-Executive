@@ -197,11 +197,14 @@ client.on("guildMemberRemove", message => {
 
 //-----------------------Çevrimiçi üye------------------------\\
 
-client.on ("guildMemberAdd" , message => { 
-  client.channels.get("kanal id").setName(`Çevrimiçi Üye • ${message.online} `);
+client.on ("guildMemberAdd", message => { 
+  client.channels.get("703577559752900699").setName(`Çevrimiçi Üye • ${message.online} `);
 
 });
-
+client.on ("guildMemberRemove", message => {
+  client.channels.get("703577559752900699").setName(`Çevrimiçi Üye • ${message.online} `) ;
+  
+});  
 
 //-----------------------Çevrimiçi üye Son------------------------\\
 
