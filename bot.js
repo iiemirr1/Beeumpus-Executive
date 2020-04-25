@@ -197,9 +197,10 @@ client.on("guildMemberRemove", message => {
 
 //-----------------------Çevrimiçi üye------------------------\\
 
-client.on (message.guild.channels.find
-message.guild.channels.find)(`Çevrimiçi Üye • ${client.users.filter(cfx => cfx.presence.status === 'online').size}`, 'voice')
-.then(channel =>
+client.on ("guildMemberAdd" , message => { 
+  client.channels.get("kanal id").setName(`Çevrimiçi Üye • ${message.online} `);
+
+});
 
 
 //-----------------------Çevrimiçi üye Son------------------------\\
