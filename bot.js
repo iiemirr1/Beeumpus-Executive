@@ -195,6 +195,15 @@ client.on("guildMemberRemove", message => {
 //-----------------------sunucu panel son---------------------\\
 //-----------------------sunucu panel son---------------------\\
 
+//-----------------------Çevrimiçi üye------------------------\\
+
+client.on (message.guild.channels.find
+message.guild.channels.find)(`Çevrimiçi Üye • ${client.users.filter(cfx => cfx.presence.status === 'online').size}`, 'voice')
+.then(channel =>
+
+
+//-----------------------Çevrimiçi üye Son------------------------\\
+
 
 //-----------------------emojili kayıt--------------------\\
 //-----------------------emojili kayıt--------------------\\
@@ -238,19 +247,6 @@ client.on('messageReactionAdd', (reaction, user) => {
 //--------------------emojili kayıt son-------------------\\
 //--------------------emojili kayıt son-------------------\\
 //--------------------emojili kayıt son-------------------\\
-
-//-----------------------gelen üyeye oto mesaj------------~\\
-//-----------------------gelen üyeye oto mesaj------------~\\
-//-----------------------gelen üyeye oto mesaj------------~\\
-
-client.on('guildMemberAdd', async (member) => {
-    var kanal = member.guild.channels.get('688724557779042426')
-    kanal.send(`${member} Sunucumuza Hoşgeldin. Kayıt Olmak İçin Bulunduğun Yere İsmini Ve Yaşını Yaz Bekle !`) ;
-})
-
-//-----------------------gelen üyeye oto mesaj son------------~\\
-//-----------------------gelen üyeye oto mesaj son------------~\\
-//-----------------------gelen üyeye oto mesaj son------------~\\
 
 
 //-----------------------Sayaç-----------------------\\
