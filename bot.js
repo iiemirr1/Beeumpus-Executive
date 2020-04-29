@@ -219,6 +219,7 @@ client.on('messageReactionAdd', (reaction, user) => {
     if (reaction.emoji.name == "kayt") {//Dilediğini emojiyi koyabilirsiniz.
       reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'Members'))//Dilediğiniz rolün adını yazabilirsiniz.
 	}
+ 
 	if (reaction.emoji.name == "emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
 	  reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'Altyapı'))//Dilediğiniz rolün adını yazabilirsiniz.
 	}
