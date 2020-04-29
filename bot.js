@@ -248,7 +248,7 @@ client.on("guildMemberAdd", async member => {
   if (!skanal9) return;
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
-  skanal31.send(`:inbox_tray: \`${ member.user.tag }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı.  ` );
+  skanal31.send(`:grs: \`${ member.user.tag }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı.  ` );
 });
 
 client.on("guildMemberRemove", async member => {
@@ -926,24 +926,6 @@ client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get
 //-----------------------Son Üye Panel Son--------------------\\
 //-----------------------Son Üye Panel Son--------------------\\
 
-//----------------------EİKET SPAM---------------------------\\
-//----------------------EİKET SPAM---------------------------\\
-//----------------------EİKET SPAM---------------------------\\
-
-client.on("message", async message => {
-    if(!message.guild) return
-    if (message.member.hasPermission('MANAGE_GUILD')) return;
-    if (message.mentions.users.size >= 2) {
-      message.delete();
-      message.channel.send(`Hey ${message.author}, Lütfen Sürekli Etiket Atma`)
-        message.author.send(`Hey Dostum, Sürekli etikett atma`)
-      }
-})
-
-//----------------------EİKET SPAM SON---------------------------\\
-//----------------------EİKET SPAM SON---------------------------\\
-//----------------------EİKET SPAM SON---------------------------\\
-
 //--------------------ROL KORUMA
 
 client.on("roleDelete", async (role) => {
@@ -1008,3 +990,37 @@ client.on("channelDelete", async channel => {
 
 //--------------------ROL KORUMA SON
 
+//-----------------------KÜFÜR ENGEL
+
+client.on("message", async msg => {
+    if(msg.author.bot) return;
+    if(msg.channel.type === "dm") return;
+        
+    let i = await db.fetch(`küfürFiltre_${msg.guild.id}`)  
+          if (i == 'acik') {
+              const küfür = ["amcık","sik","am", "yarrak", "orospu","piç", "sikerim", "sikik", "amına", "pezevenk", "yavşak", "ananı", "anandır", "orospu", "evladı", "göt", "pipi", "sokuk", "yarak", "bacını", "karını",];
+              if (küfür.some(word => msg.content.toLowerCase().includes(word))) {
+                try {
+                  if (!msg.member.hasPermission("MANAGE_WEBHOOKS")) {
+                    msg.delete();                    
+                    let embed = new Discord.RichEmbed()
+                    .setColor(0xffa300)
+                    .setFooter('Küfür Sistemi', client.user.avatarURL)
+                    .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
+                    .setDescription("Bot, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
+                    .addField('Küfür Eden Kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
+                    .addField('Engellenen mesaj', msg.content, true)
+                    .setTimestamp()                   
+                    msg.guild.owner.user.send(embed)                       
+                    return msg.channel.send(`${msg.author}, Küfür Etmek Yasak! Senin Mesajını Özelden Kurucumuza Gönderdim.`).then(msg => msg.delete(25000));
+                  }              
+                } catch(err) {
+                  console.log(err);
+                }
+              }
+          }
+          if (!i) return;
+          });   
+
+
+//------------------------KÜFÜR ENGEL SON
