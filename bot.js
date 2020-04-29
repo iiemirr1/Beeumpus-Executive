@@ -248,7 +248,7 @@ client.on("guildMemberAdd", async member => {
   if (!skanal9) return;
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
-  skanal31.send(`:grs: \`${ member.user.tag }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı.  ` );
+  skanal31.send(`:inbox_tray: \`${ member.user.tag }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı.  ` );
 });
 
 client.on("guildMemberRemove", async member => {
@@ -672,31 +672,32 @@ client.on("message", async msg => {
     if(msg.author.bot) return;
     if(msg.channel.type === "dm") return;
         
-    let i = await db.fetch(`küfürFiltre_${msg.guild.id}`) 
+    let i = await db.fetch(`küfürFiltre_${msg.guild.id}`)  
           if (i == 'acik') {
-              const küfür = ["amk", "amq", "orospu", "piç", "pıç", "göt", "got", "sg", "aq", "AMK", "AMQ", "OROSPU", "PİÇ",];
+              const küfür = ["amcık","sik","am", "yarrak", "orospu","piç", "sikerim", "sikik", "amına", "pezevenk", "yavşak", "ananı", "anandır", "orospu", "evladı", "göt", "pipi", "sokuk", "yarak", "bacını", "karını",];
               if (küfür.some(word => msg.content.toLowerCase().includes(word))) {
                 try {
-                  if (!msg.member.hasPermission("ADMINISTRATOR")) {
-                    msg.delete();                   
+                  if (!msg.member.hasPermission("MANAGE_WEBHOOKS")) {
+                    msg.delete();                    
                     let embed = new Discord.RichEmbed()
                     .setColor(0xffa300)
-                    .setFooter('  Küfür Engel.', client.user.avatarURL)
+                    .setFooter('Küfür Sistemi', client.user.avatarURL)
                     .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("Küfür sistemi " + `***${msg.guild.name}***` + " adlı sunucunuzda küfür yakaladım.")
-                    .addField('Küfür eden kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
+                    .setDescription("Bot, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
+                    .addField('Küfür Eden Kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
-                    msg.guild.owner.user.send(embed)            
-                    return msg.channel.send(`${msg.author.tag}, Küfür Etmek Yasak Bunu Biliyorsun.`).then(msg => msg.delete(25000));
-                  }             
+                    msg.guild.owner.user.send(embed)                       
+                    return msg.channel.send(`${msg.author}, Küfür Etmek Yasak! Senin Mesajını Özelden Kurucumuza Gönderdim.`).then(msg => msg.delete(25000));
+                  }              
                 } catch(err) {
                   console.log(err);
                 }
               }
           }
           if (!i) return;
-  });
+          });   
+
 
 //-----------------------Küfür Engel Link Engel Son-----------------------\\
 //-----------------------Küfür Engel Link Engel Son-----------------------\\
@@ -989,38 +990,3 @@ client.on("channelDelete", async channel => {
 
 
 //--------------------ROL KORUMA SON
-
-//-----------------------KÜFÜR ENGEL
-
-client.on("message", async msg => {
-    if(msg.author.bot) return;
-    if(msg.channel.type === "dm") return;
-        
-    let i = await db.fetch(`küfürFiltre_${msg.guild.id}`)  
-          if (i == 'acik') {
-              const küfür = ["amcık","sik","am", "yarrak", "orospu","piç", "sikerim", "sikik", "amına", "pezevenk", "yavşak", "ananı", "anandır", "orospu", "evladı", "göt", "pipi", "sokuk", "yarak", "bacını", "karını",];
-              if (küfür.some(word => msg.content.toLowerCase().includes(word))) {
-                try {
-                  if (!msg.member.hasPermission("MANAGE_WEBHOOKS")) {
-                    msg.delete();                    
-                    let embed = new Discord.RichEmbed()
-                    .setColor(0xffa300)
-                    .setFooter('Küfür Sistemi', client.user.avatarURL)
-                    .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("Bot, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
-                    .addField('Küfür Eden Kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
-                    .addField('Engellenen mesaj', msg.content, true)
-                    .setTimestamp()                   
-                    msg.guild.owner.user.send(embed)                       
-                    return msg.channel.send(`${msg.author}, Küfür Etmek Yasak! Senin Mesajını Özelden Kurucumuza Gönderdim.`).then(msg => msg.delete(25000));
-                  }              
-                } catch(err) {
-                  console.log(err);
-                }
-              }
-          }
-          if (!i) return;
-          });   
-
-
-//------------------------KÜFÜR ENGEL SON
