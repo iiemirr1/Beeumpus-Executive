@@ -8,9 +8,9 @@ module.exports.run = async (bot, message, args, guild, user) => {
 
   try {
       await (sahip.addRole(jsrolu.id));
-      message.channel.sendMessage('<a:kayt:705092959351210074> | JavaScript rolü verilmiştir')
+      message.channel.sendMessage('<:kayt:705008671335120896> | **JavaScript rolü verilmiştir !**')
     } catch (error) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
-      return message.channel.send('Rolü verirken bir hata ortaya çıktı. Bu hatalar şunlar olabilir:\n\n1-) Botun rolü, komudu kullanan kişinin üstünde değil.\n2-) Bota gerekli yetkileri vermemişsin.\n3-) Bu rol zaten sende bulunmakta.\n\nEğer bunları yaptıysan ve olmadıysa, ** Baran #0972 **\'e ulaş.')
+      return message.channel.send(' JavaScript Rolün Zaten Var')
    
 };
 }
