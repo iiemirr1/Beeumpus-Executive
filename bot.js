@@ -930,7 +930,15 @@ client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get
 //----------------------EİKET SPAM---------------------------\\
 //----------------------EİKET SPAM---------------------------\\
 
-
+client.on("message", async message => {
+    if(!message.guild) return
+    if (message.member.hasPermission('MANAGE_GUILD')) return;
+    if (message.mentions.users.size >= 1) {
+      message.delete();
+      message.channel.send(`Hey ${message.author}, Lütfen Sürekli Etiket Atma`)
+        message.author.send(`Hey Dostum, Sürekli etikett atma`)
+      }
+})
 
 //----------------------EİKET SPAM SON---------------------------\\
 //----------------------EİKET SPAM SON---------------------------\\
