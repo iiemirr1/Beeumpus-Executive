@@ -990,3 +990,5 @@ client.on("channelDelete", async channel => {
 
 
 //--------------------ROL KORUMA SON
+
+//-------------------KANAL KORUMA SON-------------
