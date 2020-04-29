@@ -182,12 +182,12 @@ client.on("guildMemberAdd", async member => {
 
 //Sunucuya biri girdiğinde kanal ismi değiştirme
 client.on("guildMemberAdd", message => {
-  client.channels.get("697184746425417788").setName(`Toplam Üye : ${message.guild.memberCount} `);
+  client.channels.get("705000223117934594").setName(`Toplam Üye : ${message.guild.memberCount} `);
 // kanal id yazan yerlere sesli kanalın id'sini sağtıklayıp kopyalayın ve yapıştırın
 });
 //Sunucudan Çıktığın Kişi Sayını Azaltma
 client.on("guildMemberRemove", message => {
-  client.channels.get("697184746425417788").setName(`Toplam Üye : ${message.guild.memberCount} `);
+  client.channels.get("705000223117934594").setName(`Toplam Üye : ${message.guild.memberCount} `);
   
 });
 
@@ -203,35 +203,49 @@ const events = {
 	MESSAGE_REACTION_ADD: 'messageReactionAdd',
 	MESSAGE_REACTION_REMOVE: 'messageReactionRemove',
 };
-
 client.on('raw', async event => {
 	if (!events.hasOwnProperty(event.t)) return;
 	const { d: data } = event;
-	const user = client.users.get(data.user_id);
-	const channel = client.channels.get(data.channel_id) || await user.createDM();
+	const anto = client.users.get(data.user_id);
+	const channel = client.channels.get(data.channel_id) || await anto.createDM();
 	if (channel.messages.has(data.message_id)) return;
 	const message = await channel.fetchMessage(data.message_id);
 	const emojiKey = (data.emoji.id) ? `${data.emoji.name}:${data.emoji.id}` : data.emoji.name;
 	const reaction = message.reactions.get(emojiKey);
-	client.emit(events[event.t], reaction, user);
+	client.emit(events[event.t], reaction, anto);
 });
-
 client.on('messageReactionAdd', (reaction, user) => {
-  if (reaction.message.id == "701092338746916875") {//Geçerli olması istediğiniz mesajın ID'sini yazabilirsiniz.
-    if (reaction.emoji.name == "discordjs") {//Dilediğini emojiyi koyabilirsiniz.
-      reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'JavaScript'))//Dilediğiniz rolün adını yazabilirsiniz.
+  if (reaction.message.id == "MesajID") {//Geçerli olması istediğiniz mesajın ID'sini yazabilirsiniz.
+    if (reaction.emoji.name == "Emoji") {//Dilediğini emojiyi koyabilirsiniz.
+      reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
 	}
-	if (reaction.emoji.name == "glitch") {//Dilediğiniz emojiyi koyabilirsiniz.
-	  reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'Altyapı'))//Dilediğiniz rolün adını yazabilirsiniz.
+	if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
+	  reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
 	}
-	if (reaction.emoji.name == "html") {//Dilediğiniz emojiyi koyabilirsiniz.
-		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'html'))//Dilediğiniz rolün adını yazabilirsiniz.
+	if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
+		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
 	  }
-    	if (reaction.emoji.name == "discordjs") {//Dilediğiniz emojiyi koyabilirsiniz.
-		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'JavaScript'))//Dilediğiniz rolün adını yazabilirsiniz.
+    	if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
+		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
 	  }
   }
 });
+client.on('messageReactionRemove', (reaction, user) => {
+	if (reaction.message.id == "MesajID") {//Geçerli olması istediğiniz mesajın ID'sini yazabilirsiniz.
+	  if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
+		reaction.message.guild.members.get(user.id).removeRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
+	  }
+	  if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
+		reaction.message.guild.members.get(user.id).removeRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
+	  }
+	  if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
+		  reaction.message.guild.members.get(user.id).removeRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
+		}
+     if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
+		  reaction.message.guild.members.get(user.id).removeRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
+		}
+	}
+  });
 
 
 //--------------------emojili kayıt son-------------------\\
@@ -921,7 +935,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 
 
 
-client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get("702206943128977469"); frenzy_c.setName(`Son Üye : ${member.user.username}`) })
+client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get("705000236225003540"); frenzy_c.setName(`Son Üye : ${member.user.username}`) })
 
 //-----------------------Son Üye Panel Son--------------------\\
 //-----------------------Son Üye Panel Son--------------------\\
