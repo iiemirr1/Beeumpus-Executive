@@ -683,7 +683,7 @@ client.on("message", async msg => {
                     .setColor(0xffa300)
                     .setFooter('Küfür Sistemi', client.user.avatarURL)
                     .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("Bot, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
+                    .setDescription("Bot, " + `***${msg.guild.name}***` + " adlı sunucunuzda küfür yakaladım.")
                     .addField('Küfür Eden Kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
