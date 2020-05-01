@@ -1034,6 +1034,25 @@ client.on("channelDelete", async channel => {
 
 //------------------FAKE HESAP ----------------------\\
 
-
+client.on("guildMemberAdd", member => {
+const Discord = require('discord.js');
+const moment = require("moment")
+require("moment-duration-format")
+moment.locale("tr")
+let marefi1 = moment(member.user.createdAt).add(3, 'days').fromNow()//30 YAZAN YER: HESABI 30 GÜNDEN ÖNCE AÇILMIŞ İSE SİSTEM DEVREYE GİRER!
+let codemarefi = member.user
+marefi1 = marefi1.replace("codemarefi", " ")
+if(!marefi1.includes("Cod") || marefi1.includes("Eming") ||marefi1 == " ") {
+let verilecek = member.guild.roles.get("705830146107506809") ///VERİLECK ROL ID SİNİ GİR
+let alınacak = member.guild.roles.get("687044388559257634") //ALINACAK ROL ID SİNİ GİR!!
+codemarefi.addRole(verilecek)
+codemarefi.user.send('Hesabın 3 Günden Kısa Bir Süre Önce Açıldığı İçin Radara Yakalandı Ve Şüpheli Hesap Olarak Kayıtlara Geçti !') 
+setTimeout(() => {
+member.removeRole(alınacak.id);
+}, 1000)
+}
+else {
+}  
+}); 
 
 //------------------FAKE HESAP SON----------------------\\
