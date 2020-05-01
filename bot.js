@@ -1030,33 +1030,4 @@ client.on("channelDelete", async channel => {
 })
 
 
-//--------------------ROL KORUMA SON
-
-//-------------------KANAL KORUMA -------------
-
-client.on("channelDelete", async function(channel) {
-if(channel.guild.id !== "687044388559257634") return;
-    let logs = await channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'});
-    if(logs.entries.first().executor.bot) return;
-    channel.guild.member(logs.entries.first().executor).roles.filter(role => role.name !== "@everyone").array().forEach(role => {
-              channel.guild.member(logs.entries.first().executor).removeRole(channel.guild.roles.get("Administrator"))
-              channel.guild.member(logs.entries.first().executor).removeRole(channel.guild.roles.get("Moderatör"))
-    })
-const sChannel = channel.guild.channels.find(c=> c.id ==="705002259217645599")
-const cıks = new Discord.RichEmbed()
-.setColor('RANDOM')
-.setDescription(`${channel.name} adlı Kanal silindi Silen kişinin yetkilerini Alıyorum.`)
-.setFooter('Premium Savunma')
-sChannel.send(cıks)
-  
-channel.guild.owner.send(` **${channel.name}** adlı Kanal silindi Silen kişinin yetkilerini aldım`)
-}) 
-
-
-//-------------------KANAL KORUMA SON-------------\\
-
-//----ÇEVRİMİÇİ ÜYE
-
-Server greeting
-
-//------ÇEVRİM İÇİ ÜYE SON --------
+//--------------------ROL KORUMA SON-----------------\\
