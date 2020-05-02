@@ -12,8 +12,8 @@ module.exports = client => {
   //idle = boşta
   //dnd = rahatsız etmeyin
   //online = çevrimiçi
-  console.log(`                                                                                                                                                                     `)
-  client.user.setActivity(`-yardım`, { type: "PLAYING"});
+  console.log(` `)
+  client.user.setActivity(`🔥-yardım🔥-premium🔥`, { type: "PLAYING"});
   //LISTENING = DİNLİYOR
   //WATCHING = İZLİYOR
   //PLAYING = OYNUYOR 

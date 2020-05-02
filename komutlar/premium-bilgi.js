@@ -20,7 +20,9 @@ exports.run = (client, message, args) => {
 
  <:ortak:705813855481233480>  | Size Özel Çekilişler !
 
- <:ortak:705813855481233480>  | 💎 | ▸Premium◂ Özel Genel Log (Premium Kişilerin Logları.)`)
+ <:ortak:705813855481233480>  | Yardımlarda Öncelik !
+
+ <:ortak:705813855481233480>  | 💎 | ▸Premium◂ Kişilere Özel Genel Log`)
     message.channel.sendEmbed(embed);
 
 };

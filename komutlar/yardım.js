@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
       .addField('** Yetkili [13]**', '`terfi`, `ban`, `erkek`, `kadın`, `kick`, `emojiler`, `dm-hg`, `güvenlik`, `capsengel`, `ping`, `rol-bilgi`, `oylama`, `rol-koruma`')
       .addField('** Yetkili [11]**', '`küfür`, `modlog`, `otorol ayarla`, `sa-as`, `reklam`, `sayaç`, `reklamtara`, `sil`, `kayıt`, `hatırlat`, `yaz`')
       .addField('** Kullanıcı [17]**', '`avatar`, `sunucubilgi`, `ping`, `havadurumu`,`top5`,`yasaklar`,`üyedurum`,`döviz`,`değişiklikler`,`saat`,`youtube`,`servericon`,`say`,`website`,`hesapla`,`korona`,`kısalt`')
-      .addField('** Rol Alma [4]**', '`-js`, `-html`, `-altyapı`,`-premium`')
+      .addField('** Rol Alma [4]**', '`-js`, `-html`, `-altyapı`,`-premium`,`-booster`')
     .setFooter(``, client.user.avatarURL)
     .setTimestamp()
     message.channel.send(juke).catch()
