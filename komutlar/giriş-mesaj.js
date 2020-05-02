@@ -23,7 +23,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'giriş-mesaj',
-  description: '',
-  usage: ''
+  name: 'dm-hg',
+  description: 'dm den giriş mesajı yollar',
+  usage: 'dm-hg'
 };
