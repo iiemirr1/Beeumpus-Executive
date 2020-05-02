@@ -5,17 +5,17 @@ const prefix = ayarlar.prefix
 exports.run = async (client, message, args) => {
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("bu komutu kullanmak için `Yönetici` yetkisine sahip olmalısın.")
   if(!args[0]) {
-    message.channel.send(`Koruma Sistemini Aktifleştirmek İçin **${prefix}koruma aç**`)
+    message.channel.send(`Koruma Sistemini Aktifleştirmek İçin **${prefix}rolkoruma aç**`)
   }
   
   if (args[0] == 'aç') {
-    if(db.has(`korumaacik_${message.guild.id}`)) return message.reply(`Koruma Sistemi Zaten Açık. Kapatmak İçn **${prefix}koruma kapat**`)
-    message.channel.send(`Koruma Sistemi Aktifleştirildi!. Kapatmak için **${prefix}koruma kapat**`)
+    if(db.has(`korumaacik_${message.guild.id}`)) return message.reply(`Koruma Sistemi Zaten Açık. Kapatmak İçin **${prefix}rolkoruma kapat**`)
+    message.channel.send(`Koruma Sistemi Aktifleştirildi!. Kapatmak için **${prefix}rolkoruma kapat**`)
     db.set(`korumaacik_${message.guild.id}`, 'acik')
   }
   if(args[0] == 'kapat') {
-    if(!db.has(`korumaacik_${message.guild.id}`)) return message.reply(`Koruma Sistemi Zaten Kapalı. Açmak İçin **${prefix}koruma aç**`)
-    message.channel.send(`Koruma Sistemi Kapatılduı. Açmak için **${prefix}koruma aç**`)
+    if(!db.has(`korumaacik_${message.guild.id}`)) return message.reply(`Koruma Sistemi Zaten Kapalı. Açmak İçin **${prefix}rolkoruma aç**`)
+    message.channel.send(`Koruma Sistemi Kapatılduı. Açmak için **${prefix}rolkoruma aç**`)
     db.delete(`korumaacik_${message.guild.id}`)
     
   } else if(args[0] == "kanal") {
@@ -34,5 +34,5 @@ exports.conf = {
   permLevel: 0
 }
 exports.help = {
-  name: 'rol-koruma'
+  name: 'rolkoruma'
 }
