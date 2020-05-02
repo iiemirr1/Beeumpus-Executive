@@ -1065,3 +1065,18 @@ client.on('guildMemberAdd', async (member) => {
 })
 
 //---------------HOŞGELDİN MESAJI SON--------------------\\
+
+//------------------OTOROL ---------------------------\\
+
+client.on("guildMemberAdd", async member => {
+  if (member.user.bot === true) return;
+ if(!db.fetch(`otorol_${member.guild.id}`)) return;
+  let rolisim = await db.fetch(`otorolismi_${member.guild.id}`);
+  let kanal = await db.fetch(`otorolkanali_${member.guild.id}`);
+  let rolID = await db.fetch(`otorol_${member.guild.id}`);
+  let logkanali = client.channels.get(kanal)
+    logkanali.send(` \`${member.user.tag}\` adlı kullanıcıya **${rolisim}** adlı rol verildi.` );
+   member.addRole(rolID);
+});
+
+//-------------OTOROL SON------------------\\

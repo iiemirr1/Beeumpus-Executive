@@ -4,8 +4,8 @@ const db = require('quick.db');
 exports.run = async(client, message, args) => {
 
   if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(` Bu komudu kullanabilmek için "ADMINISTRATOR" yetkisine sahip olman gerek.`)
-  if (!args[0]) return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`-link-engel aç\` | Kapatmak İstiyorsanız \`-link-engel kapat\` Yazabilirsiniz`)
-  if (args[0] !== 'aç' && args[0] !== 'kapat') return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`-link-engel aç\` | Kapatmak İstiyorsanız \`-link-engel  kapat\` Yazabilirsiniz`)
+  if (!args[0]) return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`-reklam aç\` | Kapatmak İstiyorsanız \`-reklam kapat\` Yazabilirsiniz`)
+  if (args[0] !== 'aç' && args[0] !== 'kapat') return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`-reklam aç\` | Kapatmak İstiyorsanız \`-reklam  kapat\` Yazabilirsiniz`)
 
     if (args[0] == 'aç') {
     db.set(`reklamFiltre_${message.guild.id}`, 'acik')
@@ -32,7 +32,7 @@ exports.conf = {
 };
 
 exports.help = {
- name: 'link-engel',
+ name: 'reklam',
  description: 'reklamm',
  usage: 's$$kanal'
 };
