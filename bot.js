@@ -1056,3 +1056,12 @@ else {
 }); 
 
 //------------------FAKE HESAP SON----------------------\\
+
+//-----------------HOŞGELDİN MESAJI---------------------\\
+
+client.on('guildMemberAdd', async (member) => {
+    var kanal = member.guild.channels.get('704998380610256928')
+    kanal.send(`${member}, Sunucumuza Hoşgeldin. \nKayıt Olmak İçin #🔑_kayıt kanalındaki Emojiye Tıkla ! \nKuralları Okumayı Unutma !`) ;
+})
+
+//---------------HOŞGELDİN MESAJI SON--------------------\\
