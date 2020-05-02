@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
 .setThumbnail(client.user.avatarURL)
       .addField('** Yetkili ()**', '`davet`, `istatistik`, `sor`, `afk`, `avatar`, `emojiler`, `roller`, `jumbo`, `kullanıcı-bilgi`, `ping`, `rol-bilgi`, `sunucu`, `sunucuresmi`')
       .addField('** Yetkili ()**', '`küfür`, `modlog`, `otorol`, `otoselam`, `reklam`, `sayaç`, `sil-üye`, `sil`, `vkanal`, `yasakla`, `yaz`')
-      .addField('** Kullanıcı ()**', '`beyaz`, `kara`, `eval`, `reboot`')
+      .addField('** Kullanıcı ()**', '`avatar`, `kara`, `eval`, `reboot`,``,``,``,``,``,')
     .setFooter(``, client.user.avatarURL)
     .setTimestamp()
     message.channel.send(juke).catch()
