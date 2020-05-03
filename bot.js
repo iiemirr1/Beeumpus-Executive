@@ -1041,3 +1041,10 @@ client.on("guildMemberAdd", async member => {
 });
 
 //-------------OTOROL SON------------------\\
+
+
+//-------------SÜRELİ MESAJ----------------\\
+
+setInterval(() => { client.channels.get("KANAL İD").send('Kodlarda ve kanallarda gördüğünüz hataları ve isteklerinizi -hatalıkod ve -istekkod komutlarını kullanarak belirtin aksi halde Hiçbir Mesaj Dikkate Alınmayacaktır ! <a:gne:706446921979527229>') }, 5000)
+
+//--------------SÜRELİ MESAJ SON--------------\\
