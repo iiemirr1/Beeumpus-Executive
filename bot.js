@@ -1045,6 +1045,6 @@ client.on("guildMemberAdd", async member => {
 
 //-------------SÜRELİ MESAJ----------------\\
 
-setInterval(() => { client.channels.get("704995443943145492").send('<a:mavi:706448266212016179> `hatırlatma` <a:siren:706448314652033024> \n<a:istek:706431026804818001> Kodlarda ve kanallarda gördüğünüz hataları ve isteklerinizi -hatalıkod ve -istekkod komutlarını kullanarak belirtin aksi taktirde Hiçbir Mesaj Dikkate Alınmayacaktır ! <a:gne:706446921979527229>\n<a:dikat:706431490027814914> Kuralları Okumayı Unutmayın !') }, 5000)
+setInterval(() => { client.channels.get("704994123475714108").send('<a:mavi:706448266212016179> `hatırlatma` <a:siren:706448314652033024> \n<a:istek:706431026804818001> Kodlarda ve kanallarda gördüğünüz hataları ve isteklerinizi -hatalıkod ve -istekkod komutlarını kullanarak belirtin aksi taktirde Hiçbir Mesaj Dikkate Alınmayacaktır ! <a:gne:706446921979527229>\n<a:krmz:706450120727592971> Kuralları Okumayı Unutma ! Yoksa Ceza Alabilirsin.\n<a:uyar:706450023872725014> JavaScript Rolü Almak İçin `-js` , Html Rolü Almak İçin `-html` , Altyapı Rolü Almak İçin `-altyapı` Komutunu Kullanabilirsiniz.') }, 60000)
 
 //--------------SÜRELİ MESAJ SON--------------\\
