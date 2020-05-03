@@ -248,7 +248,7 @@ client.on("guildMemberAdd", async member => {
   if (!skanal9) return;
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
-  skanal31.send(`<a:grs:705086956576571464> \`${ member.user.tag }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı.  ` );
+  skanal31.send(`<a:Cyrus2:706514992824057896><a:ylan:706587737758892052> \`${ member.user.tag }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı ! <a:hg:706589034226647041>  ` );
 });
 
 client.on("guildMemberRemove", async member => {
@@ -257,7 +257,7 @@ client.on("guildMemberRemove", async member => {
   if (!skanal9) return;
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
-  skanal31.send(`<a:cks:705087008875217046> \`${  member.user.tag }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı `);
+  skanal31.send(`<a:Cyrus2:706514992824057896><a:ylan:706587737758892052> \`${  member.user.tag }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı ! <a:by:706589001091383347> `);
 });
 
 //-----------------------Sayaç Son-----------------------\\
