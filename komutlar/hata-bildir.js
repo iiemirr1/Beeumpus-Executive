@@ -9,11 +9,11 @@ const embed = new Discord.RichEmbed()
 message.channel.send(embed)
 const embed2 = new Discord.RichEmbed()
 .setColor("#ff0009")
-.setDescription(`**${message.author.tag}** adlı kullanıcının **isteği ;**`)
+.setDescription(`**${message.author.tag}** adlı kullanıcının **bildirisi ;**`)
 .addField(`:envelope: **Gönderen Kişinin Bilgileri**`, `:white_small_square:Kullanıcı ID: ${message.author.id}\n:white_small_square:Kullanıcı Adı: ${message.author.username}\n:white_small_square:Kullanıcı Tagı: ${message.author.discriminator}`)
-.addField(":pencil: **Gönderilen İstek/Tavsiye Mesajı**", type)
+.addField(":pencil: **Gönderilen Hatalı/Buglu Kod Mesajı**", type)
 .setThumbnail(message.author.avatarURL)
-client.channels.get('705111758897152010').send(embed2); // Kanal ID 
+client.channels.get('705111798742777886').send(embed2); // Kanal ID 
 
 };
 
@@ -25,7 +25,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: 'istekkod',
+    name: 'hatalıkod',
     description: 'Sunucuya giren kullanıcıya seçtiğiniz rolü otomatik verir.',
-    usage: 'istek-kod <istek>'
+    usage: 'hatalıkod <hata>'
 }
