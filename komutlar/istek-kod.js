@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
     let type = args.slice(0).join(' ');
-    if (type.length < 1) return message.channel.send('Doğru Kullanım : -istekkod sayaç komutu')
+    if (type.length < 1) return message.channel.send('Doğru Kullanım : -istek sayaç komutu')
 const embed = new Discord.RichEmbed()
 .setColor('#00ff00')
 .setDescription('İstek Kodunuz başarıyla bildirildi <a:istek:706431026804818001> \nEn Yakın Zamanda #「istek-kodlara-cevap」 Kanalından Cevap Vereceğiz. <a:dikat:706431490027814914>')
@@ -25,7 +25,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: 'istekkod',
+    name: 'istek',
     description: 'Sunucuya giren kullanıcıya seçtiğiniz rolü otomatik verir.',
-    usage: 'istek-kod <istek>'
+    usage: 'istek <istek>'
 }
