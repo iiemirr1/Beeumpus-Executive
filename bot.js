@@ -1045,9 +1045,9 @@ client.on("guildMemberAdd", async member => {
 
 //-------------SÜRELİ MESAJ----------------\\
 
-setInterval(() => { client.channels.get("704994123475714108").send('==== \n<a:mavi:706448266212016179> `Hatırlatma` <a:siren:706448314652033024> \n<a:istek:706431026804818001> Kodlarda ve kanallarda gördüğünüz hataları ve isteklerinizi -hata ve -istek komutlarını kullanarak belirtin aksi taktirde Hiçbir Mesaj Dikkate Alınmayacaktır ! <a:gne:706446921979527229>\n<a:krmz:706450120727592971> Kuralları Okumayı Unutma ! Yoksa Ceza Alabilirsin.\n<a:uyar:706450023872725014> JavaScript Rolü Almak İçin `-js` , Html Rolü Almak İçin `-html` , Altyapı Rolü Almak İçin `-altyapı` Komutunu Kullanabilirsiniz.') }, 1000000)
+setInterval(() => { client.channels.get("704994123475714108").send('<a:mavi:706448266212016179> `Hatırlatma` <a:siren:706448314652033024> \n<a:istek:706431026804818001> Kodlarda ve kanallarda gördüğünüz hataları ve isteklerinizi -hata ve -istek komutlarını kullanarak belirtin aksi taktirde Hiçbir Mesaj Dikkate Alınmayacaktır ! <a:gne:706446921979527229>\n<a:krmz:706450120727592971> Kuralları Okumayı Unutma ! Yoksa Ceza Alabilirsin.\n<a:uyar:706450023872725014> JavaScript Rolü Almak İçin `-js` , Html Rolü Almak İçin `-html` , Altyapı Rolü Almak İçin `-altyapı` Komutunu Kullanabilirsiniz.') }, 1000000)
 
 
-setInterval(() => { client.channels.get("704994123475714108").send('==== \n<a:tk:705091908040392756> Kod Paylaşımı Yapmak İçin <@536470606166622208> İle İletişime Geçebilirsiniz ! <a:gne:706446921979527229> ') }, 1500000)
+setInterval(() => { client.channels.get("704994123475714108").send('<a:tk:705091908040392756> Kod Paylaşımı Yapmak İçin <@536470606166622208> İle İletişime Geçebilirsiniz ! <a:gne:706446921979527229> ') }, 1500000)
 
 //--------------SÜRELİ MESAJ SON--------------\\
