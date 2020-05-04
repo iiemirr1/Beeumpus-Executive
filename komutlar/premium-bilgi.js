@@ -6,23 +6,23 @@ exports.run = (client, message, args) => {
     const embed = new Discord.RichEmbed()
     .setColor("")
     .addField(`**Premium Rolü Bilgileri**`,`Premium Rolü Almak İçin 50 İnvite Yapmanız Gerekiyor.`)
-    .addField(`**Premium Avantajları**`, `
+    .addField(`<a:ta:706832320052854855> **Premium Avantajları**`, `
 
- <:ortak:705813855481233480>  | Sadece Size Özel <@&705809158410338408> Rolünü Alırsınız.
+ <a:disco:706438922317856839>  | Sadece Size Özel <@&705809158410338408> Rolünü Alırsınız.
 
- <:ortak:705813855481233480>  | Sunucu İçinde 2 Kez Adınızı Değiştirebilirsiniz.
+ <a:disco:706438922317856839>  | Sunucu İçinde 2 Kez Adınızı Değiştirebilirsiniz.
 
- <:ortak:705813855481233480>  | <@&705810957258981448> Rolünü Alırsınız !
+ <a:disco:706438922317856839>  | <@&705810957258981448> Rolünü Alırsınız !
 
- <:ortak:705813855481233480>  | Size Özel Altyapılara Ve Kodlara Erişim Sağlarsınız !
+ <a:disco:706438922317856839>  | Size Özel Altyapılara Ve Kodlara Erişim Sağlarsınız !
 
- <:ortak:705813855481233480>  | Size Özel Sohbet Kanalları !
+ <a:disco:706438922317856839>  | Size Özel Sohbet Kanalları !
 
- <:ortak:705813855481233480>  | Size Özel Çekilişler !
+ <a:disco:706438922317856839>  | Size Özel Çekilişler !
 
- <:ortak:705813855481233480>  | Yardımlarda Öncelik !
+ <a:disco:706438922317856839>  | Yardımlarda Öncelik !
 
- <:ortak:705813855481233480>  | <@&705809158410338408> Kişilere Özel Genel Log`)
+ <a:disco:706438922317856839>  | <@&705809158410338408> Kişilere Özel Genel Log`)
     message.channel.sendEmbed(embed);
 
 };
