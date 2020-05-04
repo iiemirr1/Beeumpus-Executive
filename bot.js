@@ -1022,7 +1022,7 @@ else {
 
 client.on('guildMemberAdd', async (member) => {
     var kanal = member.guild.channels.get('704998380610256928')
-    kanal.send(`${member}, Sunucumuza Hoşgeldin. \nKayıt Olmak İçin #🔑_kayıt kanalındaki Emojiye Tıkla ! \nKuralları Okumayı Unutma !`) ;
+    kanal.send(`${member}, Sunucumuza Hoşgeldin. \n<a:dikat:706431490027814914>  Kayıt Olmak İçin <@&704998077886496828> kanalındaki Emojiye Tıkla ! \n<a:dikat:706431490027814914>  Kuralları Okumayı Unutma !\n<a:dikat:706431490027814914>  Rol Almak İstersende Kayıt Olduktan Sonra <@&704994323560923186> Kanalına Bakabilirsin.`) ;
 })
 
 //---------------HOŞGELDİN MESAJI SON--------------------\\
