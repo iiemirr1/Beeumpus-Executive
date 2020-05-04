@@ -248,7 +248,7 @@ client.on("guildMemberAdd", async member => {
   if (!skanal9) return;
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
-  skanal31.send(`<a:Cyrus2:706514992824057896><a:ylan:706587737758892052> \`${ member.user.tag }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı ! <a:hg:706589034226647041>  ` );
+  skanal31.send(`<a:Cyrus2:706514992824057896>  <a:ylan:706587737758892052> \`${ member.user.tag }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı ! <a:hg:706589034226647041>  ` );
 });
 
 client.on("guildMemberRemove", async member => {
@@ -257,7 +257,7 @@ client.on("guildMemberRemove", async member => {
   if (!skanal9) return;
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
-  skanal31.send(`<a:Cyrus2:706514992824057896><a:ylan:706587737758892052> \`${  member.user.tag }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı ! <a:by:706589001091383347> `);
+  skanal31.send(`<a:Cyrus2:706514992824057896>  <a:ylan:706587737758892052> \`${  member.user.tag }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac - member.guild.members.size}\` Kullanıcı Kaldı ! <a:by:706589001091383347> `);
 });
 
 //-----------------------Sayaç Son-----------------------\\
@@ -993,36 +993,12 @@ client.on("channelDelete", async channel => {
 
 //--------------------ROL KORUMA SON-----------------\\
 
-//------------------FAKE HESAP ----------------------\\
-
-client.on("guildMemberAdd", member => {
-const Discord = require('discord.js');
-const moment = require("moment")
-require("moment-duration-format")
-moment.locale("tr")
-let marefi1 = moment(member.user.createdAt).add(3, 'days').fromNow()//30 YAZAN YER: HESABI 30 GÜNDEN ÖNCE AÇILMIŞ İSE SİSTEM DEVREYE GİRER!
-let codemarefi = member.user
-marefi1 = marefi1.replace("codemarefi", " ")
-if(!marefi1.includes("Cod") || marefi1.includes("Eming") ||marefi1 == " ") {
-let verilecek = member.guild.roles.get("705830146107506809") ///VERİLECK ROL ID SİNİ GİR
-let alınacak = member.guild.roles.get("687044388559257634") //ALINACAK ROL ID SİNİ GİR!!
-member.addRole(verilecek)
-member.user.send('Hesabın 3 Günden Kısa Bir Süre Önce Açıldığı İçin Radara Yakalandı Ve Şüpheli Hesap Olarak Kayıtlara Geçti !') 
-setTimeout(() => {
-member.removeRole(alınacak.id);
-}, 1000)
-}
-else {
-}  
-}); 
-
-//------------------FAKE HESAP SON----------------------\\
 
 //-----------------HOŞGELDİN MESAJI---------------------\\
 
 client.on('guildMemberAdd', async (member) => {
     var kanal = member.guild.channels.get('704998380610256928')
-    kanal.send(`${member}, Sunucumuza Hoşgeldin. \n<a:dikat:706431490027814914>  Kayıt Olmak İçin <@&704998077886496828> kanalındaki Emojiye Tıkla ! \n<a:dikat:706431490027814914>  Kuralları Okumayı Unutma !\n<a:dikat:706431490027814914>  Rol Almak İstersende Kayıt Olduktan Sonra <@&704994323560923186> Kanalına Bakabilirsin.`) ;
+    kanal.send(`${member}, Sunucumuza Hoşgeldin.\n<a:dans:706587859045449751> Kayıt Olmak İçin kayıt kanalındaki Emojiye Tıklayabilirsin.\n<a:rgb:706441310491508786> Kuralları Okumayı Unutma !\n<a:rgb:706441310491508786> Rol Almak İstersende Kayıt Olduktan Sonra 「rol-bilgi」 Kanalına Bakabilirsin.`) ;
 })
 
 //---------------HOŞGELDİN MESAJI SON--------------------\\
