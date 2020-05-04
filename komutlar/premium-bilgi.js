@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     const embed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .addField(`Premium Rolü Bilgileri`,`Premium Rolü Almak İçin 50 İnvite Yapmanız Gerekiyor.`)
-    .addField(`Premium Avantajları`, `💎 | ▸Premium◂ Rolü Avantajları ;
+    .addField(`**Premium Avantajları**`, `
 
  <:ortak:705813855481233480>  | Sadece Size Özel 💎 | ▸Premium◂ Rolünü Alırsınız.
 

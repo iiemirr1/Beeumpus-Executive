@@ -4,17 +4,17 @@ let botid = ('')
 
 exports.run = (client, message, args) => {
     const embed = new Discord.RichEmbed()
-    .setColor("RANDOM")
+    .setColor("")
     .addField(`**Booster Rolü Bilgileri**`,`Booster Rolü Almak İçin Sunucuya Boost Basmanız Gereklidir.`)
-    .addField(`<a:booster:706824717704626188>  **Booster Avantajları**`, `
+    .addField(`<a:booster:706824717704626188>  **Booster Avantajları**\n`, `
 
- <a:boost:706824674168012860>  | Sadece Boosterlere Özel 💸 | ▸Server Booster◂ Rolü Alırsınız. ( Süre : Boost Süresi Bitene Kadar )
+ <a:boost:706824674168012860>  | Sadece Boosterlere Özel <@&705810600915370056> Rolü Alırsınız. ( Süre : Boost Süresi Bitene Kadar )
 
  <a:boost:706824674168012860>  | Hesabınıza 45 Adet Davet Eklenir. ( Kalıcı )
 
- <a:boost:706824674168012860>  | 2x Boost Basarsanız 50 Davetlik 💎 | ▸Premium◂ Rolünü Direk Alırsınız. ( Süre : Kalıcı )
+ <a:boost:706824674168012860>  | 2x Boost Basarsanız 50 Davetlik <@&705809158410338408> Rolünü Direk Alırsınız. ( Süre : Kalıcı )
 
- <a:boost:706824674168012860>  | 💸 | ▸Server Booster◂ Süreniz Bittiğinde , 🔥 | ▸Özel Üye◂ Rolünü Alırsınız. ( Süre : Kalıcı )
+ <a:boost:706824674168012860>  | <@&705810600915370056> Süreniz Bittiğinde , <@&705810957258981448> Rolünü Alırsınız. ( Süre : Kalıcı )
 
  <a:boost:706824674168012860>  | İstediğiniz Kadar Kendi Adınızı Değiştirebilirsiniz.
 
