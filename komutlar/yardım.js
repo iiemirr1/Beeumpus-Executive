@@ -30,5 +30,5 @@ exports.conf = {
 exports.help = {
     name: 'yardım',
       category: 'Yardım',
-      description: 'Yardım kategorilerini gösteir.',
+      description: 'Yardım kategorilerini gösterir.',
 };
