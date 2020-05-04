@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args, guild, user) => {
 
   try {
       await (sahip.addRole(jsrolu.id));
-      message.channel.sendMessage('<:kayt:705008671335120896> | **JS rolü verilmiştir !**')
+      message.channel.sendMessage('<a:okke:706822258512887879> | **Başarılı !**\n**JavaScript Rolü Verildi.**')
     } catch (error) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
       return message.channel.send('❌ | **JS Rolün Zaten Var !**')
    

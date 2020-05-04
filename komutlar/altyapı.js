@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args, guild, user) => {
 
   try {
       await (sahip.addRole(jsrolu.id));
-      message.channel.sendMessage('<:kayt:705008671335120896> | **Altyapı rolü verilmiştir !**')
+      message.channel.sendMessage('<a:okke:706822258512887879> | **Başarılı !**\n**Altyapı Rolü Verildi.**')
     } catch (error) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
       return message.channel.send('❌ | **Altyapı Rolün Zaten Var !**')
    
