@@ -1027,3 +1027,14 @@ setInterval(() => { client.channels.get("704994123475714108").send('<a:mavi:7064
 setInterval(() => { client.channels.get("704994123475714108").send('<a:tk:705091908040392756> Kod Paylaşımı Yapmak İçin <@536470606166622208> İle İletişime Geçebilirsiniz ! <a:gne:706446921979527229> ') }, 1500000)
 
 //--------------SÜRELİ MESAJ SON--------------\\
+
+//------------sunucu panel-------------------\\
+
+client.on("guildMemberAdd", async member => {
+  client.channels.get(`707202175813812265`).setName(`Aktif Üye : ${member.guild.members.filter(off => off.presence.status !== "offline").size}`)
+});
+client.on("guildMemberRemove", async member => {
+      client.channels.get(`707202175813812265`).setName(`Aktif Üye : ${member.guild.members.filter(off => off.presence.status !== "offline").size}`)
+});
+
+//---------------sunucu panel son-----------\\
