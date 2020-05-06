@@ -9,10 +9,7 @@ exports.run = async (client, message, args) => {
   if (message.channel.id !== samet) return message.channel.send(`Kayıt Kanalı <#${samet}> Şuanda Burası !`);
   if (samet == true) return; 
   if (samet == false) return message.channel.send(`Kayıt Sistemi Aktif değil`);
- /* client.on('',{
-            
-    message.send()
-            }*/
+ 
   let user = message.member
   let guild = message.guild
   
@@ -28,10 +25,6 @@ exports.run = async (client, message, args) => {
   message.channel.send(`${message.author} Sunucuya Başarıyla Kayıt oldun !`)
   message.guild.channels.get(db.fetch(`kayıtlog_${message.guild.id}`)).send(`🗒 ${message.author} Adlı kullanıcı Başarılı Şekilde Kayıt Oldu `);
 
-  /*client.on("guildMemberAdd",async message => {
-message.guild.channel.get(db.fetch(`kayıtk_${message.guild.id}`)).send("Bil olum");
-  
-});*/
 };
 
 exports.conf = {
