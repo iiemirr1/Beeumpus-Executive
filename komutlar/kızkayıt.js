@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
   const misafir = message.guild.roles.find(r => r.id === "700775685379063878"); //buraya misafir rolünüzün id'sini koyun.
   const log = message.guild.channels.find(c => c.id === "679021833290252399"); //buraya kayıt log id koyun
   const tag = "";
-  if(!message.member.roles.array().filter(r => r.id === "700747614555078767")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
+  if(!message.member.roles.array().filter(r => r.id === "700747614555078767")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz.
     return message.channel.send("Bu işlemi sadece Ayarlanmış Kayıt Sorumluları gerçekleştirebilir.");
   } else {
     let member = message.mentions.users.first() || client.users.get(args.join(' '))
