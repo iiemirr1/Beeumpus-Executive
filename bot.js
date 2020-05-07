@@ -217,7 +217,7 @@ client.on('raw', async event => {
 client.on('messageReactionAdd', (reaction, user) => {
   if (reaction.message.id == "705008365977468928") {//Geçerli olması istediğiniz mesajın ID'sini yazabilirsiniz.
     if (reaction.emoji.name == "kayt") {//Dilediğini emojiyi koyabilirsiniz.
-      reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'Members'))//Dilediğiniz rolün adını yazabilirsiniz.
+      reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'JavaScript'))//Dilediğiniz rolün adını yazabilirsiniz.
 	}
  
 	if (reaction.emoji.name == "emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
@@ -227,7 +227,7 @@ client.on('messageReactionAdd', (reaction, user) => {
 		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'Html'))//Dilediğiniz rolün adını yazabilirsiniz.
 	  }
     	if (reaction.emoji.name == "Emoji") {//Dilediğiniz emojiyi koyabilirsiniz.
-		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'Rol'))//Dilediğiniz rolün adını yazabilirsiniz.
+		reaction.message.guild.members.get(user.id).addRole(reaction.message.guild.roles.find('name', 'rol'))//Dilediğiniz rolün adını yazabilirsiniz.
 	  }
   }
 });

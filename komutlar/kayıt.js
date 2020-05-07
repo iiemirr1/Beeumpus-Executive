@@ -4,11 +4,11 @@ const db = require('quick.db');
 
 exports.run = async (client, message, args) => {
 
-  const samet = await db.fetch(`kayıtk_${message.guild.id}`)
-  if(samet == null) return message.channel.send('Kayıt Sistemi eklemek için <`-kayıt-rol @rol`/`-kayıt-kanal #kanal`/`-kayıt-log #kanal`> şeklinde ekleyebilirsiniz. ');
-  if (message.channel.id !== samet) return message.channel.send(`Kayıt Kanalı <#${samet}> Şuanda Burası !`);
-  if (samet == true) return; 
-  if (samet == false) return message.channel.send(`Kayıt Sistemi Aktif değil`);
+  const codeshare = await db.fetch(`kayıtk_${message.guild.id}`)
+  if(codeshare == null) return message.channel.send('Kayıt Sistemi eklemek için <`-kayıt-rol @rol`/`-kayıt-kanal #kanal`/`-kayıt-log #kanal`> şeklinde ekleyebilirsiniz. ');
+  if (message.channel.id !== codeshare) return message.channel.send(`Kayıt Kanalı <#${codeshare}> Şuanda Burası !`);
+  if (codeshare == true) return; 
+  if (codeshare == false) return message.channel.send(`Kayıt Sistemi Aktif değil`);
  
   let user = message.member
   let guild = message.guild
