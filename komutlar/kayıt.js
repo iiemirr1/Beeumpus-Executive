@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
   user.setNickname(`${isim} | ${yas}`)
   user.addRole(db.fetch(`kayıt_${message.guild.id}`))
   message.channel.send(`${message.author} Sunucuya Başarıyla Kayıt oldun !`)
-  message.guild.channels.get(db.fetch(`kayıtlog_${message.guild.id}`)).send(`<a:kayit:707928076926976061> ${message.author} Adlı kullanıcı Başarılı Şekilde Kayıt Oldu `);
+  message.guild.channels.get(db.fetch(`kayıtlog_${message.guild.id}`)).send(`<a:kayit:707928076926976061> ${message.author} Adlı kullanıcı Başarılı Şekilde Kayıt Oldu ! <a:oldu:707928398902853713> `);
 
 };
 
