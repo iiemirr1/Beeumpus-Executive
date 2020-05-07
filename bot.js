@@ -182,12 +182,12 @@ client.on("guildMemberAdd", async member => {
 
 //Sunucuya biri girdiğinde kanal ismi değiştirme
 client.on("guildMemberAdd", message => {
-  client.channels.get("705000223117934594").setName(`Toplam Üye : ${message.guild.memberCount} `);
+  client.channels.get("705000223117934594").setName(`║ Toplam Üye : ${message.guild.memberCount} `);
 // kanal id yazan yerlere sesli kanalın id'sini sağtıklayıp kopyalayın ve yapıştırın
 });
 //Sunucudan Çıktığın Kişi Sayını Azaltma
 client.on("guildMemberRemove", message => {
-  client.channels.get("705000223117934594").setName(`Toplam Üye : ${message.guild.memberCount} `);
+  client.channels.get("705000223117934594").setName(`║ Toplam Üye : ${message.guild.memberCount} `);
   
 });
 
@@ -923,7 +923,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 
 
 
-client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get("705000236225003540"); frenzy_c.setName(`Son Üye : ${member.user.username}`) })
+client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get("705000236225003540"); frenzy_c.setName(`║ Son Üye : ${member.user.username}`) })
 
 //-----------------------Son Üye Panel Son--------------------\\
 //-----------------------Son Üye Panel Son--------------------\\
@@ -1031,10 +1031,10 @@ setInterval(() => { client.channels.get("704994123475714108").send('<a:tk:705091
 //------------sunucu panel-------------------\\
 
 client.on("guildMemberAdd", async member => {
-  client.channels.get(`707202175813812265`).setName(`Aktif Üye : ${member.guild.members.filter(off => off.presence.status !== "offline").size}`)
+  client.channels.get(`707202175813812265`).setName(`║ Aktif Üye : ${member.guild.members.filter(off => off.presence.status !== "offline").size}`)
 });
 client.on("guildMemberRemove", async member => {
-      client.channels.get(`707202175813812265`).setName(`Aktif Üye : ${member.guild.members.filter(off => off.presence.status !== "offline").size}`)
+      client.channels.get(`707202175813812265`).setName(`║ Aktif Üye : ${member.guild.members.filter(off => off.presence.status !== "offline").size}`)
 });
 
 //---------------sunucu panel son-----------\\
