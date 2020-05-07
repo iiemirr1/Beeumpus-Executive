@@ -5,7 +5,7 @@ const db = require('quick.db');
 exports.run = async (client, message, args) => {
 
   const codeshare = await db.fetch(`kayıtk_${message.guild.id}`)
-  const tag = "𝓒𝓢";
+  const tag = " ";
   if(codeshare == null) return message.channel.send('Kayıt Sistemi eklemek için <`-kayıt-rol @rol`/`-kayıt-kanal #kanal`/`-kayıt-log #kanal`> şeklinde ekleyebilirsiniz. ');
   if (message.channel.id !== codeshare) return message.channel.send(`Kayıt Kanalı <#${codeshare}> Şuanda Burası !`);
   if (codeshare == true) return; 
