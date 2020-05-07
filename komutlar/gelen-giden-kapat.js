@@ -4,10 +4,10 @@ const fs = require('fs')
 
 exports.run = (client, message, params, args, member) => {
   let gelengiden = JSON.parse(fs.readFileSync('./ayarlar/gelengiden.json', 'utf8'));
-  var asd = message.mentions.channels.first()
+  var codeshare = message.mentions.channels.first()
   
       if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(`**Bu komut için yeterli iznin yok!**`)
-    db.delete(`hgbb_${message.guild.id}`, asd)
+    db.delete(`hgbb_${message.guild.id}`, codeshare)
     message.channel.send("Kapatıldı!")
 
 }  
