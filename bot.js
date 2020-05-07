@@ -1016,7 +1016,7 @@ client.on("guildMemberAdd", member => {
       member.user.avatarURL || member.user.defaultAvatarURL
     )
     .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
-    .setTitle('${member.user.username} **Sunucumuza Giriş Yaptı!** <a:grs:705086956576571464>')
+    .setTitle(`${member.user.username} **Sunucumuza Giriş Yaptı!** <a:grs:705086956576571464>`)
     .setDescription(`${member.guild.memberCount} Üyeye Ulaştık!`)
     .addField("Kullanıcı", `${member.user.tag}`)
     .addField("ID", `${member.user.id}`)
@@ -1037,7 +1037,7 @@ client.on("guildMemberRemove", member => {
       member.user.avatarURL || member.user.defaultAvatarURL
     )
     .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
-    .setTitle('${member.user.username} **Sunucumuzdan Çıkış Yaptı!** <a:cks:705087008875217046>')
+    .setTitle(`${member.user.username} **Sunucumuzdan Çıkış Yaptı!** <a:cks:705087008875217046>`)
     .setDescription(`${member.guild.memberCount} Üyeye düştük!`)
     .addField("Kullanıcı", `${member.user.tag}`)
     .addField("ID", `${member.user.id}`)
