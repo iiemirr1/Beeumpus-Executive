@@ -998,7 +998,7 @@ client.on("channelDelete", async channel => {
 
 client.on('guildMemberAdd', async (member) => {
     var kanal = member.guild.channels.get('704998380610256928')
-    kanal.send(`${member}, Sunucumuza Hoşgeldin.\n<a:dans:706587859045449751> Kayıt Olmak İçin kayıt kanalındaki Emojiye Tıklayabilirsin.\n<a:rgb:706441310491508786> Kuralları Okumayı Unutma !\n<a:rgb:706441310491508786> Rol Almak İstersende Kayıt Olduktan Sonra 「rol-bilgi」 Kanalına Bakabilirsin.`) ;
+    kanal.send(`${member}, Sunucumuza Hoşgeldin.\n<a:dans:706587859045449751> Kayıt Olmak İçin <#704998077886496828> kanalındaki Emojiye Tıklayabilirsin.\n<a:rgb:706441310491508786> <#704993904943956039> Kanalını Okumayı Unutma !\n<a:rgb:706441310491508786> Rol Almak İstersende Kayıt Olduktan Sonra <#704994323560923186> Kanalına Bakabilirsin.`) ;
 })
 
 //---------------HOŞGELDİN MESAJI SON--------------------\\
