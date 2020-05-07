@@ -137,45 +137,7 @@ client.login(ayarlar.token);
 
 //-----------------------KOMUTLAR-----------------------\\
 
-//Otorol
-client.on("guildMemberAdd", async member => {
-  let sayac = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
-  let otorole = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
-  let arole = otorole[member.guild.id].sayi;
-  let giriscikis = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
-  let embed = new Discord.RichEmbed()
-    .setTitle("Otorol Sistemi")
-    .setDescription(
-      `:loudspeaker: :inbox_tray:  @${member.user.tag}'a Otorol Verildi `
-    )
-    .setColor("GREEN")
-    .setFooter("BOTISMİ", client.user.avatarURL);
 
-  if (!giriscikis[member.guild.id].kanal) {
-    return;
-  }
-
-  try {
-    let giriscikiskanalID = giriscikis[member.guild.id].kanal;
-    let giriscikiskanali = client.guilds
-      .get(member.guild.id)
-      .channels.get(giriscikiskanalID);
-    giriscikiskanali.send(
-      `:loudspeaker: :white_check_mark: Hoşgeldin **${member.user.tag}** Rolün Başarıyla Verildi.`
-    );
-  } catch (e) {
-    // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
-    return console.log(e);
-  }
-});
-//Kullanıcı sunucudan ayrıldığında ayarlanan kanala mesaj gönderelim.
-client.on("guildMemberAdd", async member => {
-  let autorole = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
-  let role = autorole[member.guild.id].sayi;
-
-  member.addRole(role);
-});
-//Otorol SON
 //-----------------------sunucu panel---------------------\\
 //-----------------------sunucu panel---------------------\\
 //-----------------------sunucu panel---------------------\\
@@ -1054,7 +1016,7 @@ client.on("guildMemberAdd", member => {
       member.user.avatarURL || member.user.defaultAvatarURL
     )
     .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
-    .setTitle(`${member.user.username} Sunucumuza Giriş Yaptı! <a:grs:705086956576571464>`)
+    .setTitle('${member.user.username} **Sunucumuza Giriş Yaptı!** <a:grs:705086956576571464>')
     .setDescription(`${member.guild.memberCount} Üyeye Ulaştık!`)
     .addField("Kullanıcı", `${member.user.tag}`)
     .addField("ID", `${member.user.id}`)
@@ -1075,7 +1037,7 @@ client.on("guildMemberRemove", member => {
       member.user.avatarURL || member.user.defaultAvatarURL
     )
     .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
-    .setTitle(`${member.user.username} Sunucumuzdan Çıkış Yaptı! <a:cks:705087008875217046>`)
+    .setTitle('${member.user.username} **Sunucumuzdan Çıkış Yaptı!** <a:cks:705087008875217046>')
     .setDescription(`${member.guild.memberCount} Üyeye düştük!`)
     .addField("Kullanıcı", `${member.user.tag}`)
     .addField("ID", `${member.user.id}`)
