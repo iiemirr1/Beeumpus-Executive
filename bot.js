@@ -1075,8 +1075,8 @@ client.on("guildMemberRemove", member => {
       member.user.avatarURL || member.user.defaultAvatarURL
     )
     .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
-    .setTitle(`**${member.user.username}** **${guild.name}** Sunucumuzdan ayrıldı!`)
-    .setDescription(`**${member.guild.memberCount}** Üyeye düştük!`)
+    .setTitle(`${member.user.username} CodeShare Sunucumuzdan Çıkış Yaptı! <a:cks:705087008875217046>`)
+    .setDescription(`${member.guild.memberCount} Üyeye düştük!`)
     .addField("kullanıcı", `${member.user.tag}`)
     .addField("ID", `${member.user.id}`)
     .setTimestamp();
