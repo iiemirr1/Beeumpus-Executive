@@ -1038,3 +1038,57 @@ client.on("guildMemberRemove", async member => {
 });
 
 //---------------sunucu panel son-----------\\
+
+//-------------GELEN-GİDEN---------------\\
+
+client.on("guildMemberAdd", member => {
+ let gelengiden = JSON.parse(fs.readFileSync('./ayarlar/gelengiden.json', 'utf8'));
+  var asd = db.fetch(`hgbb_${member.guild.id}`)
+     let guild = member.guild;
+       var Durum = member.user.presence.status;
+        var Durm = (Durum == "online" ? (0x00AE86) : (Durum == "offline" ? (0x808080) : (Durum == "idle" ? (0xFFFF00) : (Durum == "dnd" ? (0xFF0000) : (0x00AE86)))))
+        var durm = (Durum == "online" ? ("Çevrimiçi", `<:online:665133829949751296> Çevrimiçi`) : (Durum == "offline" ? ("Çevrimdışı", `<:offline:665133830000345111> Çevrimdışı`) : (Durum == "idle" ? ("Boşta", `<:idle:665133829945819176> Boşta`) : (Durum == "dnd" ? ("Rahatsız Etmeyin", `<:dnd:665133829584846859> Rahatsız Etme`) : ("Bilinmiyor/bulunamadı.")))))
+  const channel = member.guild.channels.find("id", asd.id);
+  if (!channel) return;
+  const embed = new Discord.RichEmbed()
+    .setColor("GREEN")
+    .setAuthor(
+      member.user.tag,
+      member.user.avatarURL || member.user.defaultAvatarURL
+    )
+    .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
+    .setTitle(`**${member.user.username}** **${guild.name}** Adlı sunucumuza giriş yaptı! ${client.emojis.get("673495921144889344")}`)
+    .setDescription(`**${member.guild.memberCount}** Üyeye Ulaştık!`)
+    .addField("`kullanıcı`", `${member.user.tag}`)
+    .addField("`ID`", `${member.user.id}`)
+    .addField("`Durum`", `${durm}`)
+    .setTimestamp();
+  channel.send(embed);
+});
+
+client.on("guildMemberRemove", member => {
+    let gelengiden = JSON.parse(fs.readFileSync('./ayarlar/gelengiden.json', 'utf8'));
+    var asd = db.fetch(`hgbb_${member.guild.id}`)
+         let guild = member.guild;
+         var Durum = member.user.presence.status;
+        var Durm = (Durum == "online" ? (0x00AE86) : (Durum == "offline" ? (0x808080) : (Durum == "idle" ? (0xFFFF00) : (Durum == "dnd" ? (0xFF0000) : (0x00AE86)))))
+        var durm = (Durum == "online" ? ("Çevrimiçi", `<:online:665133829949751296> Çevrimiçi`) : (Durum == "offline" ? ("Çevrimdışı", `<:offline:665133830000345111> Çevrimdışı`) : (Durum == "idle" ? ("Boşta", `<:idle:665133829945819176> Boşta`) : (Durum == "dnd" ? ("Rahatsız Etmeyin", `<:dnd:665133829584846859> Rahatsız Etme`) : ("Bilinmiyor/bulunamadı.")))))
+  const channel = member.guild.channels.find("id", asd.id);
+  if (!channel) return;
+  const embed = new Discord.RichEmbed()
+    .setColor("RED")
+    .setAuthor(
+      member.user.tag, 
+      member.user.avatarURL || member.user.defaultAvatarURL
+    )
+    .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
+    .setTitle(`**${member.user.username}** **${guild.name}** Sunucumuzdan ayrıldı! ${client.emojis.get("673495981005864960")}`)
+    .setDescription(`**${member.guild.memberCount}** Üyeye düştük!`)
+    .addField("`kullanıcı`", `${member.user.tag}`)
+    .addField("`ID`", `${member.user.id}`)
+    .addField("`Durum`", `${durm}`)
+    .setTimestamp();
+  channel.send(embed);
+});
+
+//------------GELEN-GİDEN-SON-------------\\

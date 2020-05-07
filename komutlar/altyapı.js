@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports.run = async (bot, message, args, guild, user) => {
     let sahip = message.member
    let jsrolu = message.guild.roles.find('id', 'rol id')
-  if(message.guild.id !== 'sunucu id') return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('Bu komudu sadece [Kod Paylaşım](...........) sunucusunda kullanabilirsin.').setColor('RED'));
+  if(message.guild.id !== 'sunucu id') return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('Bu Rolü <#704994323560923186> Kanalından Alabilirsin !').setColor('RED'));
     if(!jsrolu) return message.channel.send('Bu sunucuda **JavaScript** isminde bir rol bulunmamakta.')
       if(message.member.roles.has(jsrolu.id)) return message.channel.send('❌ | **Altyapı Rolün Var !**')
 
