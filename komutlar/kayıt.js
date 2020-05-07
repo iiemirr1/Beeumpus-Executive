@@ -13,11 +13,8 @@ exports.run = async (client, message, args) => {
  
   let user = message.member
   let guild = message.guild
-  
- 
-  let isim = args[0]
-  let yas = args[1]
-  
+  let isim = args[0];
+  let yas = args[1];
   if (!isim) return message.channel.send(`İsmini girmelisin.`)
   if (!yas) return message.channel.send(`Yaşını girmelisin.`)
   
