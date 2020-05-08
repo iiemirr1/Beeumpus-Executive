@@ -21,7 +21,7 @@ const mapping = {
 "abcdefghijklmnopqr".split("").forEach(c => {
   mapping[c] = mapping[c.toUpperCase()] = `:regional_indicator_${c}:`;
 });
-
+//Developer By CodeShare
 exports.run = function(client, message, args) {
   let offlinesayi = message.guild.members.filter(
     m => m.user.presence.status === "offline"
