@@ -137,26 +137,6 @@ client.login(ayarlar.token);
 
 //-----------------------KOMUTLAR-----------------------\\
 
-
-//-----------------------sunucu panel---------------------\\
-//-----------------------sunucu panel---------------------\\
-//-----------------------sunucu panel---------------------\\
-
-//Sunucuya biri girdiğinde kanal ismi değiştirme
-client.on("guildMemberAdd", message => {
-  client.channels.get("705000223117934594").setName(`Toplam Üye : ${message.guild.memberCount} `);
-// kanal id yazan yerlere sesli kanalın id'sini sağtıklayıp kopyalayın ve yapıştırın
-});
-//Sunucudan Çıktığın Kişi Sayını Azaltma
-client.on("guildMemberRemove", message => {
-  client.channels.get("705000223117934594").setName(`Toplam Üye : ${message.guild.memberCount} `);
-  
-});
-
-//-----------------------sunucu panel son---------------------\\
-//-----------------------sunucu panel son---------------------\\
-//-----------------------sunucu panel son---------------------\\
-
 //-----------------------emojili kayıt--------------------\\
 //-----------------------emojili kayıt--------------------\\
 //-----------------------emojili kayıt--------------------\\
@@ -1044,3 +1024,17 @@ client.on("guildMemberRemove", member => {
 });
 
 //------------GELEN-GİDEN-SON--------------\\
+
+//-----SUNUCU İSMİ SAYAÇ-------------\\
+
+client.on('guildMemberAdd', member => {
+var codeshare = client.guilds.get("687044388559257634")
+codeshare.setName(`CodeShare <${codeshare.memberCount}>`);
+})
+
+client.on('guildMemberRemove', member => {
+var codeshare = client.guilds.get("687044388559257634")
+codeshare.setName(`CodeShare <${codeshare.memberCount}>`);
+})
+
+//-------SUNUCU İSMİ SAYAÇ SON---------\\
