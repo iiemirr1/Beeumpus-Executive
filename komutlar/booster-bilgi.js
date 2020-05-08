@@ -8,17 +8,13 @@ exports.run = (client, message, args) => {
     .addField(`**Booster Rolü Bilgileri**`,`Booster Rolü Almak İçin Sunucuya Boost Basmanız Gereklidir.`)
     .addField(`<a:booster:706824717704626188>  **Booster Avantajları**\n`, `
 
- <a:boost:706824674168012860>  | Sadece Boosterlere Özel <@&705810600915370056> Rolü Alırsınız.\n (Süre : Boost Süresi Bitene Kadar)
+ <a:boost:706824674168012860>  | Sadece Boosterlere Özel <@&705810600915370056> Rolü Alırsınız.
 
- <a:boost:706824674168012860>  | <@&706259236711301122> Rolü Alırsınız. (Kalıcı)
+ <a:boost:706824674168012860>  | <@&706259236711301122> Rolü Alırsınız.
 
- <a:boost:706824674168012860>  | Hesabınıza 45 Adet Davet Eklenir. (Kalıcı)
+ <a:boost:706824674168012860>  | Boost Basarsanız 10 İnvitelik <@&705809158410338408> Rolünü Direk Alırsınız.
 
- <a:boost:706824674168012860>  | 2x Boost Basarsanız 50 Davetlik <@&705809158410338408> Rolünü Direk Alırsınız. (Süre : Kalıcı)
-
- <a:boost:706824674168012860>  | <@&705810600915370056> Süreniz Bittiğinde , <@&705810957258981448> Rolünü Alırsınız. (Süre : Kalıcı)
-
- <a:boost:706824674168012860>  | İstediğiniz Kadar Kendi Adınızı Değiştirebilirsiniz.
+ <a:boost:706824674168012860>  | 2 Adet İsim Değiştirme Hakkı.
 
  <a:boost:706824674168012860>  | Size Özel Sohbet Kanalları .
 
