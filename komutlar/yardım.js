@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
       .addField('** Yetkili [13]**', '`terfi`, `ban`, `erkek`, `kadın`, `kick`, `emojiler`, `dm-hg`, `güvenlik`, `capsengel`, `ping`, `rol-bilgi`, `oylama`, `rol-koruma`')
       .addField('** Yetkili 2 [11]**', '`küfür`, `modlog`, `otorol ayarla`, `sa-as`, `reklam`, `sayaç`, `reklamtara`, `sil`, `kayıt`, `hatırlat`, `yaz`')
       .addField('** Kullanıcı [10]**', '`avatar`, `sunucubilgi`, `ping`, `havadurumu`,`top5`,`yasaklar`,`üyedurum`,`döviz`,`değişiklikler`,`saat`')
-      .addField('** Kullanıcı 2 [9]**', '`hata`,`istek`,`youtube`,`servericon`,`say`,`website`,`hesapla`,`korona`,`kısalt`')
+      .addField('** Kullanıcı 2 [10]**', '`hata`,`istek`,`youtube`,`servericon`,`say`,`website`,`hesapla`,`korona`,`kısalt`,`başvuru`')
       .addField('** Rol Alma [5]**', '`-js`, `-html`, `-altyapı`,`-premium`,`-booster`')
     .setFooter(``, client.user.avatarURL)
     .setTimestamp()
