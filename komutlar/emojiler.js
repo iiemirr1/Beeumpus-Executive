@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
       var emojis = message.guild.emojis.array();
   const embed2 = new Discord.RichEmbed()
 .setColor("RED")
-  .setFooter(`Sadece emojileri görmek için +emojiler`)
+  .setFooter(`Sadece emojileri görmek için -emojiler`)
 .setDescription(`\`\`\`js
 Sunucuda Bulunan Emojiler (${emojis.length} adet)
 ${emojiList}
