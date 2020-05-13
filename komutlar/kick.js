@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
   let guild = message.guild
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
-  let modlog = guild.channels.find('name', '📁・mod-log');
+  let modlog = guild.channels.find('name', '「📁」mod-log');
   if (!modlog) return message.reply(':warning: **Uyarı** :warning:', '`mod-log` **adlı Kanal Bulunamadı!**');
   if (reason.length < 1) return message.reply('Sunucudan atma sebebini yazmalısın.');
   if (message.mentions.users.size < 1) return message.reply('Kimi sunucudan atacağını yazmalısın.').catch(console.error);
