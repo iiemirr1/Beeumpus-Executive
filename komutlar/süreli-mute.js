@@ -3,12 +3,12 @@ const ms = require("ms");
 const ayarlar = require('../ayarlar.json');
 const prefix = ayarlar.prefix;
 
-let ID1 = ""//Alınacak 1 inci Rol ID
-let ID2 = ""//Alınacak 2 inci Rol ID
-let ID3 = ""//Alınacak 3 inci Rol ID
-let ID4 = ""//Alınacak 4 inci Rol ID
-let ID5 = ""//Alınacak 5 inci Rol ID
-var mutelirolu = "Susturulmuş" //MUTELENDİGİ ZAMAN VERİLECEK ROLU  BURAYA YAZINIZ...
+let ID1 = "687045892372692992"//Alınacak 1. Rol İD
+let ID2 = "692045635074916433"//Alınacak 2. Rol İD
+let ID3 = "704818193302159364"//Alınacak 3. Rol İD
+let ID4 = "704818269336633384"//Alınacak 4. Rol İD
+let ID5 = "709729356871893053"//Alınacak 5. Rol İD
+var mutelirolu = "[❌] Muteli" //Muteli Rolü Hangisi İse Adını Girin
 
 module.exports.run = async (bot, message, args) => {
 
