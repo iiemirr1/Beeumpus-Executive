@@ -974,94 +974,25 @@ client.on('guildMemberAdd', async (member) => {
 
 //------------------OTOROL ---------------------------\\
 
-client.on("guildMemberAdd", async member => {
-  if (member.user.bot === true) return;
- if(!db.fetch(`otorol_${member.guild.id}`)) return;
-  let rolisim = await db.fetch(`otorolismi_${member.guild.id}`);
-  let kanal = await db.fetch(`otorolkanali_${member.guild.id}`);
-  let rolID = await db.fetch(`otorol_${member.guild.id}`);
-  let logkanali = client.channels.get(kanal)
-    logkanali.send(` \`${member.user.tag}\` adlı kullanıcıya **${rolisim}** adlı rol verildi.` );
-   member.addRole(rolID);
+client.on('guildMemberAdd', async (member, guild, message) => {
+let role = await  db.fetch(`otorolisim_${member.guild.id}`)
+ let otorol = await db.fetch(`autoRole_${member.guild.id}`)
+ let i = await db.fetch(`otorolKanal_${member.guild.id}`)
+ if (!otorol || otorol.toLowerCase() === 'yok') return;
+else {
+ try {
+  if (!i) return
+  member.addRole(member.guild.roles.get(otorol))
+                        var embed = new Discord.RichEmbed()
+                        .setDescription(`**Sunucuya Yeni Katılan** \`${member.user.tag}\` **Kullanıcısına** \`${role}\` **Rolü verildi.**`)
+                        .setColor('0x36393E')
+                        .setFooter(`Otorol Sistemi`)
+     member.guild.channels.get(i).send(embed)  } catch (e) {
+ console.log(e)
+}
+}
 });
 
 //-------------OTOROL SON------------------\\
 
 
-//-------------SÜRELİ MESAJ----------------\\
-
-setInterval(() => { client.channels.get("704994123475714108").send('<a:mavi:706448266212016179> `Hatırlatma` <a:siren:706448314652033024> \n<a:istek:706431026804818001> Kodlarda ve kanallarda gördüğünüz hataları ve isteklerinizi -hata ve -istek komutlarını kullanarak belirtin aksi taktirde Hiçbir Mesaj Dikkate Alınmayacaktır ! <a:gne:706446921979527229>\n<a:krmz:706450120727592971> <#704993904943956039> Kanalını Okumayı Unutma ! Yoksa Ceza Alabilirsin.\n<a:uyar:706450023872725014> `JavaScript` , `Html` , `Altyapı` Rolü Almak İçin <#704994323560923186> Kanalına Bakabilirsiniz.') }, 1000000)
-
-
-setInterval(() => { client.channels.get("704994123475714108").send('<a:tk:705091908040392756> Kod Paylaşımı Yapmak İçin <@536470606166622208> İle İletişime Geçebilirsiniz ! <a:gne:706446921979527229> ') }, 1500000)
-
-//--------------SÜRELİ MESAJ SON--------------\\
-
-//------------sunucu panel-------------------\\
-
-client.on("guildMemberAdd", async member => {
-  client.channels.get(`707202175813812265`).setName(`Aktif Üye : ${member.guild.members.filter(off => off.presence.status !== "offline").size}`)
-});
-client.on("guildMemberRemove", async member => {
-      client.channels.get(`707202175813812265`).setName(`Aktif Üye : ${member.guild.members.filter(off => off.presence.status !== "offline").size}`)
-});
-
-//---------------sunucu panel son-----------\\
-
-//-------------GELEN-GİDEN---------------\\
-
-client.on("guildMemberAdd", member => {
- let gelengiden = JSON.parse(fs.readFileSync('./ayarlar/gelengiden.json', 'utf8'));
-  var codeshare = db.fetch(`hgbb_${member.guild.id}`)
-     let guild = member.guild;
-  const channel = member.guild.channels.find("id", codeshare.id);
-  if (!channel) return;
-  const embed = new Discord.RichEmbed()
-    .setColor("GREEN")
-    .setAuthor(
-      member.user.tag,
-      member.user.avatarURL || member.user.defaultAvatarURL
-    )
-    .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
-    .setDescription(`**${member.user.username}** Sunucumuza Giriş Yaptı ! <a:grs:705086956576571464>`)
-    .addField("Kullanıcı", `${member.user.tag}`)
-    .addField("ID", `${member.user.id}`)
-    .setTimestamp();
-  channel.send(embed);
-});
-
-client.on("guildMemberRemove", member => {
-    let gelengiden = JSON.parse(fs.readFileSync('./ayarlar/gelengiden.json', 'utf8'));
-    var codeshare = db.fetch(`hgbb_${member.guild.id}`)
-         let guild = member.guild;
-  const channel = member.guild.channels.find("id", codeshare.id);
-  if (!channel) return;
-  const embed = new Discord.RichEmbed()
-    .setColor("RED")
-    .setAuthor(
-      member.user.tag, 
-      member.user.avatarURL || member.user.defaultAvatarURL
-    )
-    .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
-    .setDescription(`**${member.user.username}** Sunucumuzdan Çıkış Yaptı ! <a:cks:705087008875217046>`)
-    .addField("Kullanıcı", `${member.user.tag}`)
-    .addField("ID", `${member.user.id}`)
-    .setTimestamp();
-  channel.send(embed);
-});
-
-//------------GELEN-GİDEN-SON--------------\\
-
-//-----SUNUCU İSMİ SAYAÇ-------------\\
-
-client.on('guildMemberAdd', member => {
-var codeshare = client.guilds.get("687044388559257634")
-codeshare.setName(`CodeShare <${codeshare.memberCount}>`);
-})
-
-client.on('guildMemberRemove', member => {
-var codeshare = client.guilds.get("687044388559257634")
-codeshare.setName(`CodeShare <${codeshare.memberCount}>`);
-})
-
-//-------SUNUCU İSMİ SAYAÇ SON---------\\
