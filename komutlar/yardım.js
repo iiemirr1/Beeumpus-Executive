@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     const juke = new Discord.RichEmbed()
     .setColor('Yardım Menüsü')
     .setAuthor(`TitanX`, client.user.avatarURL) 
-      .setDescription('Versiyon : **v1.1**\nToplam Komut : **48** \nPrefix : **t+**\nDil : **Türkçe**')
+      .setDescription('Prefix : **t+** Dil : **Türkçe**')
 .setThumbnail(client.user.avatarURL)
       .addField('** Yetkili [13]**', '`terfi`, `ban`, `erkek`, `kadın`, `kick`, `emojiler`, `dm-hg`, `güvenlik`, `capsengel`, `ping`, `rol-bilgi`, `oylama`, `rol-koruma`')
       .addField('** Yetkili 2 [15]**', '`küfür`, `otorol-ayarla`, `otorolkapat`, `otorol-mesajı`, `reklam-engel`, `reklamban`, `reklambankapat`, `reklam-taraması`, `kayıt`, `sayaç`, `yaz`,`hatırlat`,`sil`,`sa-as`,`modlog`')
