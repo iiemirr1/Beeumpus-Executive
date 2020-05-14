@@ -962,16 +962,6 @@ client.on("channelDelete", async channel => {
 
 //--------------------ROL KORUMA SON-----------------\\
 
-
-//-----------------HOŞGELDİN MESAJI---------------------\\
-
-client.on('guildMemberAdd', async (member) => {
-    var kanal = member.guild.channels.get('704998380610256928')
-    kanal.send(`${member}, Sunucumuza Hoşgeldin.\n<a:dans:706587859045449751> Kayıt Olmak İçin <#704998077886496828> kanalına -kayıt isim yaş Yazabilirsin.\n<a:rgb:706441310491508786> <#704993904943956039> Kanalını Okumayı Unutma !\n<a:rgb:706441310491508786> Rol Almak İstersende Kayıt Olduktan Sonra <#704994323560923186> Kanalına Bakabilirsin.`) ;
-})
-
-//---------------HOŞGELDİN MESAJI SON--------------------\\
-
 //------------------OTOROL ---------------------------\\
 
 client.on("guildMemberAdd", async member => {
@@ -983,7 +973,7 @@ let mesaj = db.fetch(`codemingmesaj_${member.guild.id}`)
 if(!kanal) return
 member.addRole(rol)
   if(!mesaj) {
-  client.channels.get(kanal).send('Otomatik Rol Verildi Seninle Beraber **`'+member.guild.memberCount+'`** Kişiyiz! Hoşgeldin! **`'+member.user.username+'`**')
+  client.channels.get(kanal).send(':loudspeaker: :inbox_tray: Otomatik Rol Verildi Seninle Beraber **`'+member.guild.memberCount+'`** Kişiyiz! Hoşgeldin! **`'+member.user.username+'`**')
 } else {
   
       var mesajs = mesaj.replace("-uye-", `${member.author.tag}`).replace("-uyetag-", `${member.author.username}`) .replace("-server-", `${member.guild.name}`).replace("-rol-", member.guild.roles.get(db.fetch(`codemingrol_${member.guild.id}`)).name).replace("-onlineuyesayısı-", member.guild.members.filter(s => s.presenceStatus === "online").size).replace("-botsayisi-", member.guild.members.filter(s => s.bot).size) .replace('-kanalsayisi-' ,member.guild.channels.size ).replace("-uyesayisi-", member.guild.memberCount).replace("-bolge-", member.guild.region)

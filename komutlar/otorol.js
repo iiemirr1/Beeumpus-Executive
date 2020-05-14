@@ -26,7 +26,7 @@ permLevel: 0
 }
 
 exports.help = {
- name: 'oto-rol-ayarla', 
+ name: 'otorol-ayarla', 
 description: 'taslak',
  usage: 'oto-rol-ayarla' 
 };

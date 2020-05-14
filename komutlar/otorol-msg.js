@@ -21,7 +21,7 @@ permLevel: 0
 }
 
 exports.help = {
- name: 'oto-rol-msg', 
+ name: 'otorol-mesajı', 
 description: 'taslak',
  usage: 'oto-rol-msg' 
 };

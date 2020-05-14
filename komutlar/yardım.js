@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
       .setDescription('Versiyon : **v1.1**\nToplam Komut : **48** \nPrefix : **t+**\nDil : **Türkçe**')
 .setThumbnail(client.user.avatarURL)
       .addField('** Yetkili [13]**', '`terfi`, `ban`, `erkek`, `kadın`, `kick`, `emojiler`, `dm-hg`, `güvenlik`, `capsengel`, `ping`, `rol-bilgi`, `oylama`, `rol-koruma`')
-      .addField('** Yetkili 2 [13]**', '`küfür`, `modlog`, `otorol ayarla`, `sa-as`, `reklam-engel`, `reklamban`, `reklambankapat`, `reklam-taraması`, `kayıt`, `sayaç`, `yaz`,`hatırlat`,`sil`')
+      .addField('** Yetkili 2 [15]**', '`küfür`, `otorol-ayarla`, `otorolkapat`, `otorol-mesajı`, `reklam-engel`, `reklamban`, `reklambankapat`, `reklam-taraması`, `kayıt`, `sayaç`, `yaz`,`hatırlat`,`sil`,`sa-as`,`modlog`')
       .addField('** Kullanıcı [10]**', '`avatar`, `sunucubilgi`, `ping`, `havadurumu`,`top5`,`yasaklar`,`üyedurum`,`döviz`,`değişiklikler`,`saat`')
       .addField('** Kullanıcı 2 [10]**', '`hata`,`istek`,`youtube`,`servericon`,`say`,`website`,`hesapla`,`korona`,`kısalt`,`başvuru`')
       .addField('** Rol Alma [5]**', '`-js`, `-html`, `-altyapı`,`-premium`,`-booster`')
