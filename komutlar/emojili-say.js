@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const mapping = {
   " ": "   ",
-   "0": "<a:emoji_0:708263200025477161>",
+  "0": " <a:emoji_0:708263200025477161>",
   "1": " <a:emoji_1:708263098280312832>",
   "2": " <a:emoji_2:708263259748433991>",
   "3": " <a:emoji_3:708263296091815936>",
@@ -26,13 +26,13 @@ exports.run = function(client, message, args) {
   let offlinesayi = message.guild.members.filter(
     m => m.user.presence.status === "offline"
   ).size; 
-  let offline = '**Çevrimdışı Kişi Sayısı** ' +
+  let offline = '**Çevrimdışı Kişi Sayısı :** ' +
      `${offlinesayi}`
      .split("")
      .map(c => mapping[c] || c)
      .join(" ")
   let toplam = message.guild.memberCount;
-  let sunucu = '**Sunucudaki Kişi Sayısı:** ' + 
+  let sunucu = '**Sunucudaki Kişi Sayısı :** ' + 
       `${toplam}`
       .split("")
       .map(c => mapping[c] || c)
@@ -40,7 +40,7 @@ exports.run = function(client, message, args) {
   let onlinesayi = message.guild.members.filter(
     only => only.presence.status != "offline"
   ).size;
-  let online = '**Çevrimiçi Kişi Sayısı:** ' +
+  let online = '**Çevrimiçi Kişi Sayısı :** ' +
       `${onlinesayi}`
       .split("")
       .map(c => mapping[c] || c)
