@@ -987,4 +987,109 @@ member.addRole(rol)
 
 //-------------OTOROL SON------------------\\
 
+//------------------KÜFÜR ENGEL-----------------\\
+
+client.on("message", async msg => {
+  //const args = msg.content.slice.split(' ');
+  const args = msg.content.trim().split(/ +/g);
+  const fAK = await db.fetch(`filtreAK_${msg.guild.id}`);
+  let mesaj = args.slice(1).join(" ");
+  const filtre = await db.fetch(`filtre_${msg.guild.id}`);
+  const kufur = [
+    "mk",
+    "göt",
+    "amk",
+    "amq",
+    "aq",
+    "orospu",
+    "oruspu",
+    "oç",
+    "sikerim",
+    "yarrak",
+    "piç",
+    "amq",
+    "sik",
+    "amcık",
+    "çocu",
+    "sex",
+    "seks",
+    "amına",
+    "orospu çocuğu",
+    "sg",
+    "siktir git"
+  ];
+
+  const reklam = [
+    ".ml",
+    "discord.gg",
+    "invite",
+    "discordapp",
+    "discordgg",
+    ".com",
+    ".net",
+    ".xyz",
+    ".tk",
+    ".pw",
+    ".io",
+    ".me",
+    ".gg",
+    "www.",
+    "https",
+    "http",
+    ".gl",
+    ".org",
+    ".com.tr",
+    ".biz",
+    ".party",
+    ".rf.gd",
+    ".az",
+    "glitch.me",
+    "glitch.com"
+  ];
+
+  let kufures = await db.fetch(`kuyarr_${msg.author.id}`);
+  let linkes = await db.fetch(`luyarr_${msg.author.id}`);
+  let ads = msg.author.id;
+  if (fAK == "açık") {
+    const fltr = filtre;
+    if (fltr.some(word => msg.content.includes(word))) {
+      if (!msg.member.hasPermission("BAN_MEMBERS")) {
+        msg.delete();
+
+        var k = new Discord.RichEmbed()
+          .setColor("#01CFFE")
+          .setAuthor("Filtre Sistemi")
+          .setDescription(
+            `Bu sunucuda yasaklanmış bir kelimeyi kullandınız, bu yüzden mesajınızı sildim.`
+          );
+        msg.channel.send(k).then(message => message.delete(5000));
+
+        return;
+      }
+    }
+  }
+  
+  if (!msg.guild) return;
+
+  if (db.has(`küfürE_${msg.guild.id}`) === true) {
+    if (kufur.some(word => msg.content.toLowerCase().includes(word))) {
+      if (!msg.member.hasPermission("ADMINISTRATOR")) {
+        msg.delete();
+
+        var k = new Discord.RichEmbed()
+          .setColor("RANDOM")
+          .setAuthor("Küfür Engeli!")
+          .setDescription(
+            `Hey <@${msg.author.id}>, Bu sunucuda küfürler **${client.user.username}** tarafından engellenmektedir! Küfür etmene izin vermeyeceğim!`
+          );
+        db.add(`kuyarr_${msg.author.id}`, 1);
+        msg.channel.send(k).then(message => message.delete(5000));
+    
+      }
+    }
+  }
+});
+
+//-------------------KÜFÜR ENGEL SON-----------------------\\
+
 
