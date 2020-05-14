@@ -26,26 +26,26 @@ var filter = m => m.author.id === message.author.id;
  
   
   
-      message.channel.send(`:eight_pointed_black_star:| **Çekilişin yapılacağı kanalın adını yaz**\n Lütfen birleşik değil tek tek yazın.`).then(msg => {
+      message.channel.send(`**Çekilişin yapılacağı kanalın adını yaz**\n Lütfen birleşik değil tek tek yazın.`).then(msg => {
       message.channel.awaitMessages(filter, {
         max: 1,
         time: 20000,
         errors: ['time']
       }).then(collected => {
         let room = message.guild.channels.find('name' , collected.first().content);
-        if(!room) return message.channel.send(':heavy_multiplication_x:| **Böyle bir kanal bulamadım lütfen tam bir şekilde etiket atmadan yazınız**');
+        if(!room) return message.channel.send('**Böyle bir kanal bulamadım lütfen tam bir şekilde etiket atmadan yazınız**');
         room = collected.first().content;
         collected.first().delete();
-        msg.edit(':eight_pointed_black_star:| **Çekilişin süresini belirle (1s (saniye) 1s-59s, 1m (dakika) 1m-59m, 1h (saat) 1h-59h, 1d (gün) 1d-6d, 1w (hafta) Örnek: 3h**').then(msg => {
+        msg.edit('**Çekilişin süresini belirle (1s (saniye) 1s-59s, 1m (dakika) 1m-59m, 1h (saat) 1h-59h, 1d (gün) 1d-6d, 1w (hafta) Örnek: 3h**').then(msg => {
           message.channel.awaitMessages(filter, {
             max: 1,
             time: 20000,
             errors: ['time']
           }).then(collected => {
-            if(!collected.first().content.match(/[1-60][s,m,h,d,w]/g)) return message.channel.send(':heavy_multiplication_x:| **Böyle bir süre bilmiyorum :(**');
+            if(!collected.first().content.match(/[1-60][s,m,h,d,w]/g)) return message.channel.send('**Böyle bir süre bilmiyorum**');
             duration = collected.first().content
             collected.first().delete();
-            msg.edit(':eight_pointed_black_star:| **Şimdi de ödülü yaz bakalım**').then(msg => {
+            msg.edit('**Şimdi de ödülü yaz bakalım**').then(msg => {
               message.channel.awaitMessages(filter, {
                 max: 1,
                 time: 20000,
