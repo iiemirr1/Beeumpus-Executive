@@ -13,10 +13,10 @@ exports.run = async (client, message) => {
 	let args = message.content.split(' ').slice(1);
 	const secenekler = args.slice(0).join(' ');
 
-	if(secenekler.length < 1) return message.reply(`**${prefix}küfür-engelle aç** veya **${prefix}küfür-engelle kapat** yazınz `);
+	if(secenekler.length < 1) return message.reply(`**t+küfür-engelle aç** veya **t+küfür-engelle kapat** yazınz `);
 	//if(secenekler === "aç" || "kapat") return message.channel.send(errembed);
 
-  if (secenekler !== "aç" && secenekler !== "kapat" && secenekler !== "on" && secenekler !== "off") return message.reply(`**${prefix}küfür-engelle aç** veya **${prefix}küfür-engelle kapat** yazınz `)
+  if (secenekler !== "aç" && secenekler !== "kapat" && secenekler !== "on" && secenekler !== "off") return message.reply(`**t+küfür-engelle aç** veya **t+küfür-engelle kapat** yazınz `)
   
 	if (secenekler === "aç" || secenekler === "on") {
     
