@@ -577,76 +577,103 @@ let rrrsembed = new Discord.RichEmbed()
 //-----------------------Eklendim-Atıldım Son-----------------------\\
 //-----------------------Eklendim-Atıldım Son-----------------------\\
 
-//-----------------------Küfür Engel Link Engel-----------------------\\
-//-----------------------Küfür Engel Link Engel-----------------------\\
-//-----------------------Küfür Engel Link Engel-----------------------\\
-//-----------------------Küfür Engel Link Engel-----------------------\\
+//-----------------------Reklam Engel Link Engel-----------------------\\
+//-----------------------Reklam Engel Link Engel-----------------------\\
+//-----------------------Reklam Engel Link Engell-----------------------\\
+//-----------------------Reklam Engel Link Engel-----------------------\\
 
-client.on("message", async msg => {
-    if(msg.author.bot) return;
-    if(msg.channel.type === "dm") return;
-        
-    let i = await db.fetch(`reklamFiltre_${msg.guild.id}`) 
-          if (i == 'acik') {
-              const reklam = ["discord.app", "discord.gg", "invite","discordapp","discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az",];
-              if (reklam.some(word => msg.content.toLowerCase().includes(word))) {
-                try {
-                  if (!msg.member.hasPermission("ADMINISTRATOR")) {
-                    msg.delete();                   
-                    let embed = new Discord.RichEmbed()
-                    .setColor(0xffa300)
-                    .setFooter('Reklam engellendi.', client.user.avatarURL)
-                    .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("Reklam sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
-                    .addField('Reklamı yapan kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
-                    .addField('Engellenen mesaj', msg.content, true)
-                    .setTimestamp()                   
-                    msg.guild.owner.user.send(embed)                       
-                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Bunu Biliyorsun.`).then(msg => msg.delete(25000));
-                  }             
-                } catch(err) {
-                  console.log(err);
-                }
-              }
-          }
-          if (!i) return;
-  });
-
-client.on("message", async msg => {
-    if(msg.author.bot) return;
-    if(msg.channel.type === "dm") return;
-        
-    let i = await db.fetch(`küfürFiltre_${msg.guild.id}`)  
-          if (i == 'acik') {
-              const küfür = ["amcık","sik","am", "yarrak", "orospu","piç", "sikerim", "sikik", "amına", "pezevenk", "yavşak", "ananı", "anandır", "orospu", "evladı", "göt", "pipi", "sokuk", "yarak", "bacını", "karını",];
-              if (küfür.some(word => msg.content.toLowerCase().includes(word))) {
-                try {
-                  if (!msg.member.hasPermission("MANAGE_WEBHOOKS")) {
-                    msg.delete();                    
-                    let embed = new Discord.RichEmbed()
-                    .setColor(0xffa300)
-                    .setFooter('Küfür Sistemi', client.user.avatarURL)
-                    .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("Bot, " + `***${msg.guild.name}***` + " adlı sunucunuzda küfür yakaladım.")
-                    .addField('Küfür Eden Kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
-                    .addField('Engellenen mesaj', msg.content, true)
-                    .setTimestamp()                   
-                    msg.guild.owner.user.send(embed)                       
-                    return msg.channel.send(`${msg.author}, Küfür Etmek Yasak! Senin Mesajını Özelden Kurucumuza Gönderdim.`).then(msg => msg.delete(25000));
-                  }              
-                } catch(err) {
-                  console.log(err);
-                }
-              }
-          }
-          if (!i) return;
-          });   
+client.on('message', async message => {
+let aktif = await db.fetch(`reklamEngelcodeshare_${message.channel.id}`)
+if (!aktif) return 
+let reklamlar = ["discord.app", "discord.gg" ,"discordapp","discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az", ".cf", ".me", ".in"]
+let kelimeler = message.content.slice(" ").split(/ +/g)
+if (reklamlar.some(word => message.content.toLowerCase().includes(word))) {
+if (message.member.hasPermission("BAN_MEMBERS")) return;
+message.delete()
+message.reply('Reklamları engelliyorum!').then(msg => msg.delete(7000)) 
+}
+});
+//CodeShare
+client.on("messageUpdate", async (oldMsg, newMsg) => {
+let aktif = await db.fetch(`reklamEngelcodeshare_${oldMsg.channel.id}`)
+if(!aktif) return
+let reklamlar = ["discord.app", "discord.gg","discordapp","discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az", ".cf", ".me", ".in"]
+let kelimeler = newMsg.content.slice(" ").split(/ +/g)
+if (reklamlar.some(word => newMsg.content.toLowerCase().includes(word))) {
+if (newMsg.member.hasPermission("BAN_MEMBERS")) return;
+newMsg.delete()
+oldMsg.reply('Reklamları engelliyorum!').then(msg => msg.delete(7000)) 
+}
+});
 
 
-//-----------------------Küfür Engel Link Engel Son-----------------------\\
-//-----------------------Küfür Engel Link Engel Son-----------------------\\
-//-----------------------Küfür Engel Link Engel Son-----------------------\\
-//-----------------------Küfür Engel Link Engel Son-----------------------\\
+//-----------------------Reklam Engel Son-----------------------\\
+//-----------------------Reklam Engel Son-----------------------\\
+//-----------------------Reklam Engel Son-----------------------\\
+//-----------------------Reklam Engel Son-----------------------\\
+
+//----------------------REKLAM BAN SİSTEMİ---------------------\\
+//----------------------REKLAM BAN SİSTEMİ---------------------\\
+//----------------------REKLAM BAN SİSTEMİ---------------------\\
+
+client.on("message", async message => {
+  let kişiuyari = await db.fetch(  `uyarisayisi_${message.author.id}${message.guild.id}`);
+  let sınır = await db.fetch(`reklamsınır_${message.guild.id}`);
+  let reklambanayar = await db.fetch(`reklambanayar_${message.guild.id}`);
+  let kullanici = message.member;
+  const reklambankelimeler = [
+    "discord.app",
+    "discord.gg",
+    "invite",
+    "discordapp",
+    "discordgg"
+  ];
+  if (reklambanayar == "kapali") return;
+  if (reklambanayar == "acik") {
+    if (
+      reklambankelimeler.some(word =>
+        message.content.toLowerCase().includes(word)
+      )
+    ) {
+      if (!message.member.hasPermission("ADMINISTRATOR")) {
+        message.delete();
+        db.add(`uyarisayisi_${message.author.id}${message.guild.id}`, 1);
+        let reklambanuyari = new Discord.RichEmbed()
+          .addField(
+            `Reklam Ban Sistemi Tarafından Discord Reklamı Engellendi :thumbsup:`,
+            `Sunucu Reklamını Atan Kişi: **${message.author.tag}**\nUyarı Sayısı: **${kişiuyari}/${sınır}**`
+          )
+          .setTimestamp()
+          .setFooter(`${client.user.username}`, client.user.avatarURL);
+        message.channel
+          .send(reklambanuyari)
+          .then(message => message.delete(10000));
+        if (kişiuyari == sınır) {
+          message.delete();
+          kullanici.ban({
+            reason: `${client.user.username} Reklam Oto Ban Sistemi`
+          });
+          db.set(`uyarisayisi_${message.author.id}${message.guild.id}`, 1);
+          let yeteramkreklamban = new Discord.RichEmbed()
+            .addField(
+              `Reklam Ban Sistemi Reklam Yapan Kişiyi Banladı :white_check_mark:`,
+              `Reklamdan Banlanan Kişi: **${kullanici}**`
+            )
+            .setTimestamp(new Date())
+            .setFooter(
+              `${client.user.username} Blocker`,
+              client.user.avatarURL
+            );
+          message.channel.send(yeteramkreklamban);
+        }
+      }
+    }
+  }
+});
+
+//------------------REKLAM BAN SİSTEMİ SON---------------------\\
+//------------------REKLAM BAN SİSTEMİ SON---------------------\\
+//------------------REKLAM BAN SİSTEMİ SON---------------------\\
 
 
 //-----------------------Modlog-----------------------\\
