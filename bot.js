@@ -983,7 +983,7 @@ let mesaj = db.fetch(`codemingmesaj_${member.guild.id}`)
 if(!kanal) return
 member.addRole(rol)
   if(!mesaj) {
-  client.channels.get(kanal).send('Otomatik Rol Verildi Seninle Beraber **'+member.guild.memberCount+'** Kişiyiz! Hoşgeldin! **'+member.user.username+'**')
+  client.channels.get(kanal).send('Otomatik Rol Verildi Seninle Beraber **`'+member.guild.memberCount+'`** Kişiyiz! Hoşgeldin! **`'+member.user.username+'`**')
 } else {
   
       var mesajs = mesaj.replace("-uye-", `${member.author.tag}`).replace("-uyetag-", `${member.author.username}`) .replace("-server-", `${member.guild.name}`).replace("-rol-", member.guild.roles.get(db.fetch(`codemingrol_${member.guild.id}`)).name).replace("-onlineuyesayısı-", member.guild.members.filter(s => s.presenceStatus === "online").size).replace("-botsayisi-", member.guild.members.filter(s => s.bot).size) .replace('-kanalsayisi-' ,member.guild.channels.size ).replace("-uyesayisi-", member.guild.memberCount).replace("-bolge-", member.guild.region)
