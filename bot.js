@@ -1092,6 +1092,54 @@ client.on("message", async msg => {
 
 //-------------------KÜFÜR ENGEL SON-----------------------\\
 
-//------------------ROL LİMİT-------------------------
+//------------------ROL LİMİT-------------------------\\
+
+client.on("roleDelete", async(role) => {
+  const guild = role.guild;
+  const entry = await guild.fetchAuditLogs({type: 32}).then(audit => audit.entries.first())
+  let yashinukanallimit = await db.fetch(`rlimit31_${guild.id}`)
+  let yashinukullanıcılimit = await db.fetch(`rlimitP31_${entry.executor.id}`)
+  const log = db.fetch(`korumaLog_${guild.id}`); 
+    if(yashinukanallimit) {
+      if(entry.executor.id !== guild.owner.user.id) {
+        
+        await db.add(`rlimitP31_${entry.executor.id}`, 1)
+        
+        client.channels.get(log).send(`\`${role.name}\` adlı rol ${entry.executor} tarafından silindi!`)
+        
+        if(yashinukullanıcılimit >= yashinukanallimit) {
+                  try {
+            client.channels.get(log).send(`Sunucundan bir yetkili rol limitine ulaştı ve sunucudan atıldı ! İşte bilgileri => \n\n\`Kullanıcı:\`  ${entry.executor} | ${entry.executor.id} \n\`Discord'a ve Sunucuya Katılım Tarihi:\` \n• **Discord:** ${moment(entry.executor.createdAt).format('DD/MM/YYYY | HH:mm:ss')} • **Sunucu:** ${moment(guild.member(entry.executor).joinedAt).format('DD/MM/YYYY | HH:mm:ss')}`)
+            guild.kick(entry.executor.id, "Rol Limit")
+            
+          } catch(err) { }
+          db.delete(`rlimitP31_${entry.executor.id}`)
+        }
+      }
+    }
+  
+})
+
+client.on("roleUpdate", async(oldRole, newRole) => {
+
+  let codeming = await db.fetch(`ceyöneticiengel_${oldRole.guild.id}`)
+  if(!codeming) return
+  if (oldRole.hasPermission("ADMINISTRATOR"))  return
+   if (!oldRole.hasPermission("ADMINISTRATOR")) 
+    if (newRole.hasPermission("ADMINISTRATOR")) {
+      
+      
+   newRole.setPermissions(oldRole.permissions)   
+      
+      
+    } else {
+      return
+    }  
+    
+  
+  
+});
+
+//-----------------------ROL LİMİT SON ------------------------\\
 
 
