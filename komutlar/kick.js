@@ -1,42 +1,25 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
+
 exports.run = (client, message, args) => {
-  if (!message.guild) {
-  const ozelmesajuyari = new Discord.RichEmbed()
-  .setColor(0xFF0000)
-  .setTimestamp()
-  .setAuthor(message.author.username, message.author.avatarURL)
-  .addField(':warning: Uyarı :warning:', '`kick` adlı komutu özel mesajlarda kullanamazsın.')
-  return message.author.sendEmbed(ozelmesajuyari); }
-  let guild = message.guild
-  let reason = args.slice(1).join(' ');
-  let user = message.mentions.users.first();
-  let modlog = guild.channels.find('name', '「📁」mod-log');
-  if (!modlog) return message.reply(':warning: **Uyarı** :warning:', '`mod-log` **adlı Kanal Bulunamadı!**');
-  if (reason.length < 1) return message.reply('Sunucudan atma sebebini yazmalısın.');
-  if (message.mentions.users.size < 1) return message.reply('Kimi sunucudan atacağını yazmalısın.').catch(console.error);
+if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Yeterli yetkin yok!")
+  let codework = message.mentions.users.first();
 
-  if (!message.guild.member(user).kickable) return message.reply('Yetkilileri sunucudan atamam.');
-  message.guild.member(user).kick();
-
-  const embed = new Discord.RichEmbed()
-    .setColor(0x00AE86)
-    .setTimestamp()
-    .addField('Eylem:', 'Sunucudan atma :bangbang: ')
-    .addField('Atılan Kullanıcı:', `${user.username}#${user.discriminator} (${user.id})`)
-    .addField('Atan Yetkili:', `${message.author.username}#${message.author.discriminator}`)
-    .addField('Atma Sebebi: ', reason);
-  return guild.channels.get(modlog.id).sendEmbed(embed);
-};
-
+  if(!codework) return message.channel.send("Kimi sunucudan atacağımı belirtmedin")
+  
+  message.guild.kick(codework);
+  
+  
+  message.channel.send(`${codework} adlı üyeyi sunucudan attım.`)
+}
 exports.conf = {
   enabled: true,
-  guildOnly: true,
-  aliases: ['at'],
-  permLevel: 2
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0  
 };
 
 exports.help = {
   name: 'kick',
-  description: 'İstediğiniz kişiyi sunucudan atar.',
-  usage: 'kick [kullanıcı] [sebep]'
-};
+  description: 'Kişiyi sunucudan atar.',
+  usage: 'kick @kullanıcı'
+}

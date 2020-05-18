@@ -41,7 +41,7 @@ exports.run = (client, message, args, member ) => {
   
   message.guild.unban(user);
   const embed = new Discord.RichEmbed()
-    .setColor(0x00AE86)
+    .setColor('#ff0009')
     .setTimestamp()
     .setDescription('**Bir Kullanıcının Yasağı Kaldırıldı** <a:redalert:649006788850614302>')
     .addField('Yasağı Kaldırılan Kullanıcı:', `<@!${user}>`,true)

@@ -54,9 +54,8 @@ exports.run = (client, message, args, ) => {
   message.guild.ban(user, 2);
 
   const embed = new Discord.RichEmbed()
-    .setColor(0x00AE86)
+    .setColor('#ff0009')
     .setTimestamp()
-    
     .setDescription('**Bir Kullanıcı Sunucudan Yasaklandı** <a:banned:711992683727552574>')
     .setThumbnail('https://cdn.discordapp.com/emojis/649384898003599370.png?v=1',true)
     .addField('Yasaklanan Kullanıcı:', `<@!${user.id}>`,true)
