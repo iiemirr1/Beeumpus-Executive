@@ -1,25 +1,61 @@
 const Discord = require("discord.js");
+const db = require("quick.db");
+module.exports.run = async (bot, message, args) => {
+  let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "t+";
+  if (!message.member.hasPermission("KICK_MEMBERS")) {
+    const embed = new Discord.RichEmbed()
+      .setDescription("**Ne yazık ki bu komutu kullanmaya yetkin yok.**")
+      .setColor("BLACK");
 
-exports.run = (client, message, args) => {
-if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Yeterli yetkin yok!")
-  let codework = message.mentions.users.first();
+    message.channel.send(embed);
+    return;
+  }
 
-  if(!codework) return message.channel.send("Kimi sunucudan atacağımı belirtmedin")
-  
-  message.guild.kick(codework);
-  
-  
-  message.channel.send(`${codework} adlı üyeyi sunucudan attım.`)
-}
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: 0  
+  let u = message.mentions.users.first();
+  if (!u) {
+    return message.channel.send(
+      new Discord.RichEmbed()
+        .setDescription("Lütfen atılacak kişiyi etiketleyiniz!")
+        .setColor("BLACK")
+        .setFooter(bot.user.username, bot.user.avatarURL)
+    );
+  }
+
+  const embed = new Discord.RichEmbed()
+    .setColor("BLACK")
+    .setDescription(`:unlem: ${u} **Adlı şahsın sunucudan atılmasını onaylıyor musunuz?**`)
+    .setFooter(bot.user.username, bot.user.avatarURL);
+  message.channel.send(embed).then(async function(sentEmbed) {
+    const emojiArray = ["✅"];
+    const filter = (reaction, user) =>
+      emojiArray.includes(reaction.emoji.name) && user.id === message.author.id;
+    await sentEmbed.react(emojiArray[0]).catch(function() {});
+    var reactions = sentEmbed.createReactionCollector(filter, {
+      time: 30000
+    });
+    reactions.on("end", () => sentEmbed.edit(`:unlem: **İşlem iptal oldu!**`));
+    reactions.on("collect", async function(reaction) {
+      if (reaction.emoji.name === "✅") {
+        message.channel.send(
+          `<a:okey:711999433486893058> **İşlem onaylandı!** ${u} **adlı şahıs sunucudan atıldı!**`
+        );
+
+        message.guild.member(u).kick();
+      }
+    });
+  });
 };
 
-exports.help = {
-  name: 'kick',
-  description: 'Kişiyi sunucudan atar.',
-  usage: 'kick @kullanıcı'
-}
+module.exports.conf = {
+  aliases: [],
+  permLevel: 2,
+  enabled: true,
+  guildOnly: true,
+  kategori: "moderasyon"
+};
+
+module.exports.help = {
+  name: "kick",
+  description: "kick",
+  usage: "kick"
+};

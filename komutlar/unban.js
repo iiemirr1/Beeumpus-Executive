@@ -43,7 +43,7 @@ exports.run = (client, message, args, member ) => {
   const embed = new Discord.RichEmbed()
     .setColor('#ff0009')
     .setTimestamp()
-    .setDescription('**Bir Kullanıcının Yasağı Kaldırıldı** <a:redalert:649006788850614302>')
+    .setDescription('**Bir Kullanıcının Yasağı Kaldırıldı** <a:okey:711999433486893058>')
     .addField('Yasağı Kaldırılan Kullanıcı:', `<@!${user}>`,true)
     .addField('Yasağı Kaldıran Yetkili:', `<@!${message.author.id}>`,true)
     .addField('Yasağı Kaldırma Sebebi:', reason,false)
