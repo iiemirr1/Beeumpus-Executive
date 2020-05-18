@@ -1,44 +1,81 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, ) => {
   if (!message.guild) {
+     if (!message.member.hasPermission("BAN_MEMBERS")) 
+{
+    const prmlv = new Discord.RichEmbed()
+    .setColor('BLACK')
+    .setDescription('**:warning: Bunu yapabilmek için gerekli yetkiye sahip değilsiniz! :warning:**')
+   .setTimestamp() 
+    .setFooter(`TitanX Ban Sistemi`)
+   return message.channel.send(prmlv)
+  } 
   const ozelmesajuyari = new Discord.RichEmbed()
-  .setColor(0xFF0000)
+  .setColor('BLACK')
   .setTimestamp()
   .setAuthor(message.author.username, message.author.avatarURL)
-  .addField(':warning: Uyarı :warning:', '`ban` adlı komutu özel mesajlarda kullanamazsın.')
+  .addField(':warning: Uyarı', '`ban`özel mesajlarda kullanılamaz.')
   return message.author.sendEmbed(ozelmesajuyari); }
   let guild = message.guild
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
-  let modlog = guild.channels.find('name', '「📁」mod-log');
-  if (!modlog) return message.reply('`mod-log` kanalını bulamıyorum.');
-  if (reason.length < 1) return message.reply('Ban sebebini yazmalısın.');
-  if (message.mentions.users.size < 1) return message.reply('Kimi banlayacağını yazmalısın.').catch(console.error);
+   
+  if (message.mentions.users.size < 1) 
+   {
+    const ment = new Discord.RichEmbed()
+    .setColor('GREEN')
+    .setDescription('**Banlanacak kişiyi etiketlemedin!**\n Doğru kullanım:`+ban kullanıcı sebep`')
+   .setTimestamp() 
+    .setFooter(`TitanX Ban Sistemi`)
+   return message.channel.send(ment).catch(console.error);
+  }
+  if (reason.length < 1) 
+  
 
-  if (!message.guild.member(user).bannable) return message.reply('Yetkilileri banlayamam.');
+   {
+    const reas = new Discord.RichEmbed()
+    .setColor('GREEN')
+    .setDescription('**Ban sebebini belirtmedin!**')
+   .setTimestamp()
+    .setFooter(`TitanX Ban Sistemi`)
+   return message.channel.send(reas)
+  }
+
+  if (!message.guild.member(user).bannable) 
+  {
+    const ytk = new Discord.RichEmbed()
+    .setColor('BLUE')
+    .setDescription('**Banlanacak kişinin yetkisi benden yüksek!**')
+   .setTimestamp() 
+    .setFooter(`TitanX Ban Sistemi`)
+   return message.channel.send(ytk)
+  }
   message.guild.ban(user, 2);
 
   const embed = new Discord.RichEmbed()
     .setColor(0x00AE86)
     .setTimestamp()
-    .addField('Eylem:', 'Ban')
-    .addField('Kullanıcı:', `${user.username}#${user.discriminator} (${user.id})`)
-    .addField('Yetkili:', `${message.author.username}#${message.author.discriminator}`)
-    .addField('Sebep', reason);
-  return guild.channels.get(modlog.id).sendEmbed(embed);
+    
+    .setDescription('<a:redalert:649006788850614302> **Sunucudan Yasaklama** <a:redalert:649006788850614302>')
+    .setThumbnail('https://cdn.discordapp.com/emojis/649384898003599370.png?v=1',true)
+    .addField('Yasaklanan Kullanıcı:', `<@!${user.id}>`,true)
+    .addField('Yasaklayan Yetkili:', `<@!${message.author.id}>`,true)
+    .addField('Yasaklama Sebebi:', reason,false)
+  .setFooter(`TitanX Ban Sistemi`);
+   
+    message.channel.send(embed)
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: [],
-  permLevel: 2
+  permLevel: 0
 };
 
 exports.help = {
   name: 'ban',
-  description: 'İstediğiniz kişiyi banlar.',
+  description: 'İstediğiniz kişiyi sunucudan yasaklar.',
   usage: 'ban [kullanıcı] [sebep]'
 };
