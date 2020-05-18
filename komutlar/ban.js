@@ -57,7 +57,7 @@ exports.run = (client, message, args, ) => {
     .setColor(0x00AE86)
     .setTimestamp()
     
-    .setDescription('<a:redalert:649006788850614302> **Sunucudan Yasaklama** <a:redalert:649006788850614302>')
+    .setDescription('**Bir Kullanıcı Sunucudan Yasaklandı** <a:banned:711992683727552574>')
     .setThumbnail('https://cdn.discordapp.com/emojis/649384898003599370.png?v=1',true)
     .addField('Yasaklanan Kullanıcı:', `<@!${user.id}>`,true)
     .addField('Yasaklayan Yetkili:', `<@!${message.author.id}>`,true)
