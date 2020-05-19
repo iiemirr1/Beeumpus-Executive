@@ -1162,37 +1162,3 @@ client.on('message', message => {
     })})})})
 
 //----------------Self bot koruma son----------------\\
-
-//-----------------GOLD ÜYE---------------\\
-
-client.on("message", async msg => {
-const request = require('node-superfetch');
-const db = require('quick.db');
-const ms2 = require('parse-ms')
-let timeout = 600000 //süresini dilediğiniz gibi kısaltabilirsiniz.
-let dakdest = 1
-let i = db.fetch(`üyelikk_${msg.author.id}`)
-          if (db.has(`üyelikk_${msg.author.id}`) == true) {
-    if (dakdest !== null && timeout - (Date.now() - dakdest) > 0) {
-        let time = ms2(timeout - (Date.now() - dakdest));
-    } else {
-  if(msg.author.bot) return;   
-  if (msg.content.length > 64) {
-  var embed = new Discord.RichEmbed()
-  .setAuthor(`Vortex`,`${msg.author.avatarURL || msg.author.displayAvatarURL}`)
-  .setDescription(`${client.emojis.get("672906896893673556")} Hizzaya Geçin! Burada Bir Gold Üye Belirdi! <@${msg.author.id}>`)
-  .setColor("BLUE")
-  msg.channel.send(embed).then(message => {
-    message.delete(4000)
-  })
-
-  }
-};
-          }
-   else if (i == undefined) {           
-          }
-          if (!i) return;
-        
-});
-
-//------------------GOLD ÜYE SON-----------------\\
