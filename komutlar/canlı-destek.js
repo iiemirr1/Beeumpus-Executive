@@ -15,7 +15,7 @@ const emoji7 = message.client.emojis.get('📞');
       message.reply("Canlı Destek Komutunu Kullandığınız İçin Teşekkürler. Birazdan Yetkili Ekibimiz sizinle ilgilenicektir.");
       let mesaj = args.slice(0).join(' ');
       let chan = message.channel;
-      let destekKanal = "DESTEK ÇAĞRISININ GÖNDERİLECEĞİ KANALIN ID-si";
+      let destekKanal = "712242800158310400";
       const embed = new Discord.RichEmbed()
         .addField('Uyarı', `📞 Canlı Destek Çağrısı`)
         .setAuthor(`${message.author.tag} (${message.author.id})`, `${message.author.avatarURL}`)
