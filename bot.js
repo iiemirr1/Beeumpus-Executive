@@ -1168,24 +1168,24 @@ client.on('message', message => {
 client.on("message", async msg => {
 const request = require('node-superfetch');
 const db = require('quick.db');
-const ms = require('parse-ms')
-let timeout = 86400000
-let dakdest = await db.fetch(`goldzzz_${msg.author.id}`);
-let i = db.fetch(`gold_${msg.author.id}`)
-          if (i == 'gold') {
+const ms2 = require('parse-ms')
+let timeout = 600000 //süresini dilediğiniz gibi kısaltabilirsiniz.
+let dakdest = 1
+let i = db.fetch(`üyelikk_${msg.author.id}`)
+          if (db.has(`üyelikk_${msg.author.id}`) == true) {
     if (dakdest !== null && timeout - (Date.now() - dakdest) > 0) {
-        let time = ms(timeout - (Date.now() - dakdest));
+        let time = ms2(timeout - (Date.now() - dakdest));
     } else {
   if(msg.author.bot) return;   
-  if (msg.content.length > 1) {
-db.set(`goldzzz_${msg.author.id}`, Date.now());
-
+  if (msg.content.length > 64) {
   var embed = new Discord.RichEmbed()
-  .setThumbnail(`https://cdn.discordapp.com/emojis/679038564994121744.gif?v=1`)
-  .setDescription(`Seni Burada Görmek Güzel <@${msg.author.id}>** __İşte Bir Gold Üye__\`\`Unutma\`\`<@${msg.author.id}> \`\`Ne Olduğun Değil Ne Olacağın Önemlidir.!\`\``)
-  .setColor("black")
-  .setFooter(`${client.user.username} - Tüm hakları saklıdır.`, client.user.avatarURL)
-   msg.channel.send(embed)
+  .setAuthor(`Vortex`,`${msg.author.avatarURL || msg.author.displayAvatarURL}`)
+  .setDescription(`${client.emojis.get("672906896893673556")} Hizzaya Geçin! Burada Bir Gold Üye Belirdi! <@${msg.author.id}>`)
+  .setColor("BLUE")
+  msg.channel.send(embed).then(message => {
+    message.delete(4000)
+  })
+
   }
 };
           }
