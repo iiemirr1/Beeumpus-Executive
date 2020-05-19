@@ -1109,3 +1109,18 @@ client.channels.get(codeming).send(reel)
 });
 
 //-------------------Kayıt Sistemi Son----------------\\
+
+//------------------OTOTAG SİSTEMİ--------------------\\
+
+client.on("guildMemberAdd", async member => {
+let frenzy_ibrahim = await db.fetch(`Frenzy?Code?Ototag_${member.guild.id}`) 
+let frenzykanal = await db.fetch(`Frenzy?Code?OtotagKanal_${member.guild.id}`)
+if(!frenzy_ibrahim || !frenzykanal) return
+ 
+ member.setNickname(`${frenzy_ibrahim} ${member.user.username}`) 
+client.channels.get(frenzykanal).send(`Hoşgeldin ${member.user.username}!\n`)
+ 
+});
+
+
+//------------OTOTAG SİSTEMİ SON-----------------\\

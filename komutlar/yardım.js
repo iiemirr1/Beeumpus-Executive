@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
       .addField('** Yetkili [13]**', '`terfi`, `ban`,`unban`,`kick`, `emojiler`, `dm-hg`, `yaz`, `sil`, `ping`, `rol-bilgi`, `oylama`, `hatırlat`,`süreliban`,`temizle-üye`,`çekiliş`')
       .addField('** Sunucu [15]**', '`küfür-engelle`, `otorol-ayarla`, `otorolkapat`, `otorol-mesajı`, `reklam-engel`, `reklamban`, `reklambankapat`, `reklam-taraması`, `kayıt-sistemi`, `sayaç`, `güvenlik`,`rolkoruma`,`capsengel`,`sa-as`,`modlog`')
       .addField('** Kullanıcı [11]**', '`avatar`, `sunucubilgi`, `ping`, `havadurumu`,`top5`,`yasaklar`,`üyedurum`,`döviz`,`değişiklikler`,`saat`,`youtube`,`servericon`,`say`,`hesapla`,`korona`,`kısalt`,`canlıdestek`')
-    .setFooter(``, client.user.avatarURL)
+      .setThumbnail(`https://cdn.discordapp.com/attachments/704396564227031130/710399250021744660/image0-1.gif`)
     .setTimestamp()
     message.channel.send(juke).catch()
 
