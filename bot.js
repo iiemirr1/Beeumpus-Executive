@@ -1109,3 +1109,303 @@ client.channels.get(codeming).send(reel)
 });
 
 //-------------------Kayıt Sistemi Son----------------\\
+
+//------------------Tarihli Gelen Giden-----------------\\
+
+client.on("guildMemberAdd", member => {
+  //if (member.author.bot) return;
+
+  // if (!logA[member.guild.id]) return;
+
+  var user = member.user;
+  var tarih = "";
+  if (moment(user.createdAt).format("MM") === "01") {
+    var tarih = `${moment(user.createdAt).format("DD")} Ocak ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "02") {
+    var tarih = `${moment(user.createdAt).format("DD")} Şubat ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "03") {
+    var tarih = `${moment(user.createdAt).format("DD")} Mart ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "04") {
+    var tarih = `${moment(user.createdAt).format("DD")} Nisan ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "05") {
+    var tarih = `${moment(user.createdAt).format("DD")} Mayıs ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "06") {
+    var tarih = `${moment(user.createdAt).format("DD")} Haziran ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "07") {
+    var tarih = `${moment(user.createdAt).format("DD")} Temmuz ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "08") {
+    var tarih = `${moment(user.createdAt).format("DD")} Ağustos ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "09") {
+    var tarih = `${moment(user.createdAt).format("DD")} Eylül ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "10") {
+    var tarih = `${moment(user.createdAt).format("DD")} Ekim ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "11") {
+    var tarih = `${moment(user.createdAt).format("DD")} Kasım ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "12") {
+    var tarih = `${moment(user.createdAt).format("DD")} Aralık ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+
+  var tarih2 = "";
+  if (moment(user.joinedAt).format("MM") === "01") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Ocak ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "02") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Şubat ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "03") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Mart ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "04") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Nisan ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "05") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Mayıs ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "06") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Haziran ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "07") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Temmuz ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "08") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Ağustos ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "09") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Eylül ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "10") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Ekim ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "11") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Kasım ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "12") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Aralık ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+
+  //var kanal = member.guild.channels.get(logA[member.guild.id].log);
+
+  if (db.has(`log_${member.guild.id}`) === false) return;
+
+  var kanal = member.guild.channels.get(db.fetch(`log_${member.guild.id}`));
+  if (!kanal) return;
+
+  const embed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setAuthor(`Sunucuya Bir Kullanıcı Katıldı!`, member.user.avatarURL)
+    .addField("Kullanıcı Tag", member.user.tag, true)
+    .addField("ID", member.user.id, true)
+    .addField("Discord Kayıt Tarihi", tarih, true)
+    .addField("Sunucuya Katıldığı Tarih", tarih2, true)
+    .setThumbnail(member.user.avatarURL);
+  kanal.send(embed);
+});
+
+client.on("guildMemberRemove", member => {
+  //if (member.author.bot) return;
+
+  // if (!logA[member.guild.id]) return;
+
+  var user = member.user;
+  var tarih = "";
+  if (moment(user.createdAt).format("MM") === "01") {
+    var tarih = `${moment(user.createdAt).format("DD")} Ocak ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "02") {
+    var tarih = `${moment(user.createdAt).format("DD")} Şubat ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "03") {
+    var tarih = `${moment(user.createdAt).format("DD")} Mart ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "04") {
+    var tarih = `${moment(user.createdAt).format("DD")} Nisan ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "05") {
+    var tarih = `${moment(user.createdAt).format("DD")} Mayıs ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "06") {
+    var tarih = `${moment(user.createdAt).format("DD")} Haziran ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "07") {
+    var tarih = `${moment(user.createdAt).format("DD")} Temmuz ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "08") {
+    var tarih = `${moment(user.createdAt).format("DD")} Ağustos ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "09") {
+    var tarih = `${moment(user.createdAt).format("DD")} Eylül ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "10") {
+    var tarih = `${moment(user.createdAt).format("DD")} Ekim ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "11") {
+    var tarih = `${moment(user.createdAt).format("DD")} Kasım ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.createdAt).format("MM") === "12") {
+    var tarih = `${moment(user.createdAt).format("DD")} Aralık ${moment(
+      user.createdAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+
+  var tarih2 = "";
+  if (moment(user.joinedAt).format("MM") === "01") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Ocak ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "02") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Şubat ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "03") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Mart ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "04") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Nisan ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "05") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Mayıs ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "06") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Haziran ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "07") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Temmuz ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "08") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Ağustos ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "09") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Eylül ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "10") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Ekim ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "11") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Kasım ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+  if (moment(user.joinedAt).format("MM") === "12") {
+    var tarih2 = `${moment(user.joinedAt).format("DD")} Aralık ${moment(
+      user.joinedAt
+    ).format("YYYY HH:mm:ss")} `;
+  }
+
+  //var kanal = member.guild.channels.get(logA[member.guild.id].log);
+
+  if (db.has(`log_${member.guild.id}`) === false) return;
+
+  var kanal = member.guild.channels.get(db.fetch(`log_${member.guild.id}`));
+  if (!kanal) return;
+
+  const embed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setAuthor(`Sunucudan Bir Kullanıcı Ayrıldı!`, member.user.avatarURL)
+    .addField("Kullanıcı Tag", member.user.tag, true)
+    .addField("ID", member.user.id, true)
+    .addField("Discord Kayıt Tarihi", tarih, true)
+    .addField("Sunucuya Katıldığı Tarih", tarih2, true)
+    .setThumbnail(member.user.avatarURL);
+  kanal.send(embed);
+});
+
+//-----------Tarihli Gelen Giden Son-------------------\\
