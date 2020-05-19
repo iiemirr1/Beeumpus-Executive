@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
 const ayarlar = require('../ayarlar.json');
-const emojiler = require('../emojiler.json')
 exports.run = async (client, message, args) => { 
   // geldik ayvayı yediğimişz bölüme
  // mrb bi arka bakip cikcaktm 

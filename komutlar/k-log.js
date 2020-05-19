@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
 const ayarlar = require('../ayarlar.json');
-const emojiler = require('../emojiler.json')
 exports.run = (client, message, args) => { //<3
 // mete işin bittiyse kayıt sisteminin yardım menüsünü yazabilir misin?   yazarim tabii ki
    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(` Bu işlemi yapabilmek için yönetici yetkisine sahip olmalısın. `)
