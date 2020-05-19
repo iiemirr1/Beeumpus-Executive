@@ -17,8 +17,8 @@ module.exports.run = async (client, message, args) => {
     .setColor("BLACK")
     .setTitle('||@everyone|| ||@here||')
     .addField('Heey , Oylamaya Katılmayı Unutma!',`**${yazi}**`)
-    .setThumbnail(`https://cdn.discordapp.com/avatars/708311518017486848/bcbde67c60e6ea07d9a1ebbc6e60958c.png?size=2048`)
     .setAuthor(`TitanX Oylama Sistemi`)
+    .setThumbnail(`https://cdn.discordapp.com/attachments/704396564227031130/710399172108615730/bilinmeyen-1.gif`)
     .setTimestamp()
      sea.send('',{embed: embed}).then(m => {
    let re = m.react('✅');
