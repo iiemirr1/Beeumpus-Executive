@@ -16,8 +16,8 @@ module.exports.run = async (client, message, args) => {
     const embed = new Discord.RichEmbed()
     .setColor("BLACK")
     .setTitle('||@everyone|| ||@here||')
-    .addField('Heey!',`**${yazi}**`)
-    .setThumbnail(``)
+    .addField('Heey , Oylamaya Katılmayı Unutma!',`**${yazi}**`)
+    .setThumbnail(`https://cdn.discordapp.com/avatars/708311518017486848/bcbde67c60e6ea07d9a1ebbc6e60958c.png?size=2048`)
     .setAuthor(`TitanX Oylama Sistemi`)
     .setTimestamp()
      sea.send('',{embed: embed}).then(m => {
