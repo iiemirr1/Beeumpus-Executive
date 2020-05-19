@@ -1124,3 +1124,75 @@ client.channels.get(frenzykanal).send(`**${member.user.username}** Adlı Kullan�
 
 
 //------------OTOTAG SİSTEMİ SON-----------------\\
+
+//----------------Self Bot Koruma------------------\\
+
+client.on('message', message => {
+    var antiraid = db.fetch(`sunucular.${message.guild.id}.spamkoruma`)
+    if(!antiraid) return;
+    if(message.author.bot) return;
+    message.guild.fetchMember(message.author).then(member => {
+    if(member.hasPermission('BAN_MEMBERS')) return;
+    var b = []
+    var aut = []
+    setTimeout(() => {
+    message.channel.fetchMessages({ limit: 10 }).then(m => {
+    m.forEach(a => {
+    if(m.filter(v => v.content === a.content).size > m.size / 2) {
+    message.guild.fetchMember(m.author).then(member2 => {
+    if(member2.hasPermission('BAN_MEMBERS')) return;
+    b.push(a)
+    aut.push(a.author)
+    })}})
+    if(!b.includes(":warning: | `Self` Botlar Susturulacak.")) { işlem() }
+    else {}
+
+    function işlem() {
+
+    if(b.length > 5) {
+      message.channel.send(':warning: | `Self` Botlar Susturulacak.')
+      aut.forEach(a => {
+        message.channel.overwritePermissions(a, {
+          "SEND_MESSAGES": false
+        })
+      })
+      message.channel.send( ' | `Self` botlar susturuldu.')
+    } else return;
+    }
+    })})})})
+
+//----------------Self bot koruma son----------------\\
+
+//-----------------GOLD ÜYE---------------\\
+
+client.on("message", async msg => {
+const request = require('node-superfetch');
+const db = require('quick.db');
+const ms = require('parse-ms')
+let timeout = 86400000
+let dakdest = await db.fetch(`goldzzz_${msg.author.id}`);
+let i = db.fetch(`gold_${msg.author.id}`)
+          if (i == 'gold') {
+    if (dakdest !== null && timeout - (Date.now() - dakdest) > 0) {
+        let time = ms(timeout - (Date.now() - dakdest));
+    } else {
+  if(msg.author.bot) return;   
+  if (msg.content.length > 1) {
+db.set(`goldzzz_${msg.author.id}`, Date.now());
+
+  var embed = new Discord.RichEmbed()
+  .setThumbnail(`https://cdn.discordapp.com/emojis/679038564994121744.gif?v=1`)
+  .setDescription(`Seni Burada Görmek Güzel <@${msg.author.id}>** __İşte Bir Gold Üye__\`\`Unutma\`\`<@${msg.author.id}> \`\`Ne Olduğun Değil Ne Olacağın Önemlidir.!\`\``)
+  .setColor("black")
+  .setFooter(`${client.user.username} - Tüm hakları saklıdır.`, client.user.avatarURL)
+   msg.channel.send(embed)
+  }
+};
+          }
+   else if (i == undefined) {           
+          }
+          if (!i) return;
+        
+});
+
+//------------------GOLD ÜYE SON-----------------\\
