@@ -1117,8 +1117,8 @@ let frenzy_ibrahim = await db.fetch(`Frenzy?Code?Ototag_${member.guild.id}`)
 let frenzykanal = await db.fetch(`Frenzy?Code?OtotagKanal_${member.guild.id}`)
 if(!frenzy_ibrahim || !frenzykanal) return
  
- member.setNickname(`${frenzy_ibrahim} ${member.user.username}`) 
-client.channels.get(frenzykanal).send(`Hoşgeldin ${member.user.username}!\n`)
+ member.setNickname(`${frenzy_ibrahim} ${member.user.username}`)
+client.channels.get(frenzykanal).send(`Hoşgeldin **${member.user.username}**!\n<a:tik:712366677194702979> | Otomatik Tag Verildi.`)
  
 });
 
