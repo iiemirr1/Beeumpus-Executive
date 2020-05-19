@@ -1091,3 +1091,21 @@ client.on("message", async msg => {
 });
 
 //-------------------KÜFÜR ENGEL SON-----------------------\\
+
+//-------------------Kayıt Sistemi--------------------\\
+
+client.on("guildMemberAdd", async member => {
+  
+  let codeming = await db.fetch(`codemingkkanal_${member.guild.id}`)
+    let msg =  await db.fetch(`codeminghgmsj_${member.guild.id}`)
+
+  if(!codeming) return
+  if(!msg) return
+  
+  let reel = msg.replace("-uye-", "<@!"+member.id+'>')
+
+client.channels.get(codeming).send(reel) 
+
+});
+
+//-------------------Kayıt Sistemi Son----------------\\
