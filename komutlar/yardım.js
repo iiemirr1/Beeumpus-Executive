@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
     .setAuthor(`TitanX`, client.user.avatarURL) 
       .setDescription('Prefix : **t+** , Dil : **Türkçe**')
 .setThumbnail(client.user.avatarURL)
-      .addField('** Yetkili [13]**', '`terfi`, `ban`,`unban`,`kick`, `emojiler`, `yaz`, `sil`, `ping`, `rol-bilgi`, `oylama`, `hatırlat`,`süreliban`,`temizle-üye`,`çekiliş`,`kanalkilit`')
+      .addField('** Yetkili [13]**', '`terfi`, `ban`,`unban`,`kick`, `emojiler`, `yaz`, `sil`, `ping`, `rol-bilgi`, `oylama`, `hatırlat`,`süreliban`,`temizle-üye`,`çekiliş`,`kanalkilit`,`rolal`,`rolver`')
       .addField('** Sunucu [15]**', '`küfür-engelle`, `otorol-ayarla`, `otorolkapat`, `otorol-mesajı`, `reklam-engel`, `reklamban`, `reklambankapat`, `reklam-taraması`, `kayıt-sistemi`, `sayaç`, `capsengel`,`sa-as`,`modlog`,`ototag`,``dm-hg``')
       .addField('** Kullanıcı [11]**', '`avatar`, `sunucubilgi`, `ping`, `havadurumu`,`top5`,`yasaklar`,`üyedurum`,`döviz`,`değişiklikler`,`saat`,`youtube`,`servericon`,`say`,`hesapla`,`korona`,`kısalt`,`canlıdestek`')
       .addField('** Sunucu Koruma [11]**', '`rolkoruma`, `güvenlik`,`self-koruma`')
