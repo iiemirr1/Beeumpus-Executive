@@ -1184,3 +1184,17 @@ if(client.ping > 2500) {
 }});
 
 //DDOS KORUMA SON
+
+//BOT KORUMA
+
+client.on("guildMemberAdd", async member => {
+if (db.has(`botkoruma_${member.guild.id}`) === false) return;
+if (member.user.bot === false) return;
+if (db.has(`botİzinli_${member.id}`) === true) return;
+
+member.kick(member, `Bot koruması aktif!`)
+
+member.guild.owner.send(`Sunucunuza bir bot eklendi ve sunucudan otomatik olarak atıldı, sunucuya eklenmesini onaylıyor iseniz \`t+giriş-izni ${member.id}\``)
+})
+
+//BOT KORUMA SON
