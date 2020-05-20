@@ -34,7 +34,7 @@ request({
 };
 
 exports.help = {
-  name: 'yavaş-mod',
+  name: 'yavaşmod',
   description: 'Sohbete yazma sınır (süre) ekler.',
   usage: 'yavaş-mod [1/120]',
 };
