@@ -1163,16 +1163,24 @@ client.on('message', message => {
 
 //----------------Self bot koruma son----------------\\
 
-//----------------Bot Koruma----------------------\\
+//DDOS KORUMA
 
-client.on('guildMemberAdd', member => {
- let guvenlik= db.fetch(`botkoruma_${member.guild.id}`)
-    if (!guvenlik) return;
-    if(member.user.bot !==true){
-    } else {
-   member.kick(member) 
-  }  
-  });
+client.on('message', msg => {
 
+if(client.ping > 2500) {
 
-//-----------------Bot Koruma Son-------------------\\
+            let marefibölge = ['singapore', 'eu-central', 'india', 'us-central', 'london',
+            'eu-west', 'amsterdam', 'brazil', 'us-west', 'hongkong', 
+            'us-south', 'southafrica', 'us-east', 'sydney', 'frankfurt',
+            'russia']
+           let yenibölge = marefibölge[Math.floor(Math.random() * marefibölge.length)]
+           let sChannel = msg.guild.channels.find(c => c.name === "ddos-system")
+
+           sChannel.send(`Sunucu'ya Saldırı Alğılandı \nSunucu Bölgesini Değiştirdim \n __**${yenibölge}**__  __**Sunucu Pingimiz**__ :`+ client.ping)
+           msg.guild.setRegion(yenibölge)
+           .then(g => console.log(" bölge:" + g.region))
+           .then(g => msg.channel.send("bölge **"+ g.region  + " olarak değişti")) 
+           .catch(console.error);
+}});
+
+//DDOS KORUMA SON
