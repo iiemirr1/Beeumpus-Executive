@@ -1162,3 +1162,17 @@ client.on('message', message => {
     })})})})
 
 //----------------Self bot koruma son----------------\\
+
+//----------------Bot Koruma----------------------\\
+
+client.on('guildMemberAdd', member => {
+ let guvenlik= db.fetch(`botkoruma_${member.guild.id}`)
+    if (!guvenlik) return;
+    if(member.user.bot !==true){
+    } else {
+   member.kick(member) 
+  }  
+  });
+
+
+//-----------------Bot Koruma Son-------------------\\
