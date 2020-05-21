@@ -1,9 +1,7 @@
 const Discord = require("discord.js");
 const fs = require('fs');
 exports.run = (client, msg, args) => {
-   if(!msg.member.roles.has("691577676598738985")) {
-    msg.reply("Bu komutu sadece belirlenen rol kullanabilir güzel kardeşim (YETKİN YOK MK APTALI)")
-  } else {
+    if (!message.member.hasPermission("PERMN")) return message.channel.send('bu komudu kullana bilmek için PERM yetkisine sahip olmalısınız');
     if(!args[0]) {
       msg.reply("lütfen `aç` veya `kapat` şeklinde bir ayar giriniz.")
     } else {
@@ -49,6 +47,6 @@ exports.conf = {
 };
 exports.help = {
   name: "ever-engel",
-  description: "",
-  usage: "ever-engel"
+  description: "Everyone Engellemeyi Açar.",
+  usage: "ever-engel aç/kapat"
 };

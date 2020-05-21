@@ -1431,3 +1431,39 @@ client.on('guildMemberAdd', member => {
   });
 
 //ANTİ RAİD SİSTEMİ SON
+
+//EVERYONE ENGEL
+
+let ehengel = JSON.parse(
+  fs.readFileSync("./ayarlar/everhereengel.json", "utf8")
+);
+client.on("message", async function(msg) {
+  if (!msg.guild) {
+  } else {
+    if (!ehengel[msg.guild.id]) {
+    } else {
+      if (ehengel[msg.guild.id].sistem == false) {
+      } else if (ehengel[msg.guild.id].sistem == true) {
+        if (msg.author.id == msg.guild.ownerID) {
+        } else {
+          if (msg.content.includes("@everyone")) {
+            msg.delete();
+            msg
+              .reply("maalesef `everyone` atmana izin veremem!")
+              .then(msj => msj.delete(3200));
+          } else {
+          }
+          if (msg.content.includes("@here")) {
+            msg.delete();
+            msg
+              .reply("maalesef `here` atmana izin veremem!")
+              .then(msj => msj.delete(3200));
+          } else {
+          }
+        }
+      }
+    }
+  }
+});
+
+//EVERYONE ENGEL SON
