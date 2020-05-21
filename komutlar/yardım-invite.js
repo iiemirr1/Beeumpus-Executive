@@ -5,9 +5,9 @@ let yardım = new Discord.RichEmbed()
 .setAuthor(`${client.user.username}`, client.user.avatarURL)
 .setColor('GRAY')
 .addField('**<:Simsek:712992067126820895> Yetkili Komutları**',`
-**:white_small_square: davet-kanal** : Puan Oyunu!
-**:white_small_square: davetler** : Puan Gönderir!
-**:white_small_square: davetsayısı** : Sunucuda Kaç Davet Linki Aktif Onu G!
+**:white_small_square: davet-kanal** : Davet-Takip Log Kanalını Belirler!
+**:white_small_square: davetler** : Kişinin Davetlerini Gösterir!
+**:white_small_square: davetsayısı** : Sunucuda Kaç Davet Linki Var Onu Gösterir!
 **:white_small_square: davet-sıralaması** : Davet Sıralamasını Gösterir!
 **:white_small_square: rütbe-ekle** : Rütbe Eklersiniz!
 **:white_small_square: rütbe-liste** : Eklenen Rütbeleri Gösterir!

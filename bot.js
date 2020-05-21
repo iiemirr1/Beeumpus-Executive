@@ -1418,3 +1418,16 @@ client.on("guildMemberAdd", async member => {
 
 
 //İNVİTE SİSTEMİ SON
+
+//ANTİ RAİD SİSTEMİ
+
+client.on('guildMemberAdd', member => {
+ let guvenlik= db.fetch(`bottemizle_${member.guild.id}`)
+    if (!guvenlik) return;
+    if(member.user.bot !==true){
+    } else {
+   member.kick(member) 
+  }  
+  });
+
+//ANTİ RAİD SİSTEMİ SON
