@@ -1,59 +1,33 @@
 const Discord = require('discord.js');
-const db = require('quick.db')
-const ms = require('parse-ms')
+const frenzydb = require("quick.db")
+const frenzyms = require('parse-ms')
 exports.run = async(client, message, args) => { 
   
+let fc = await frenzydb.fetch(`DateNowFC_${message.author.id}`)
+if (fc !== null && 86400000 - (Date.now() - fc) > 0) {
+let time = frenzyms(86400000 - (Date.now() - fc));
+
+
+message.reply(`Günlük hediyeni almak için ${time.hours} saatcik,  ${time.minutes} dakikacık, ${time.seconds} saniyecik daja beklemenn gerek küçük dostum`) 
+return
+}
   
+frenzydb.add(`Bakiye_FrenzyCode.${message.author.id}`, 745) 
+frenzydb.set(`DateNowFC_${message.author.id}`, Date.now()) 
+let fcbakiye = await frenzydb.fetch(`Bakiye_FrenzyCode.${message.author.id}`) || 0
   
-  let süre = await db.fetch(`günlük-kullanım_${message.author.id}`)
+message.reply(`Günlük oldülünü aldın birdaha almana 24 saat var şimdiki para : ${fcbakiye}`)
   
-  let gün = 86400000 
-  
-  if (süre !== null && gün - (Date.now() - süre) > 0) {
-        let time = ms(gün - (Date.now() - süre));
 
   
-    let embed = new Discord.RichEmbed()
-    .setTitle(':x: Hata!')
-    .setDescription('Günlük ödülünü alabilmen için;\n **'+time.hours+'** Saat,**'+time.minutes+'** Dakika,**'+time.seconds+'** Saniye daha beklemelisin.!') 
-    .setColor('RED')
-    .setFooter(client.user.username, client.user.avatarURL)
-    message.channel.send(embed).then(CodEming => CodEming.delete(10000))
-    
-    return
-  }
-  
-  
-  
-  let random_para = Math.floor(Math.random() * 1000);
-  
-  
-  
-  
-  message.reply(':tada: **Ödül Alındı!** :tada: \n\n Bu gün **'+random_para+'** Miktarda para kazandın.')
-  
-  
- db.set(`günlük-kullanım_${message.author.id}`, Date.now()) 
-  
-  let puan = await db.fetch(`puan_${message.author.id}`)
-  
-  if(!puan) db.set(`puan_${message.author.id}`, random_para)
-  else db.add(`puan_${message.author.id}`, random_para)
-  
-  
-  
-  
-  
-  };
+ };
 exports.conf = {
-  enabled: true,  
+  enabled: false,  
   guildOnly: false, 
-  aliases: ['daily'], 
+  aliases: ['günlükhediyem'], 
   permLevel: 0
 };
 
 exports.help = {
-  name: 'günlük',
-  description: 'taslak', 
-  usage: 'günlük'
+  name: 'günlük'
 };
