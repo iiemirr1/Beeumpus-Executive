@@ -1241,3 +1241,23 @@ client.on("channelCreate", async (channel, member, guild) => {
 });
 
 //////////////////////////////////////////////// KANAL KORUMA SON
+
+////////////////////////
+client.on('message', msg => {
+
+if (!msg.content.startsWith(prefix)) {
+    return;
+  }
+
+  });
+
+
+client.elevation = message => {
+  if(!message.guild) {
+	return; }
+  let permlvl = 0;
+  if (message.member.hasPermission("BAN_MEMBERS")) permlvl = 2;
+  if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
+  if (message.author.id === ayarlar.sahip) permlvl = 4;
+  return permlvl;
+};
