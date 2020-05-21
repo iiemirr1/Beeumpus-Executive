@@ -9,6 +9,7 @@ let yardım = new Discord.RichEmbed()
 **<a:disco:712995317234270298> Sunucu Komutları** : \`\Sunucu\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Kullanıcı Komutları** : \`\Kullanıcı\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Koruma Komutları** : \`\Güvenlik\`\ Komutlarını Listeler!
+**<a:disco:712995317234270298> Kayıt-sistemi Komutları** : \`\Kayıt\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Ekonomi Komutları** : \`\Ekonomi\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Davet Komutları** : \`\İnvite Sisteminin\`\ Komutlarını Listeler!`)
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL)
