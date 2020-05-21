@@ -4,7 +4,7 @@ let prefix = 't+'
 let yardım = new Discord.RichEmbed()  
 .setAuthor(`${client.user.username}`, client.user.avatarURL)
 .setColor('GRAY')
-.addField('<:Simsek:712992067126820895> Yardım Kategorileri',`
+.addField('**<:Simsek:712992067126820895> Yardım Kategorileri**',`
 **<a:disco:712995317234270298> Yetkili Komutları** : \`\Yetkili\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Sunucu Komutları** : \`\Sunucu\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Kullanıcı Komutları** : \`\Kullanıcı\`\ Komutlarını Listeler!

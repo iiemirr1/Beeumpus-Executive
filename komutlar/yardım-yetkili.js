@@ -4,7 +4,7 @@ let prefix = 't+'
 let yardım = new Discord.RichEmbed()  
 .setAuthor(`${client.user.username}`, client.user.avatarURL)
 .setColor('GRAY')
-.addField('<:Simsek:712992067126820895> Yetkili Komutları',`
+.addField('**<:Simsek:712992067126820895> Yetkili Komutları**',`
 **:white_small_square: ban** : Sunucudan Yasaklar!
 **:white_small_square: unban** : Yasağını Kaldırır!
 **:white_small_square: kick** : Sunucudan Kickler!
