@@ -5,14 +5,14 @@ let yardım = new Discord.RichEmbed()
 .setAuthor(`${client.user.username}`, client.user.avatarURL)
 .setColor('GRAY')
 .addField('<:Simsek:712992067126820895> Yardım Kategorileri',`
-**<a:yet:712619592937373786> Yetkili Komutları** : \`\Yetkili\`\ Komutlarını Listeler!
-**<a:yet:712619592937373786> Sunucu Komutları** : \`\Sunucu\`\ Komutlarını Listeler!
-**<a:yet:712619592937373786> Kullanıcı Komutları** : \`\Kullanıcı\`\ Komutlarını Listeler!
-**<a:yet:712619592937373786> Koruma Komutları** : \`\Güvenlik\`\ Komutlarını Listeler!
-**<a:yet:712619592937373786> Ekonomi Komutları** : \`\Ekonomi\`\ Komutlarını Listeler!
-**<a:yet:712619592937373786> Davet Komutları** : \`\İnvite Sisteminin\`\ Komutlarını Listeler!`)
+**<a:disco:712995317234270298> Yetkili Komutları** : \`\Yetkili\`\ Komutlarını Listeler!
+**<a:disco:712995317234270298> Sunucu Komutları** : \`\Sunucu\`\ Komutlarını Listeler!
+**<a:disco:712995317234270298> Kullanıcı Komutları** : \`\Kullanıcı\`\ Komutlarını Listeler!
+**<a:disco:712995317234270298> Koruma Komutları** : \`\Güvenlik\`\ Komutlarını Listeler!
+**<a:disco:712995317234270298> Ekonomi Komutları** : \`\Ekonomi\`\ Komutlarını Listeler!
+**<a:disco:712995317234270298> Davet Komutları** : \`\İnvite Sisteminin\`\ Komutlarını Listeler!`)
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL)
-  .addField("**<:Simsek:712992067126820895> Linkler**", "[<a:yet:712619592937373786> Davet Linki](yakında)\n[<a:yet:712619592937373786> Destek Sunucu](https://discord.gg/Bhn7nde)\n[<a:yet:712619592937373786> Website](yakında)")
+  .addField("**<:Simsek:712992067126820895> Linkler**", "[<a:Rgbsag:712244124924772373> Davet Linki](yakında)\n[<a:Rgbsag:712244124924772373> Destek Sunucu](https://discord.gg/Bhn7nde)\n[<a:Rgbsag:712244124924772373> Website](yakında)")
 .setThumbnail(client.user.avatarURL)
  message.channel.send(yardım) 
   };
