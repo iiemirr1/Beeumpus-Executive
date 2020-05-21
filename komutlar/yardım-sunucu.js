@@ -4,7 +4,7 @@ let prefix = 't+'
 let yardım = new Discord.RichEmbed()  
 .setAuthor(`${client.user.username}`, client.user.avatarURL)
 .setColor('GRAY')
-.addField('**<:Simsek:712992067126820895> Yetkili Komutları**',`
+.addField('**<:Simsek:712992067126820895> Sunucu Komutları**',`
 **:white_small_square: otorol-ayarla** : Otorol Ayarlar!
 **:white_small_square: otorol-mesajı** : Otorol Mesajını Ayarlar!
 **:white_small_square: otorolkapat** : Otorolü Kapatır!
