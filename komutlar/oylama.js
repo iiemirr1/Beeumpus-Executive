@@ -19,6 +19,7 @@ module.exports.run = async (client, message, args) => {
     .addField('Heey , Oylamaya Katılmayı Unutma!',`**${yazi}**`)
     .setAuthor(`TitanX Oylama Sistemi`)
     .setThumbnail(`https://cdn.discordapp.com/attachments/704396564227031130/710399172108615730/bilinmeyen-1.gif`)
+    .setFooter(`${message.author.tag} Tarafından Yapıldı.`, message.author.avatarURL)
     .setTimestamp()
      sea.send('',{embed: embed}).then(m => {
    let re = m.react('✅');

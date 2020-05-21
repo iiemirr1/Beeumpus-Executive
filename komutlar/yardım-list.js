@@ -3,15 +3,16 @@ exports.run = async (client, message, args) => {
 let prefix = 't+'
 let yardım = new Discord.RichEmbed()  
 .setAuthor(`${client.user.username}`, client.user.avatarURL)
-.setColor('RANDOM')
-.addField('Yardım Menüsü (7)',`
-**Yetkili Komutları** : Yetkili````Komutlarını Listeler!
-**Sunucu Komutları** : Sunucu Komutlarını Listeler!
-**Kullanıcı Komutları** : Kullanıcı Komutlarını Listeler!
-**Koruma Komutları** : Güvenlik Komutlarını Listeler!
-**Ekonomi Komutları** : Ekonomi Komutlarını Listeler!`)
+.setColor('GRAY')
+.addField('Yardım Kategorileri',`
+**Yetkili Komutları** : \`\Yetkili\`\ Komutlarını Listeler!
+**Sunucu Komutları** : \`\Sunucu\`\ Komutlarını Listeler!
+**Kullanıcı Komutları** : \`\Kullanıcı\`\ Komutlarını Listeler!
+**Koruma Komutları** : \`\Güvenlik\`\ Komutlarını Listeler!
+**Ekonomi Komutları** : \`\Ekonomi\`\ Komutlarını Listeler!
+**Davet Komutları** : \`\İnvite Sisteminin\`\ Komutlarını Listeler!`)
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL)
-.addField('Linkler:',`[Botu Davet Et](BOTUN DAVET LİNKİ) | [Destek Sunucumuz](DETEK SUNUCU LİNKİ) | [Oy Ver](OY VERME LİNKİ)`)
+.addField('Linkler:',`[Website](https://) | [Destek Sunucumuz](DETEK SUNUCU LİNKİ) | [Oy Ver](OY VERME LİNKİ)`)
 .setThumbnail(client.user.avatarURL)
  message.channel.send(yardım) 
   };
