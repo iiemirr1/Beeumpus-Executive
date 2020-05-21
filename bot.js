@@ -1198,3 +1198,70 @@ member.guild.owner.send(`Sunucunuza bir bot eklendi ve sunucudan otomatik olarak
 })
 
 //BOT KORUMA SON
+
+//SAĞTIK BAN
+
+client.on("guildBanAdd", async function(guild, user) {
+  
+   let koruma = await db.fetch(`koruma_${user.guild.id}`)
+    if (koruma == 'kapali') return;
+    if (koruma == 'acik') {
+  
+  const entry = await guild
+    .fetchAuditLogs({ type: "MEMBER_BAN_ADD" })
+    .then(audit => audit.entries.first());
+  const yetkili = await guild.members.get(entry.executor.id);
+setTimeout(async () =>{
+    let logs = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'});
+    if(logs.entries.first().executor.bot) return;
+    
+      let kisi = guild.guild.member(entry.executor);
+kisi.roles.filter(a => a.hasPermission('ADMINISTRATOR')).forEach(x => kisi.removeRole(x.id))
+kisi.roles.filter(a => a.hasPermission('MANAGE_CHANNELS')).forEach(x => kisi.removeRole(x.id))
+kisi.roles.filter(a => a.hasPermission('MANAGE_ROLES')).forEach(x => kisi.removeRole(x.id))
+kisi.kick()
+
+      
+//SAĞTIK BAN SON
+  
+//////////////////////////////////////////////////// EMOJİ KORUMA 
+  
+  client.on('emojiDelete',async function(emoji, kisi) {
+    
+    const i = await db.fetch(`emojikoruma_${emoji.guild.id}`, true)
+    if(i) {
+        const entry = await emoji.guild.fetchAuditLogs({type: 'EMOJİ_DELETE'}).then(audit => audit.entries.first())
+
+    let kisi = emoji.guild.member(entry.executor);
+kisi.roles.filter(a => a.hasPermission('ADMINISTRATOR')).forEach(x => kisi.removeRole(x.id))
+kisi.roles.filter(a => a.hasPermission('MANAGE_CHANNELS')).forEach(x => kisi.removeRole(x.id))
+kisi.roles.filter(a => a.hasPermission('MANAGE_ROLES')).forEach(x => kisi.removeRole(x.id))
+kisi.kick()
+
+  
+const deleter = emoji.executor;
+const id = emoji.executor.id;
+
+if (id === client.user.id || id === emoji.guild.ownerID) return
+
+
+emoji.guild.members.forEach(async function(members) {
+if (members.id !== id) return
+members.roles.forEach(role => {
+if (role.hasPermission(8) || role.hasPermission("MANAGE_EMOJIS")) {
+members.removeRole(role.id)
+}
+})
+})
+
+}
+}  
+      
+  );
+
+guild.owner.send(`** <@${yetkili.id}> İsimili Yetkili <@${user.id}>** Adlı Kişiyi Banladı Ve Yetkilerini Aldım.`)
+},2000)
+    }
+})
+
+//////////////////////////////////////////////////// EMOJİ KORUMA SON
