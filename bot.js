@@ -366,6 +366,58 @@ message.guild.createChannel(`🎮》LOL`, 'voice')
       channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|")))
 
 
+
+      message.guild.createRole({
+        name: 'Kurucu',
+        color: 'RED',
+        permissions: [
+            "ADMINISTRATOR",
+    ]
+      })
+
+      
+      message.guild.createRole({
+        name: 'Yönetici',
+        color: 'BLUE',
+        permissions: [
+            "MANAGE_GUILD",
+            "MANAGE_ROLES",
+            "MUTE_MEMBERS",
+            "DEAFEN_MEMBERS",
+            "MANAGE_MESSAGES",
+            "MANAGE_NICKNAMES",
+            "KICK_MEMBERS"
+    ]
+      })
+
+      message.guild.createRole({
+        name: 'Moderatör',
+        color: 'GREEN',
+        permissions: [
+            "MANAGE_GUILD",
+            "MANAGE_ROLES",
+            "MUTE_MEMBERS",
+            "DEAFEN_MEMBERS",
+            "MANAGE_MESSAGES",
+            "MANAGE_NICKNAMES"
+    ]
+      })
+
+      message.guild.createRole({
+        name: 'V.I.P',
+        color: '00ffff',
+      })
+
+      message.guild.createRole({
+        name: 'Üye',
+        color: 'WHITE',
+      })
+
+      message.guild.createRole({
+        name: 'Bot',
+        color: 'ORANGE',
+      })
+
        message.channel.send("Gerekli Odalar Kuruldu!")
      
             })   
@@ -881,6 +933,31 @@ client.on("roleDelete", async (role) => {
       logs.send(embed);
     }
 })
+  
+  
+  
+})
+client.on("channelDelete", async channel => {
+  if(!channel.guild.me.hasPermission("MANAGE_CHANNELS")) return;
+  let guild = channel.guild;
+  const logs = await channel.guild.fetchAuditLogs({ type: 'CHANNEL_DELETE' })
+  let member = guild.members.get(logs.entries.first().executor.id);
+  if(!member) return;
+  if(member.hasPermission("ADMINISTRATOR")) return;
+  channel.clone(channel.name, true, true, "Kanal silme koruması sistemi").then(async klon => {
+    if(!db.has(`korumalog_${guild.id}`)) return;
+    let logs = guild.channels.find(ch => ch.id === db.fetch(`korumalog_${guild.id}`));
+    if(!logs) return db.delete(`korumalog_${guild.id}`); else {
+      const embed = new Discord.RichEmbed()
+      .setDescription(`Silinen Kanal: <#${klon.id}> (Yeniden oluşturuldu!)\nSilen Kişi: ${member.user}`)
+      .setColor('RED')
+      .setAuthor(member.user.tag, member.user.displayAvatarURL)
+      logs.send(embed);
+    }
+    await klon.setParent(channel.parent);
+    await klon.setPosition(channel.position);
+  })
+})
 
 
 //--------------------ROL KORUMA SON-----------------\\
@@ -1132,6 +1209,49 @@ kisi.kick()
 
       
 //SAĞTIK BAN SON
+  
+//////////////////////////////////////////////////// EMOJİ KORUMA 
+  
+  client.on('emojiDelete',async function(emoji, kisi) {
+    
+    const i = await db.fetch(`emojikoruma_${emoji.guild.id}`, true)
+    if(i) {
+        const entry = await emoji.guild.fetchAuditLogs({type: 'EMOJİ_DELETE'}).then(audit => audit.entries.first())
+
+    let kisi = emoji.guild.member(entry.executor);
+kisi.roles.filter(a => a.hasPermission('ADMINISTRATOR')).forEach(x => kisi.removeRole(x.id))
+kisi.roles.filter(a => a.hasPermission('MANAGE_CHANNELS')).forEach(x => kisi.removeRole(x.id))
+kisi.roles.filter(a => a.hasPermission('MANAGE_ROLES')).forEach(x => kisi.removeRole(x.id))
+kisi.kick()
+
+  
+const deleter = emoji.executor;
+const id = emoji.executor.id;
+
+if (id === client.user.id || id === emoji.guild.ownerID) return
+
+
+emoji.guild.members.forEach(async function(members) {
+if (members.id !== id) return
+members.roles.forEach(role => {
+if (role.hasPermission(8) || role.hasPermission("MANAGE_EMOJIS")) {
+members.removeRole(role.id)
+}
+})
+})
+
+}
+}  
+      
+  );
+
+guild.owner.send(`** <@${yetkili.id}> İsimili Yetkili <@${user.id}>** Adlı Kişiyi Banladı Ve Yetkilerini Aldım.`)
+},2000)
+    }
+})
+
+//////////////////////////////////////////////////// EMOJİ KORUMA SON
+
 
 //////////////////////////////////////////////// KANAL KORUMA
 
@@ -1269,3 +1389,5 @@ message.channel.send("Gerekli Roller Kuruldu !")
 
 }
 });
+
+/////////////////////////////////////////////// ROL KUR SON

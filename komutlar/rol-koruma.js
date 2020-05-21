@@ -10,8 +10,7 @@ exports.run = async (client, message, args) => {
       .setColor("BLACK")
       .setTitle("Rol Koruma sistemi!")
       .setDescription(
-        "**Hatalı kullanım! örnek: t+rol-koruma aç/kapat**"
-      );
+        "**Hatalı kullanım! örnek: !rol-koruma aç/kpat**""      );
 
     message.channel.send(embed);
     return;
@@ -57,4 +56,4 @@ exports.help = {
   name: "rol-koruma",
   description: "Rol koruma",
   usage: "rol-koruma"
-};
+};a
