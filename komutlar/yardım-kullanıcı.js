@@ -9,7 +9,6 @@ let yardım = new Discord.RichEmbed()
 **:white_small_square: sunucubilgi** : Sunucu Bilgilerini Gösterir!
 **:white_small_square: havadurumu** : HavaDurumunu Gösterir!
 **:white_small_square: yasaklar** : Yasaklı Kişileri Gösterir!
-**:white_small_square: top5** : Bulunduğu En İyi 5 Sunucu!
 **:white_small_square: üyedurum** : Üye Durum Gösterir!
 **:white_small_square: döviz** : Döviz Kurlarını Gösterir!
 **:white_small_square: saat** : Saati Gösterir!
