@@ -4,15 +4,17 @@ let prefix = 't+'
 let yardım = new Discord.RichEmbed()  
 .setAuthor(`${client.user.username}`, client.user.avatarURL)
 .setColor('GRAY')
-.addField('**<:Simsek:712992067126820895> Ekonomi Komutları**',`
-**:white_small_square: emoji-yakalamaca** : Puan Oyunu!
-**:white_small_square: gönder** : Puan Gönderir!
-**:white_small_square: günlük** : Günlük Puan Alırsın!
-**:white_small_square: kumar** : Sunucudaki Emojileri Listeler!
-**:white_small_square: puan** : Puanınızı Gösterir!
-**:white_small_square: puan-ver** : Puan Verir (Bot Sahibi Kullanabilir)!
-**:white_small_square: satın-al** : Marketten Bişey Alırsınız!(bakım şuan)
-**:white_small_square: çal** : Cepcilik Yaparsınız!`)
+.addField('**<:Simsek:712992067126820895> Müzik Komutları**',`
+**:white_small_square: oynat** : Avatarını Gösterir!
+**:white_small_square: durdur** : Sunucu Bilgilerini Gösterir!
+**:white_small_square: geç** : HavaDurumunu Gösterir!
+**:white_small_square: ses** : Yasaklı Kişileri Gösterir!
+**:white_small_square: tekrar** : Üye Durum Gösterir!
+**:white_small_square: kuyruk** : Döviz Kurlarını Gösterir!
+**:white_small_square: devamet** : Saati Gösterir!
+**:white_small_square: oynatılan** : Şuan da Çalan Müziği Gösterir!
+**:white_small_square: ping** : Botun Pingini Gösterir!
+**:white_small_square: kapat** : Oynatılan Müziği Kapatır!`)
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL)
   .addField("**<:Simsek:712992067126820895> Linkler**", "[<a:Rgbsag:712244124924772373> Davet Linki](yakında)\n[<a:Rgbsag:712244124924772373> Destek Sunucu](https://discord.gg/Bhn7nde)\n[<a:Rgbsag:712244124924772373> Website](yakında)")
 .setThumbnail(client.user.avatarURL)
@@ -25,5 +27,5 @@ exports.conf = {
   permLevel: 0
 };
 exports.help = {
-  name: 'ekonomi'
+  name: 'müzik'
 };

@@ -4,7 +4,7 @@ let prefix = 't+'
 let yardım = new Discord.RichEmbed()  
 .setAuthor(`${client.user.username}`, client.user.avatarURL)
 .setColor('GRAY')
-.addField('**<:Simsek:712992067126820895> Yetkili Komutları**',`
+.addField('**<:Simsek:712992067126820895> İnvite Komutları**',`
 **:white_small_square: davet-kanal** : Davet-Takip Log Kanalını Belirler!
 **:white_small_square: davetler** : Kişinin Davetlerini Gösterir!
 **:white_small_square: davetsayısı** : Sunucuda Kaç Davet Linki Var Onu Gösterir!

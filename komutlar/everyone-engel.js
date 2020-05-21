@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const fs = require('fs');
 exports.run = (client, msg, args) => {
 if(!msg.member.hasPermission("ADMINISTRATOR")) return msg.channel.send('Bu Komutu Kullanabilmek İçin \`\ADMINISTRATOR\`\ Yetkisine Sahip Olmalısın!');    
-  if(!args[2]) {
+  if(!args[0]) {
       msg.reply("lütfen `aç` veya `kapat` şeklinde bir ayar giriniz.")
     } else {
       if(!["aç", "kapat"].includes(args[0])) {
