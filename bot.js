@@ -886,57 +886,26 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 //-----------------------Modlog Son-----------------------\\
 //-----------------------Modlog Son-----------------------\\
 
-//-----------------------Son Üye Panel--------------------\\
-//-----------------------Son Üye Panel--------------------\\
-//-----------------------Son Üye Panel--------------------\\
-
-
-
-client.on("guildMemberAdd", async member => { let frenzy_c = client.channels.get("705000236225003540"); frenzy_c.setName(`Son Üye : ${member.user.username}`) })
-
-//-----------------------Son Üye Panel Son--------------------\\
-//-----------------------Son Üye Panel Son--------------------\\
-//-----------------------Son Üye Panel Son--------------------\\
-
 //--------------------ROL KORUMA
 
-client.on("roleDelete", async (role) => {
-  let guild = role.guild;
-  if(!guild.me.hasPermission("MANAGE_ROLES")) return;
-  let koruma = db.fetch(`korumaacik_${role.guild.id}`)
-  if(koruma == null) return; 
-  let e = await guild.fetchAuditLogs({type: 'ROLE_DELETE'});
-  let member = guild.members.get(e.entries.first().executor.id);
-  if(!member) return;
-  if(member.hasPermission("ADMINISTRATOR")) return;
-  let mention = role.mentionable;
-  let hoist = role.hoist;
-  let color = role.hexColor;
-  let name = role.name;
-  let perms = role.permissions;
-  let position = role.position
-  role.guild.createRole({
-    name: name,
-    color: color,
-    hoist: hoist,
-    position: position,
-    permissions: perms,
-    mentionable: mention
-  }).then(rol => {
-    if(!db.has(`korumalog_${guild.id}`)) return;
-    let logs = guild.channels.find(ch => ch.id === db.fetch(`korumalog_${guild.id}`));
-    if(!logs) return db.delete(`korumalog_${guild.id}`); else {
-      const embed = new Discord.RichEmbed()
-      .setDescription(`Silinen Rol: <@&${rol.id}> (Yeniden oluşturuldu!)\nSilen Kişi: ${member.user}`)
-      .setColor('RED')
-      .setAuthor(member.user.tag, member.user.displayAvatarURL)
-      logs.send(embed);
-    }
-})
+client.on("roleCreate", async (rolee, member, guild) => {
+  let rolkoruma = await db.fetch(`rolk_${rolee.guild.id}`);
+  if (rolkoruma == "acik") {
+    rolee.delete();
+    const embed = new Discord.RichEmbed()
+      .setDescription(
+        "Sunucunuzda yeni bir rol oluşturuludu! fakat geri silindi! (Rol Koruma Sistemi)"
+      )
+      .setColor("BLACK");
+    rolee.guild.owner.send(embed);
+    return;
+  } else {
+    return;
+  }
+});
   
   
   
-})
 client.on("channelDelete", async channel => {
   if(!channel.guild.me.hasPermission("MANAGE_CHANNELS")) return;
   let guild = channel.guild;
