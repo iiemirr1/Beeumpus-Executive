@@ -4,15 +4,15 @@ let prefix = 't+'
 let yardım = new Discord.RichEmbed()  
 .setAuthor(`${client.user.username}`, client.user.avatarURL)
 .setColor('GRAY')
-.addField('Yardım Kategorileri',`
-**Yetkili Komutları** : \`\Yetkili\`\ Komutlarını Listeler!
-**Sunucu Komutları** : \`\Sunucu\`\ Komutlarını Listeler!
-**Kullanıcı Komutları** : \`\Kullanıcı\`\ Komutlarını Listeler!
-**Koruma Komutları** : \`\Güvenlik\`\ Komutlarını Listeler!
-**Ekonomi Komutları** : \`\Ekonomi\`\ Komutlarını Listeler!
-**Davet Komutları** : \`\İnvite Sisteminin\`\ Komutlarını Listeler!`)
+.addField('<:Simsek:712992067126820895> Yardım Kategorileri',`
+**<a:yet:712619592937373786> Yetkili Komutları** : \`\Yetkili\`\ Komutlarını Listeler!
+**<a:yet:712619592937373786> Sunucu Komutları** : \`\Sunucu\`\ Komutlarını Listeler!
+**<a:yet:712619592937373786> Kullanıcı Komutları** : \`\Kullanıcı\`\ Komutlarını Listeler!
+**<a:yet:712619592937373786> Koruma Komutları** : \`\Güvenlik\`\ Komutlarını Listeler!
+**<a:yet:712619592937373786> Ekonomi Komutları** : \`\Ekonomi\`\ Komutlarını Listeler!
+**<a:yet:712619592937373786> Davet Komutları** : \`\İnvite Sisteminin\`\ Komutlarını Listeler!`)
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL)
-.addField('Linkler:',`[Website](https://) | [Destek Sunucumuz](DETEK SUNUCU LİNKİ) | [Oy Ver](OY VERME LİNKİ)`)
+  .addField("**<:Simsek:712992067126820895> Linkler**", "[<a:yet:712619592937373786> Davet Linki](yakında)\n[<a:yet:712619592937373786> Destek Sunucu](https://discord.gg/Bhn7nde)\n[<a:yet:712619592937373786> Website](yakında)")
 .setThumbnail(client.user.avatarURL)
  message.channel.send(yardım) 
   };
