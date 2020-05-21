@@ -2,7 +2,7 @@ const db = require("quick.db");
 const Discord = require("discord.js");
 
 exports.run = async (client, message, args) => {
-  let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || '!'
+  let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || 't+'
  
 
   if (!args[0]) {
@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
       .setColor("BLACK")
       .setTitle("Kanal Koruma sistemi!")
       .setDescription(
-        "Hatalı kullanım! örnek: !kanal-koruma aç && kapat"
+        "Hatalı kullanım! örnek: t+kanal-koruma aç/kapat"
       );
 
     message.channel.send(embed);

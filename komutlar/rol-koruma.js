@@ -1,38 +1,59 @@
-const Discord = require('discord.js')
-const db = require('quick.db')
-const ayarlar = require('../ayarlar.json')
-const prefix = ayarlar.prefix
+const db = require("quick.db");
+const Discord = require("discord.js");
+
 exports.run = async (client, message, args) => {
-  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("bu komutu kullanmak için `Yönetici` yetkisine sahip olmalısın.")
-  if(!args[0]) {
-    message.channel.send(`Koruma Sistemini Aktifleştirmek İçin **${prefix}rolkoruma aç**`)
+  let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "t+";
+ 
+
+  if (!args[0]) {
+    const embed = new Discord.RichEmbed()
+      .setColor("BLACK")
+      .setTitle("Rol Koruma sistemi!")
+      .setDescription(
+        "**Hatalı kullanım! örnek: !rol-koruma aç/kpat**""      );
+
+    message.channel.send(embed);
+    return;
   }
-  
-  if (args[0] == 'aç') {
-    if(db.has(`korumaacik_${message.guild.id}`)) return message.reply(`Koruma Sistemi Zaten Açık. Kapatmak İçin **${prefix}rolkoruma kapat**`)
-    message.channel.send(`Koruma Sistemi Aktifleştirildi!. Kapatmak için **${prefix}rolkoruma kapat**`)
-    db.set(`korumaacik_${message.guild.id}`, 'acik')
-  }
-  if(args[0] == 'kapat') {
-    if(!db.has(`korumaacik_${message.guild.id}`)) return message.reply(`Koruma Sistemi Zaten Kapalı. Açmak İçin **${prefix}rolkoruma aç**`)
-    message.channel.send(`Koruma Sistemi Kapatılduı. Açmak için **${prefix}rolkoruma aç**`)
-    db.delete(`korumaacik_${message.guild.id}`)
-    
-  } else if(args[0] == "kanal") {
-    if(!db.has(`korumaacik_${message.guild.id}`)) return message.reply("koruma sistemi kapalıyken kanal ayarlayamazsın");  
-    let kanal = message.mentions.channels.first() || message.guild.channels.find(c => c.name.replace("-" , " ").toLowerCase().includes(args[1])) || message.guild.channels.get(args[1]) || message.guild.channels.id();
-    if(!kanal) return message.reply("koruma kanalını ayarlamam için bir kanal girmeniz gereklidir. Kanalı etiketleyebilir veya ismini girebilirsiniz."); else {
-      await db.set(`korumalog_${message.guild.id}`, kanal.id);
-      message.reply("koruma-log kanalı başarıyla " + kanal + " olarak ayarlandı.");
+  let rol = await db.fetch(`rolk_${message.guild.id}`);
+  if (args[0] == "aç") {
+    if (rol) {
+      const embed = new Discord.RichEmbed()
+        .setColor("BLACK")
+        .setTitle("Rol Koruma sistemi!")
+        .setDescription("**Görünüşe göre rol koruma zaten aktif!**");
+
+      message.channel.send(embed);
+      return;
+    } else {
+      db.set(`rolk_${message.guild.id}`, "acik");
+      const embed = new Discord.RichEmbed()
+        .setColor("BLACK")
+        .setTitle("Rol Koruma sistemi!")
+        .setDescription("**Rol koruma başarıyla açıldı!**");
+
+      message.channel.send(embed);
     }
+  } else if (args[0] == "kapat") {
+    db.delete(`rolk_${message.guild.id}`);
+    const embed = new Discord.RichEmbed()
+      .setColor("BLACK")
+      .setTitle("Rol Koruma sistemi!")
+      .setDescription("**Rol Koruma başarıyla kapandı!**");
+
+    message.channel.send(embed);
   }
-}
+};
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: [],
-  permLevel: 0
-}
+  aliases: ["rol-k"],
+  permLevel: 2,
+  kategori: "sunucu"
+};
+
 exports.help = {
-  name: 'rolkoruma'
-}
+  name: "rol-koruma",
+  description: "Rol koruma",
+  usage: "rol-koruma"
+};a
