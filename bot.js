@@ -1265,3 +1265,143 @@ guild.owner.send(`** <@${yetkili.id}> İsimili Yetkili <@${user.id}>** Adlı Ki�
 })
 
 //////////////////////////////////////////////////// EMOJİ KORUMA SON
+
+
+//////////////////////////////////////////////// KANAL KORUMA
+
+client.on("channelCreate", async (channel, member, guild) => {
+  let kanal = await db.fetch(`kanalk_${channel.guild.id}`);
+  if (kanal == "acik") {
+    channel.delete();
+    const embed = new Discord.RichEmbed()
+      .setDescription(
+        "Sunucunuzda yeni bir kanal oluşturuludu! fakat geri silindi! ( Kanal Koruma Sistemi) "
+      )
+      .setColor("BLACK");
+    channel.guild.owner.send(embed);
+    return;
+  } else {
+    return;
+  }
+});
+
+//////////////////////////////////////////////// KANAL KORUMA SON
+
+
+/////////////////////////////////////////////// ROL KUR
+
+client.on('message', async message => {
+const ms = require('ms');
+const args = message.content.slice(prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
+let u = message.mentions.users.first() || message.author;
+if (command === "rol-kur") {
+if (message.guild.channels.find(channel => channel.name === "Bot Kullanımı")) return message.channel.send(" Bot Paneli Zaten Ayarlanmış.")
+message.channel.send(`Kurulum Başlıyor`)
+if (!message.member.hasPermission('ADMINISTRATOR'))
+return message.channel.send(" Bu Kodu `Yönetici` Yetkisi Olan Kişi Kullanabilir.");
+message.channel.awaitMessages(response => response.content === 'evet', {
+max: 1,
+time: 10000,
+errors: ['time'],
+})
+
+message.guild.createRole({
+name: '💎 | Sunucu Sahip',
+color: 'ff0000',
+permissions: [
+"ADMINISTRATOR",
+]
+})
+
+
+message.guild.createRole({
+name: '🌺 | Genel Sorumlu',
+color: '49ff00',
+permissions: [
+"MANAGE_GUILD",
+"MANAGE_ROLES",
+"MUTE_MEMBERS",
+"DEAFEN_MEMBERS",
+"MANAGE_MESSAGES",
+"MANAGE_NICKNAMES",
+"KICK_MEMBERS"
+]
+})
+
+message.guild.createRole({
+name: '💮 | Yönetici',
+color: 'ffb400',
+permissions: [
+"MANAGE_GUILD",
+"MANAGE_ROLES",
+"MUTE_MEMBERS",
+"DEAFEN_MEMBERS",
+"MANAGE_MESSAGES",
+"MANAGE_NICKNAMES"
+]
+})
+  
+  
+message.guild.createRole({
+name: '🔨 | Partner Sorumlusu',
+color: '#FF4D00'
+})
+
+message.guild.createRole({
+name: '💸 | Booster',
+color: '#FF77FF',
+})
+  
+message.guild.createRole({
+name: '♾️ | Mustafa Kemal Atatürk',
+color: '#ED9121',
+})
+  
+message.guild.createRole({
+name: '🎑 | Developer',
+color: '#FFCC00',
+})
+  
+message.guild.createRole({
+name: '🌻 | Family',
+color: '#FF8C69',
+})
+  
+message.guild.createRole({
+name: '⚜ | Partner',
+color: '#002FA7'
+})
+  
+message.guild.createRole({
+name: '🔫 | Tek Tabanca',
+color: '#00CCCC',
+})
+  
+message.guild.createRole({
+name: '💖 | Sevgiler',
+color: '#CD00CC',
+})
+  
+message.guild.createRole({
+name: '🌌 | Kız',
+color: 'd300ff',
+})
+
+message.guild.createRole({
+name: '🌃 | Erkek',
+color: '#0000FF',
+})
+
+message.guild.createRole({
+name: '🛡 | Discord Bot',
+color: '0006ff',
+})
+
+message.channel.send("Gerekli Roller Kuruldu !")
+
+
+}
+});
+
+/////////////////////////////////////////////// ROL KUR SON

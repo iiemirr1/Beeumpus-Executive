@@ -13,7 +13,7 @@ let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || ay
   if (args[0] == 'aç') { 
         if (db.fetch(`emojikoruma_${message.guild.id}`) === true) return message.channel.send('Dostum Sistem Daha Önceden Açılmış  ')
     db.set(`emojikoruma_${message.guild.id}`, true)
-    message.channel.sendEmbed(new Discord.RichEmbed().setDescription('Emoji Koruma Sistemi Başarıyla Açıldı').setColor("RANDOM")); 
+    message.channel.sendEmbed(new Discord.RichEmbed().setDescription('Emoji Koruma Sistemi Başarıyla Açıldı ').setColor("RANDOM")); 
      message.react('638612513428209664')
   };
   if (args[0] == 'kapat') {
