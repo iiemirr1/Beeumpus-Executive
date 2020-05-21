@@ -5,13 +5,13 @@ let yardım = new Discord.RichEmbed()
 .setAuthor(`${client.user.username}`, client.user.avatarURL)
 .setColor('GRAY')
 .addField('**<:Simsek:712992067126820895> Müzik Komutları**',`
-**:white_small_square: oynat** : Avatarını Gösterir!
-**:white_small_square: durdur** : Sunucu Bilgilerini Gösterir!
-**:white_small_square: geç** : HavaDurumunu Gösterir!
-**:white_small_square: ses** : Yasaklı Kişileri Gösterir!
-**:white_small_square: tekrar** : Üye Durum Gösterir!
-**:white_small_square: kuyruk** : Döviz Kurlarını Gösterir!
-**:white_small_square: devamet** : Saati Gösterir!
+**:white_small_square: oynat** : İstediğiniz Müziği Oynatır!
+**:white_small_square: durdur** : Oynatılan Müziği Durdurur!
+**:white_small_square: geç** : Sıradaki Şarkıya Geçer!
+**:white_small_square: ses** : Ses Seviyesini Belirler!
+**:white_small_square: tekrar** : Çalan şarkı bitince tekrar çalar!
+**:white_small_square: kuyruk** : Sıradaki Şarkıları Gösterir!
+**:white_small_square: devamet** : Durdurulan Müziği Oynatır!
 **:white_small_square: oynatılan** : Şuan da Çalan Müziği Gösterir!
 **:white_small_square: ping** : Botun Pingini Gösterir!
 **:white_small_square: kapat** : Oynatılan Müziği Kapatır!`)

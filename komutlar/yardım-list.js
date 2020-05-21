@@ -11,7 +11,8 @@ let yardım = new Discord.RichEmbed()
 **<a:disco:712995317234270298> Koruma Komutları** : \`\koruma\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Kayıt-sistemi Komutları** : \`\kayıt\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Ekonomi Komutları** : \`\ekonomi\`\ Komutlarını Listeler!
-**<a:disco:712995317234270298> Davet Komutları** : \`\invite\`\ Komutlarını Listeler!`)
+**<a:disco:712995317234270298> Davet Komutları** : \`\invite\`\ Komutlarını Listeler!
+**<a:disco:712995317234270298> Müzik Komutları** : \`\müzik\`\ Komutlarını Listeler!`)
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL)
   .addField("**<:Simsek:712992067126820895> Linkler**", "[<a:Rgbsag:712244124924772373> Davet Linki](yakında)\n[<a:Rgbsag:712244124924772373> Destek Sunucu](https://discord.gg/Bhn7nde)\n[<a:Rgbsag:712244124924772373> Website](yakında)")
 .setThumbnail(client.user.avatarURL)
@@ -24,5 +25,5 @@ exports.conf = {
   permLevel: 0
 };
 exports.help = {
-  name: 'yardımlar'
+  name: 'yardım'
 };
