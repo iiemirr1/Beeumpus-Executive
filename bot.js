@@ -1472,7 +1472,7 @@ client.on("message", async function(msg) {
 
 const youTube = require('simple-youtube-api');
 const Ytdl = require('ytdl-core');
-const youtube = new YouTube('AIzaSyB0fgl55b3wLhGxTVFPFIdyKrQuCS0hOEI');
+const youtube = new YouTube('AIzaSyAHq-LLsLH7Q38Wf52YAvrnmKqJ7SnlzsQ');
 
 client.on("message", async message => {
   
