@@ -30,7 +30,7 @@ exports.run = async(client, message, args) => {
   let codeming = new Discord.RichEmbed()
   .setTitle('İşlem Başarılı!')
   .setDescrtiption(s)
-  .setFooter('CodEming')
+  .setFooter('TitanX')
   .setColor('GREEN')
   message.channel.send(codeming)
   

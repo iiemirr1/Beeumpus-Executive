@@ -45,7 +45,7 @@ db.add(`puan_${message.author.id}`, -fiyat)
   
 
     ///////////////////////////////// ÖRNEK \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-  if(!ürün) return message.reply('Yanlış bir barkod girdin. \n\n Bot Sahibine NOT: **Öğrenmen için `qRpsk` İçreiğinde bir barkod ekledim.Bundan yola çıkarak daha fazla ürünler ekliyebilirsin.')
+  if(!ürün) return message.reply('Yanlış bir barkod girdin.')
   };
 exports.conf = {
   enabled: true,  
