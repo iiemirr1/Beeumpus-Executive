@@ -20,7 +20,8 @@ let yardım = new Discord.RichEmbed()
 **:white_small_square: modlog** : Modlog Kanalını Belirler!
 **:white_small_square: güvenlik** : Resimli Güvenlik!
 **:white_small_square: hgbb-kanal** : Resimli Giriş Çıkış!
-**:white_small_square: ototag** : Ototagı Ayarlar!`)
+**:white_small_square: ototag** : Ototagı Ayarlar!
+**:white_small_square: ever-engel** : Everyoneyi Engeller!`)
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL)
   .addField("**<:Simsek:712992067126820895> Linkler**", "[<a:Rgbsag:712244124924772373> Davet Linki](yakında)\n[<a:Rgbsag:712244124924772373> Destek Sunucu](https://discord.gg/Bhn7nde)\n[<a:Rgbsag:712244124924772373> Website](yakında)")
 .setThumbnail(client.user.avatarURL)

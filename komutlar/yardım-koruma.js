@@ -9,7 +9,8 @@ let yardım = new Discord.RichEmbed()
 **:white_small_square: self-koruma** : Self Botları Susturur!
 **:white_small_square: ddos-sistemi** : ddos Koruma Sistemini Aktif Eder!
 **:white_small_square: sağtıkban** : Sağtık Ban Korumasını Aktif Eder!
-**:white_small_square: kanal-koruma** : Kanalları Korur!`)
+**:white_small_square: kanal-koruma** : Kanalları Korur!
+**:white_small_square: anti-raid** : Sunucuya Eklenen Botları Kickler!`)
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL)
   .addField("**<:Simsek:712992067126820895> Linkler**", "[<a:Rgbsag:712244124924772373> Davet Linki](yakında)\n[<a:Rgbsag:712244124924772373> Destek Sunucu](https://discord.gg/Bhn7nde)\n[<a:Rgbsag:712244124924772373> Website](yakında)")
 .setThumbnail(client.user.avatarURL)
