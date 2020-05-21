@@ -1,35 +1,26 @@
-const Discord = require("discord.js");
-
-exports.run = (client, message, params) => {
-  const embedyardim = new Discord.RichEmbed()
-    .setTitle("Komut Listesi")
-    .setDescription("")
-    .setColor(0x00ffff)
-    .setDescription(
-      "**•** **!yetkili** Sunucuyu yönetmek için gerekli olan komutlar.\n**•** **!eğlence** Eğlenmek için bulunan komutlar.\n**•** **!kullanıcı** Kullanıcılar için komutlar.\n**•** **!bot** Bot ile alakalı komutları görürsünüz."
-    )
-    .addField(
-      "» Linkler",
-      `[Bot Davet Linki](Yakında !)` +
-        "**\n**" +
-        `[Bota Oyver](Yakında !)` +
-        "**\n**" +
-        `[Destek Sunucusu](https://discord.gg/Z2zuGCR)`,
-      false
-    )
-    .setFooter("Mechanic Topluluk Sunucusu");
-  
-};
-
+const Discord = require('discord.js');
+exports.run = async (client, message, args) => { 
+let prefix = 't+'
+let yardım = new Discord.RichEmbed()  
+.setAuthor(`${client.user.username}`, client.user.avatarURL)
+.setColor('RANDOM')
+.addField('Yardım Menüsü (7)',`
+**Yetkili Komutları** : Yetkili````Komutlarını Listeler!
+**Sunucu Komutları** : Sunucu Komutlarını Listeler!
+**Kullanıcı Komutları** : Kullanıcı Komutlarını Listeler!
+**Koruma Komutları** : Güvenlik Komutlarını Listeler!
+**Ekonomi Komutları** : Ekonomi Komutlarını Listeler!`)
+.setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL)
+.addField('Linkler:',`[Botu Davet Et](BOTUN DAVET LİNKİ) | [Destek Sunucumuz](DETEK SUNUCU LİNKİ) | [Oy Ver](OY VERME LİNKİ)`)
+.setThumbnail(client.user.avatarURL)
+ message.channel.send(yardım) 
+  };
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ["help"],
+  enabled: false,  
+  guildOnly: false, 
+  aliases: ["help"], 
   permLevel: 0
 };
-
 exports.help = {
-  name: "yardımss",
-  description: "Tüm komutları gösterir.",
-  usage: "yetkili "
+  name: 'yardımlar'
 };
