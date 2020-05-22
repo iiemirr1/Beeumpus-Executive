@@ -23,7 +23,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'kayıt-sistemi',
+  name: 'kayıt',
   description: 'taslak', 
   usage: 'kayıt-sistemi'
 };
