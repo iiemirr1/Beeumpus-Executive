@@ -1,39 +1,35 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
-const ayarlar = require("../ayarlar.json");
-exports.run = async (client, message, args) => {
-  //
-
-  let prefix =
-    (await require("quick.db").fetch(`prefix_${message.guild.id}`)) ||
-    ayarlar.prefix;
-  if (!message.member.hasPermission("MANAGE_GUILD"))
-    return message.channel.send(
-      `Bu Komutu Kullanabilmek İçin "\`Sunucuyu Yönet\`" Yetkisine Sahip Olmalısın.`
+exports.run = (client, message, args) => {
+  if (args[0] == "aç") {
+    if (db.has(`antiraidK_${message.guild.id}`) === true) {
+      return message.channel.send("Anti-raid zaten açılmış.");
+    }
+    db.set(`antiraidK_${message.guild.id}`, "anti-raid-aç");
+    message.reply("Anti-raid sistemi başarıyla açıldı");
+  }
+ 
+  if (args[0] == "kapat") {
+    if (db.has(`antiraidK_${message.guild.id}`) === false) {
+      return message.channel.send(
+        "Anti-raid açılmamış. Açmak için **t+anti-raid aç**"
+      );
+    }
+    db.delete(`antiraidK_${message.guild.id}`, "anti-raid-aç");
+    message.reply("Anti-raid sistemi başarıyla kapatıldı");
+  }
+  if (!args[0])
+    return message.reply(
+      "Lütfen geçerli işlem girin. Örnek: **t+anti-raid aç/kapat**"
     );
-
-  let aktif = await db.fetch(`bottemizle_${message.guild.id}`);
-  if (aktif) {
-    db.delete(`bottemizle_${message.guild.id}`);
-    message.channel.send(`🛑 Koruma Sistemi Devre Dışı Bırakıldı! 🛑`);
-  }
-
-  if (!aktif) {
-    db.set(`bottemizle_${message.guild.id}`, "aktif");
-    message.channel.send(`✅ Koruma Sistemi Aktif Edildi!`);
-  }
 };
-
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: ["koruma-sistemi", "koruma"],
+  guildOnly: true,
+  aliases: [],
   permLevel: 0
 };
-
 exports.help = {
-  name: "anti-raid",
-  description:
-    "Sunucuya Bot Eklendiğinde Atılmasını Sağlayan Sistemi Başarıyla Aktifleştirirsiniz/Kapatırsınız.",
-  usage: "koruma-sistemi"
+  name: "anti-raid"
 };
+ 

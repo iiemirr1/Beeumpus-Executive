@@ -1421,14 +1421,28 @@ client.on("guildMemberAdd", async member => {
 
 //ANTİ RAİD SİSTEMİ
 
-client.on('guildMemberAdd', member => {
- let guvenlik= db.fetch(`bottemizle_${member.guild.id}`)
-    if (!guvenlik) return;
-    if(member.user.bot !==true){
-    } else {
-   member.kick(member) 
-  }  
-  });
+//BOT ENGEL,anti-baskın yada anti-raid
+client.on("guildMemberAdd", async member => {// Yapımı Tamamen CodAre'den '~'Resađ Seferov✨#0809 a aitdir
+let kanal = await db.fetch(`antiraidK_${member.guild.id}`)== "anti-raid-aç"
+  if (!kanal) return;  
+  var cod = member.guild.owner
+  if (member.user.bot === true) {
+     if (db.fetch(`botizin_${member.guild.id}.${member.id}`) == "aktif") {
+    let are = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setThumbnail(member.user.avatarURL)
+      .setDescription(`**${member.user.tag}** (${member.id}) adlı bota bir yetkili izin verdi eğer kaldırmak istiyorsanız **${prefix}bot-izni kaldır botun_id**.`);
+    cod.send(are);//CodAre✨
+     } else {
+       let izinverilmemişbot = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setThumbnail(member.user.avatarURL)
+      .setDescription("**" + member.user.tag +"**" + " (" + member.id+ ") " + "adlı bot sunucuya eklendi ve banladım eğer izin vermek istiyorsanız **" + prefix + "bot-izni ver botun_id**")
+       member.ban();// Eğer sunucudan atmak istiyorsanız ban kısmını kick yapın
+       cod.send(izinverilmemişbot)
+}
+  }
+});
 
 //ANTİ RAİD SİSTEMİ SON
 
