@@ -1,8 +1,11 @@
 const Discord = require('discord.js');
-let prefix = 't+'
-let yardım = new Discord.RichEmbed()  
-.setColor('GRAY')
-.addField('**<:Simsek:712992067126820895> Sunucu Komutları**',`
+
+let botid = ('')
+
+exports.run = (client, message, args) => {
+    const embed = new Discord.RichEmbed()
+    .setColor("GRAY")
+    .addField('**<:Simsek:712992067126820895> Sunucu Komutları**',`
 **:white_small_square: otorol-ayarla** : Otorol Ayarlar!
 **:white_small_square: otorol-mesajı** : Otorol Mesajını Ayarlar!
 **:white_small_square: otorolkapat** : Otorolü Kapatır!
@@ -23,8 +26,9 @@ let yardım = new Discord.RichEmbed()
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL)
   .addField("**<:Simsek:712992067126820895> Linkler**", "[<a:Rgbsag:712244124924772373> Davet Linki](yakında)\n[<a:Rgbsag:712244124924772373> Destek Sunucu](https://discord.gg/Bhn7nde)\n[<a:Rgbsag:712244124924772373> Website](yakında)")
 .setThumbnail(client.user.avatarURL)
- message.channel.send(yardım);
- 
+    message.channel.sendEmbed(embed);
+
+};
 
 exports.conf = {
   enabled: true,
@@ -34,7 +38,8 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'premium',
+  name: 'sunucu',
   description: 'Premium Rolü Hakkındaki Bilgileri Gösterir.',
   usage: 'premium'
 };
+   

@@ -1,9 +1,10 @@
 const Discord = require('discord.js');
-exports.run = async (client, message, args) => { 
-let prefix = 't+'
-let yardım = new Discord.RichEmbed()  
-.setAuthor(`${client.user.username}`, client.user.avatarURL)
-.setColor('GRAY')
+
+let botid = ('')
+
+exports.run = (client, message, args) => {
+    const embed = new Discord.RichEmbed()
+   .setColor('GRAY')
 .addField('**<:Simsek:712992067126820895> Ekonomi Komutları**',`
 **:white_small_square: emoji-yakalamaca** : Puan Oyunu!
 **:white_small_square: gönder** : Puan Gönderir!
@@ -16,14 +17,20 @@ let yardım = new Discord.RichEmbed()
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL)
   .addField("**<:Simsek:712992067126820895> Linkler**", "[<a:Rgbsag:712244124924772373> Davet Linki](yakında)\n[<a:Rgbsag:712244124924772373> Destek Sunucu](https://discord.gg/Bhn7nde)\n[<a:Rgbsag:712244124924772373> Website](yakında)")
 .setThumbnail(client.user.avatarURL)
- message.channel.send(yardım) 
-  };
+    message.channel.sendEmbed(embed);
+
+};
+
 exports.conf = {
-  enabled: false,  
-  guildOnly: false, 
-  aliases: ["help"], 
-  permLevel: 0
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0,
 };
+
 exports.help = {
-  name: 'ekonomi'
+  name: 'ekonomi',
+  description: 'Premium Rolü Hakkındaki Bilgileri Gösterir.',
+  usage: 'premium'
 };
+   
