@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
 
   const embed = new Discord.RichEmbed()
     .setColor("BLACK")
-    .setDescription(`:unlem: ${u} **Adlı şahsın sunucudan atılmasını onaylıyor musunuz?**`)
+    .setDescription(`<a:dsc:715974050857615511> ${u} **Adlı şahsın sunucudan atılmasını onaylıyor musunuz?**`)
     .setFooter(bot.user.username, bot.user.avatarURL);
   message.channel.send(embed).then(async function(sentEmbed) {
     const emojiArray = ["✅"];
@@ -33,7 +33,6 @@ module.exports.run = async (bot, message, args) => {
     var reactions = sentEmbed.createReactionCollector(filter, {
       time: 30000
     });
-    reactions.on("end", () => sentEmbed.edit(`:unlem: **İşlem iptal oldu!**`));
     reactions.on("collect", async function(reaction) {
       if (reaction.emoji.name === "✅") {
         message.channel.send(

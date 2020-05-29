@@ -1,26 +1,62 @@
 const Discord = require("discord.js");
-const db = require ('quick.db')
+const db = require("quick.db");
+const ayarlar = require("../ayarlar.json")
 
-exports.run = (client, message, args) => {
-if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Yeterli yetkin yok!")
-  let user = message.mentions.users.first();
+module.exports.run = async (bot, message, args) => {
+  let prefix = ayarlar.prefix;
+  if (!message.member.hasPermission("BAN_MEMBERS")) {
+    const embed = new Discord.RichEmbed()
+      .setDescription("**Ne yazık ki bu komutu kullanmaya yetkin yok.**")
+      .setColor("BLACK");
 
-  if(!user) return message.channel.send("Kimi banlayacağını belirtmedin")
-  
-  message.guild.ban(user);
-  
-  
-  message.channel.send(`${user} adlı üye sunucudan banlandı`)
-}
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: 0  
+    message.channel.send(embed);
+    return;
+  }
+
+  let u = message.mentions.users.first();
+  if (!u) {
+    return message.channel.send(
+      new Discord.RichEmbed()
+        .setDescription("Lütfen sunucudan yasaklanacak kişiyi etiketleyiniz!")
+        .setColor("BLACK")
+        .setFooter(bot.user.username, bot.user.avatarURL)
+    );
+  }
+
+  const embed = new Discord.RichEmbed()
+    .setColor("BLACK")
+    .setDescription(`<a:dsc:715974050857615511> ${u} **Adlı şahsın yasaklanmasını onaylıyor musunuz?**`)
+    .setFooter(bot.user.username, bot.user.avatarURL);
+  message.channel.send(embed).then(async function(sentEmbed) {
+    const emojiArray = ["✅"];
+    const filter = (reaction, user) =>
+      emojiArray.includes(reaction.emoji.name) && user.id === message.author.id;
+    await sentEmbed.react(emojiArray[0]).catch(function() {});
+    var reactions = sentEmbed.createReactionCollector(filter, {
+      time: 30000
+    });
+    reactions.on("collect", async function(reaction) {
+      if (reaction.emoji.name === "✅") {
+        message.channel.send(
+          `<a:okey:711999433486893058> **İşlem onaylandı! ${u} adlı şahıs sunucudan yasaklandı!**`
+        );
+
+        message.guild.ban(u, 2);
+      }
+    });
+  });
 };
 
-exports.help = {
-  name: 'ban',
-  description: 'Kişiyi banlar',
-  usage: '-ban @üye'
-}
+module.exports.conf = {
+  aliases: [],
+  permLevel: 2,
+  enabled: true,
+  guildOnly: true,
+  kategori: "moderasyon"
+};
+
+module.exports.help = {
+  name: "ban",
+  description: "ban",
+  usage: "ban"
+};
