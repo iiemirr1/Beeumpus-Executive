@@ -1244,58 +1244,128 @@ client.on("channelCreate", async (channel, member, guild) => {
 
 //RESİMLİ HG-BB 
 
-client.on("guildMemberAdd", async member => {
-   const fs = require('fs');
-    let gkanal = JSON.parse(fs.readFileSync("./ayarlar/glog.json", "utf8"));
-    const gözelkanal = member.guild.channels.get(gkanal[member.guild.id].resim)
-    if (!gözelkanal) return; //dcs ekibi
-     let username = member.user.username;
-        if (gözelkanal === undefined || gözelkanal === null) return;
-        if (gözelkanal.type === "text") {
-  
-          const bg = await Jimp.read("https://cdn.discordapp.com/attachments/596076560293953565/613821209880297502/giris_yapt.png");
-            const userimg = await Jimp.read(member.user.avatarURL);
-            var font;
-            if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);
-            else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            await bg.print(font, 430, 170, member.user.tag);
-            await userimg.resize(300, 300);
-            await bg.composite(userimg, 50, 20).write("./img/"+ member.id + ".png");
-              setTimeout(function () {
-                    gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
-              }, 1000);
-              setTimeout(function () {
-                fs.unlink("./img/" + member.id + ".png");
-              }, 10000);
-        }
-    })
 client.on("guildMemberRemove", async member => {
-   const fs = require('fs');
-    let gkanal = JSON.parse(fs.readFileSync("./ayarlar/glog.json", "utf8"));
-    const gözelkanal = member.guild.channels.get(gkanal[member.guild.id].resim)
-    if (!gözelkanal) return; //dcs ekibi
-        let username = member.user.username;
-        if (gözelkanal === undefined || gözelkanal === null) return;
-        if (gözelkanal.type === "text") {              
-           const bg = await Jimp.read("https://cdn.discordapp.com/attachments/596076560293953565/613821573249499177/cksyapt.png");
-            const userimg = await Jimp.read(member.user.avatarURL);
-          var font;
-            if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);
-            else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            await bg.print(font, 430, 170, member.user.tag);
-            await userimg.resize(300, 300);
-            await bg.composite(userimg, 50, 20).write("./img/"+ member.id + ".png");
-              setTimeout(function () {
-                    gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
-              }, 1000);
-              setTimeout(function () {
-                fs.unlink("./img/" + member.id + ".png");
-              
-              }, 10000);
-        }
-    })
+  let resimkanal = JSON.parse(fs.readFileSync("./ayarlar/gç.json", "utf8"));
+  const canvaskanal = member.guild.channels.get(
+    resimkanal[member.guild.id].resim
+  );
+  if (!canvaskanal) return;
+ 
+  const request = require("node-superfetch");
+  const Canvas = require("canvas"),
+    Image = Canvas.Image,
+    Font = Canvas.Font,
+    path = require("path");
+ 
+  var randomMsg = ["Sunucudan Ayrıldı."];
+  var randomMsg_integer =
+    randomMsg[Math.floor(Math.random() * randomMsg.length)];
+ 
+  let msj = await db.fetch(`cikisM_${member.guild.id}`);
+  if (!msj) msj = `{uye}, ${randomMsg_integer}`;
+ 
+  const canvas = Canvas.createCanvas(640, 360);
+  const ctx = canvas.getContext("2d");
+ 
+  const background = await Canvas.loadImage(
+    "https://i.hizliresim.com/Wrn1XW.jpg"
+  );
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+ 
+  ctx.strokeStyle = "#74037b";
+  ctx.strokeRect(0, 0, canvas.width, canvas.height);
+ 
+  ctx.fillStyle = `#D3D3D3`;
+  ctx.font = `37px "Warsaw"`;
+  ctx.textAlign = "center";
+  ctx.fillText(`${member.user.username}`, 300, 342);
+ 
+  let avatarURL = member.user.avatarURL || member.user.defaultAvatarURL;
+  const { body } = await request.get(avatarURL);
+  const avatar = await Canvas.loadImage(body);
+ 
+  ctx.beginPath();
+  ctx.lineWidth = 4;
+  ctx.fill();
+  ctx.lineWidth = 4;
+  ctx.arc(250 + 55, 55 + 55, 55, 0, 2 * Math.PI, false);
+  ctx.clip();
+  ctx.drawImage(avatar, 250, 55, 110, 110);
+ 
+  const attachment = new Discord.Attachment(
+    canvas.toBuffer(),
+    "ro-BOT-güle-güle.png"
+  );
+ 
+    canvaskanal.send(attachment);
+    canvaskanal.send(
+      msj.replace("{uye}", member).replace("{sunucu}", member.guild.name)
+    );
+    if (member.user.bot)
+      return canvaskanal.send(`? Bu bir bot, ${member.user.tag}`);
+ 
+});
+ 
+client.on("guildMemberAdd", async member => {
+  let resimkanal = JSON.parse(fs.readFileSync("./ayarlar/gç.json", "utf8"));
+  const canvaskanal = member.guild.channels.get(
+    resimkanal[member.guild.id].resim
+  );
+  if (!canvaskanal) return;
+  const request = require("node-superfetch");
+  const Canvas = require("canvas"),
+    Image = Canvas.Image,
+    Font = Canvas.Font,
+    path = require("path");
+ 
+  var randomMsg = ["Sunucuya Katıldı."];
+  var randomMsg_integer =
+    randomMsg[Math.floor(Math.random() * randomMsg.length)];
+ 
+  let paket = await db.fetch(`pakets_${member.id}`);
+  let msj = await db.fetch(`cikisM_${member.guild.id}`);
+  if (!msj) msj = `{uye}, ${randomMsg_integer}`;
+ 
+  const canvas = Canvas.createCanvas(640, 360);
+  const ctx = canvas.getContext("2d");
+ 
+  const background = await Canvas.loadImage(
+    "https://i.hizliresim.com/UyVZ4f.jpg"
+  );
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+ 
+  ctx.strokeStyle = "#74037b";
+  ctx.strokeRect(0, 0, canvas.width, canvas.height);
+//Umarım çalmadan(ben yapdım kod bana ait falan demeden) kullanırsınız❤️
+  ctx.fillStyle = `#D3D3D3`;
+  ctx.font = `37px "Warsaw"`;
+  ctx.textAlign = "center";
+  ctx.fillText(`${member.user.username}`, 300, 342);
+ 
+  let avatarURL = member.user.avatarURL || member.user.defaultAvatarURL;
+  const { body } = await request.get(avatarURL);
+  const avatar = await Canvas.loadImage(body);
+ 
+  ctx.beginPath();
+  ctx.lineWidth = 4;
+  ctx.fill();
+  ctx.lineWidth = 4;
+  ctx.arc(250 + 55, 55 + 55, 55, 0, 2 * Math.PI, false);
+  ctx.clip();
+  ctx.drawImage(avatar, 250, 55, 110, 110);
+ 
+  const attachment = new Discord.Attachment(
+    canvas.toBuffer(),
+    "ro-BOT-hosgeldin.png"
+  );
+ 
+  canvaskanal.send(attachment);
+  canvaskanal.send(
+    msj.replace("{uye}", member).replace("{sunucu}", member.guild.name)
+  );
+  if (member.user.bot)
+    return canvaskanal.send(`? Bu bir bot, ${member.user.tag}`);
+});
 
 //RESİMLİ HG-BB SON
 
