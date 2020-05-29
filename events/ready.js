@@ -7,10 +7,10 @@ var prefix = ayarlar.prefix;
   
 module.exports = client => {
 var oyun = [
-         " 🔥TitanX | ⏰7/24 Aktif!",
-         ` 🔥Müzik`,
-         ` 🔥İnvite`,
-         ` 🔥Yakında Website !`
+         " 🔥TitanX",
+         ` 🔥Müzik Sistemi`,
+         ` 🔥İnvite Sistemi`,
+         ` 🔥Ekonomi Sistemi`
      
     ];
 
