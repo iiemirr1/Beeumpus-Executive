@@ -8,7 +8,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu Kom
  
   let channel = message.mentions.channels.first()
     if (!channel) {
-        message.channel.send(`:x: | Kullanım: **${ayarlar.prefix}giriş-çıkış-ayarla #kanal**`)
+        message.channel.send(`:x: | Kullanım: **${ayarlar.prefix}hgbb #kanal**`)
         return
     }
     if(!kanal[message.guild.id]){
@@ -30,7 +30,7 @@ exports.conf = {
 }
  
 exports.help = {
-    name: 'resimli-hgbb',
+    name: 'hgbb',
     description: 'Giriş Çıkış Kanalını Ayarlar.',
-    usage: 'gç-ayarla <#kanal>'
+    usage: 'hgbb <#kanal>'
 }

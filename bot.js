@@ -1366,7 +1366,6 @@ client.on("guildMemberAdd", async member => {
   if (member.user.bot)
     return canvaskanal.send(`? Bu bir bot, ${member.user.tag}`);
 });
-
 //RESİMLİ HG-BB SON
 
 //İNVİTE SİSTEMİ
