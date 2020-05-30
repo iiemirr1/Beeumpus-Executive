@@ -10,7 +10,8 @@ exports.run = (client, message, args) => {
 **<a:disco:712995317234270298> Sunucu Komutları** : \`\sunucu\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Kullanıcı Komutları** : \`\kullanıcı\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Koruma Komutları** : \`\koruma\`\ Komutlarını Listeler!
-**<a:disco:712995317234270298> Kayıt-sistemi Komutları** : \`\kayıt\`\ Komutlarını Listeler!
+**<a:disco:712995317234270298> Kayıt-Sistemi Komutları** : \`\kayıt\`\ Komutlarını Listeler!
+**<a:disco:712995317234270298> Seviye-Sistemi Komutları** : \`\sevsis\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Ekonomi Komutları** : \`\ekonomi\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Davet Komutları** : \`\invite\`\ Komutlarını Listeler!
 **<a:disco:712995317234270298> Müzik Komutları** : \`\müzik\`\ Komutlarını Listeler!`)
