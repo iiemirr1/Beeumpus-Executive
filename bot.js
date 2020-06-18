@@ -1214,7 +1214,7 @@ members.removeRole(role.id)
       
   );
 
-guild.owner.send(`** <@${yetkili.id}> İsimili Yetkili <@${user.id}>** Adlı Kişiyi Banladı Ve Yetkilerini Aldım.`)
+guild.owner.send(`** <@${yetkili.id}> İsimili Yetkili <@${user.id}>** Adlı Kişiyi Banladı Ve Yetkilerini Aldı`)
 },2000)
     }
 })
