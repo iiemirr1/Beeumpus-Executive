@@ -11,6 +11,9 @@ var oyun = [
          ` 🔥Müzik Sistemi`,
          ` 🔥İnvite Sistemi`,
          ` 🔥Ekonomi Sistemi`
+           `👑 | Bu Altyapı Nordx Youtube Kanalına Aittir`
+
+                
      
     ];
 

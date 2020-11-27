@@ -1,9 +1,8 @@
+
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
+  "name": "Judge Developer",
   "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
+  "description": "Judge Developer",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
@@ -22,7 +21,7 @@
     "common-tags": "^1.8.0",
     "croxy-api": "^1.4.1",
     "dblapi.js": "^2.4.0",
-    "discord.js": "^11.5.1",
+    "discord.js": "^12.5.1",
     "discord.js-commando": "^0.10.0",
     "emojier": "^0.1.2",
     "express": "^4.17.1",
@@ -78,10 +77,6 @@
   "engines": {
     "node": "8.x"
   },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/salty-airport"
-  },
-  "license": "MIT",
   "keywords": [
     "node",
     "glitch",
