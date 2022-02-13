@@ -1,7 +1,7 @@
 {
-  "name": "borangkdn",
+  "name": "BoranGkdn",
   "version": "0.0.1",
-  "description": "BoranGkdn tarafından yapılan süpervizör bot.",
+  "description": "BoranGkdn tarafından yapılan v13 süpervizör bot.",
   "main": "borangkdn.js",
   "scripts": {
     "start": "node borangkdn.js"
@@ -20,7 +20,13 @@
     "parse-ms": "^3.0.0",
     "quick.db": "^7.1.3"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "keywords": [
+    "BoranGkdn",
+    "BoranGkdn",
+    "BoranGkdn",
     "BoranGkdn"
   ]
-}
+}      

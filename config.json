@@ -54,7 +54,7 @@
         "chat": "CHAT KANALI ID",
         "voicechannel": "BOT SES KANALI ID",
         "welcomechannel": "HOŞ GELDİN KANALI ID",
-        "rules": "899246452876922890"
+        "rules": "KURALLAR KANALI ID"
     },
     "registration": {
         "unregistered": "KAYITSIZ ROL ID",
@@ -76,7 +76,7 @@
     },
     "Guild": {
         "GuildID": "SUNUCU ID",
-        "GuilDName": "BoranGkdn Video",
+        "GuilDName": "SUNUCU ISMI",
         "GuildOwnerRole": ["SUNUCU OWNER ROL ID"]
     },
     "emojis": {
