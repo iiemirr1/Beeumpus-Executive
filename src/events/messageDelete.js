@@ -1,3 +1,4 @@
+const client = global.client;
 const config = require("../../config.json");
 const db = require("quick.db");
 const moment = require("moment");
@@ -17,9 +18,8 @@ module.exports = async message => {
     let embed = new MessageEmbed().setColor('#2F3136')
     let user = message.member
     client.channels.cache.get(config.logs.messagelog).send({ embeds: [embed.setDescription(`     
-    ${user ? user.toString(): user.username} kullanıcısı **${message.channel.name}** kanalında bir mesaj sildi.
-
-    Silinen mesaj: ${message.content}`)] });
+${user ? user.toString(): user.username} kullanıcısı **${message.channel.name}** kanalında bir mesaj sildi.
+${message.content}`)] });
 }
 
 module.exports.conf = {

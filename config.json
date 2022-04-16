@@ -41,6 +41,7 @@
     "logs": {
         "taglog": "TAG LOG ID",
         "rollog": "ROL LOG ID",
+        "messagelog": "MESAJ LOG ID",
         "seslog": "SES LOG ID"
     },
     "roles": {
