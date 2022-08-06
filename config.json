@@ -20,13 +20,13 @@
         },
         "mute": {
             "staff": "1005495361273597952",
-            "roles": "SUSTURURULMUS ROLÜ ID",
-            "log": "MUTE LOG ID",
+            "roles": "1005535226153410611",
+            "log": "1005526979530997821",
             "limit": 5
         },
         "warn": {
             "staff": "WARN YETKİLİSİ ID",
-            "log": "WARN LOG ID"
+            "log": "1005527011005050922"
         },
         "transport": {
             "staff": "TAŞIYICI YETKİLİSİ ID"
@@ -39,15 +39,15 @@
         }
     },
     "logs": {
-        "taglog": "TAG LOG ID",
-        "rollog": "ROL LOG ID",
-        "messagelog": "MESAJ LOG ID",
-        "seslog": "SES LOG ID"
+        "taglog": "1005527057813491782",
+        "rollog": "1005527081951694928",
+        "messagelog": "1005527132459499520",
+        "seslog": "1005527169532952626"
     },
     "roles": {
-        "vip": "VİP ROL ID",
+        "vip": "1005507887721885808",
         "sponsor": "SPONSOR ROL ID",
-        "müzisyen": "MÜZİSYEN ROL ID",
+        "müzisyen": "1005510180303282247",
         "team": "TAGLI ROL ID"
     },
     "channels": {
