@@ -2,24 +2,24 @@
     "bot": {
         "owner": "796263552771817472",
         "prefix": ".",
-        "BotStatus": "YOUTUBE BORANGKDN",
-        "BotFooter": "YOUTUBE BORANGKDN",
+        "BotStatus": "Prss ✬ Croxy",
+        "BotFooter": "Prss ✬ Croxy",
         "cooldown": 8
     },
     "penals": {
         "ban": {
-            "staff": "BAN YETKİLİSİ ID",
-            "log": "BAN LOG ID",
+            "staff": "1005495369737703574",
+            "log": "1005526956676218990",
             "limit": 3
         },
         "jail": {
-            "staff": "JAİL YETKİLİSİ ID",
-            "roles": "CEZALI ROLÜ ID",
-            "log": "CEZA LOG ID",
+            "staff": "1005495370551402586",
+            "roles": "1005507081178202163",
+            "log": "1005526790002978869",
             "limit": 5
         },
         "mute": {
-            "staff": "MUTE YETKİLİSİ ID",
+            "staff": "1005495361273597952",
             "roles": "SUSTURURULMUS ROLÜ ID",
             "log": "MUTE LOG ID",
             "limit": 5
