@@ -69,20 +69,20 @@
         "symbol": "|",
         "suspecios": "ŞÜPHELİ ROL ID",
         "susoeciosnickname": "Şüpheli Hesap",
-        "oneman": "1. ERKEK ROLU",
-        "onewoman": "2. ERKEK ROLU",
+        "oneman": "1005434679379361802",
+        "onewoman": "1005434646605090856",
         "minage": 13, 
         "purchase": false
     },
     "Guild": {
-        "GuildID": "SUNUCU ID",
-        "GuilDName": "SUNUCU ISMI",
-        "GuildOwnerRole": ["SUNUCU OWNER ROL ID"]
+        "GuildID": "977920203394547723",
+        "GuilDName": "✬ P R S S",
+        "GuildOwnerRole": ["759457765244141639"]
     },
     "emojis": {
-        "tada": "TADA EMOJİSİ",
-        "yes": "ONAY EMOJİSİ",
-        "no": "RED EMOJİSİ"
+        "tada": "1005539593464057958",
+        "yes": "1005539701970698381",
+        "no": "1005539644303212684"
 
     }
 } 
