@@ -25,11 +25,11 @@
             "limit": 5
         },
         "warn": {
-            "staff": "WARN YETKİLİSİ ID",
+            "staff": "1005495371327352983",
             "log": "1005527011005050922"
         },
         "transport": {
-            "staff": "TAŞIYICI YETKİLİSİ ID"
+            "staff": "1005495369213415434"
         },
         "points": {
             "mutepoints": "10",
@@ -46,28 +46,28 @@
     },
     "roles": {
         "vip": "1005507887721885808",
-        "sponsor": "SPONSOR ROL ID",
+        "sponsor": "1005498171713134693",
         "müzisyen": "1005510180303282247",
-        "team": "TAGLI ROL ID"
+        "team": "1005536050766155836"
     },
     "channels": {
-        "chat": "CHAT KANALI ID",
-        "voicechannel": "BOT SES KANALI ID",
-        "welcomechannel": "HOŞ GELDİN KANALI ID",
-        "rules": "KURALLAR KANALI ID"
+        "chat": "1005423114236219412",
+        "voicechannel": "1005440949884821563",
+        "welcomechannel": "1005437453202628608",
+        "rules": "1005438629725876276"
     },
     "registration": {
-        "unregistered": "KAYITSIZ ROL ID",
-        "man": ["ERKEK ROL ID", "2. ERKEK ROL ID"],
-        "woman": ["KADIN ROL ID", "2. ERKEK ROL ID"],
-        "yetkilialim": "YETKİLİ ALIM ROL ID",
-        "staff": "REGİSTER ROL ID",
-        "enaltyetkilirolü": "EN ALT YETKİLİ ROL ID",
-        "GuilDTag": "SUNUCU TAGINIZ",
-        "TagSymbol": "ISIM YAŞIN ÖNÜNE KOYULACAK SEMBOL",
-        "autonickname": "$ İsim | Yaş",
+        "unregistered": "1005508346620686407",
+        "man": ["1005434679379361802", "1005434679379361802"],
+        "woman": ["1005434646605090856", "1005434646605090856"],
+        "yetkilialim": "1005524926708588594",
+        "staff": "1005495372178784367",
+        "enaltyetkilirolü": "1005504549110431854",
+        "GuilDTag": "✬",
+        "TagSymbol": "✬",
+        "autonickname": "✬ İsim | Yaş",
         "symbol": "|",
-        "suspecios": "ŞÜPHELİ ROL ID",
+        "suspecios": "1005540712919597126",
         "susoeciosnickname": "Şüpheli Hesap",
         "oneman": "1005434679379361802",
         "onewoman": "1005434646605090856",
@@ -81,8 +81,8 @@
     },
     "emojis": {
         "tada": "1005539593464057958",
-        "yes": "1005539701970698381",
-        "no": "1005539644303212684"
+        "yes": "1005541278559252490",
+        "no": "1005541304257744906"
 
     }
 } 
