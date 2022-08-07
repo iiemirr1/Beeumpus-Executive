@@ -2,8 +2,8 @@
     "bot": {
         "owner": "796263552771817472",
         "prefix": ".",
-        "BotStatus": "Prss ✬ Croxy",
-        "BotFooter": "Prss ✬ Croxy",
+        "BotStatus": "",
+        "BotFooter": "",
         "cooldown": 8
     },
     "penals": {
