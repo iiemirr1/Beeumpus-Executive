@@ -46,6 +46,6 @@ readdir("./src/events", (err, files) => {
   });
 });
 
-client.login("MTAwNTQ4NDA2ODI5NDYzNTYwMA.GSQ80x.HcZ_l19o9-4u26loACOx7RVxEZXgxM7jbG5Ouw")
+client.login("MTAwNTQ4NDA2ODI5NDYzNTYwMA.GkO1nG.JUCXL8nYqcm-t8Gly_0SVFEnfaiaQZ8kOuyU0Q")
   .then(() => console.log(`Bot ${client.user.username} olarak giriş yaptı!`))
   .catch((err) => console.log(`Bot Giriş yapamadı sebep: ${err}`));
